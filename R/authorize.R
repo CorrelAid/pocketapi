@@ -27,5 +27,21 @@ access_token <- httr::content(res)$access_token
 access_token
 
 get_url <- httr::parse_url("https://getpocket.com/v3/get")
-res <- httr::POST(get_url, body = list(consumer_key = consumer_key, access_token = access_token))
+res <- httr::POST(get_url, body = list(consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"), access_token = Sys.getenv("POCKET_ACCESS_TOKEN")))
 httr::content(res)
+
+# Extracting stuff
+# URL (https://www.reddit.com/r/AskReddit/comments/b9q1zj/what_sounds_like_fiction_but_is_actually_a_real/)
+
+pocket_urls <- httr::content(res)$list$`2548580874`$resolved_url
+pocket_urls
+
+# Title
+
+pocket_titles <- httr::content(res)$list$`2548580874`$resolved_title
+pocket_titles
+
+# Upvotes (Excerpt?)
+
+upvotes <- httr::content(res)$list$`2548580874`$excerpt
+upvotes
