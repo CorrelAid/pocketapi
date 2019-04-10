@@ -35,4 +35,7 @@ httr::content(res)
 
 output <- httr::content(res)$list
 
+library(purrr)
+URLs <- map(output, "given_url")
+URLs
 
