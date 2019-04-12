@@ -6,7 +6,7 @@
 library(httr)
 library(usethis)
 
-usethis::edit_r_environ()
+# usethis::edit_r_environ()
 
 # consumer_key <- Sys.getenv("POCKET_CONSUMER_KEY")
 # consumer_key
@@ -36,6 +36,15 @@ httr::content(res)
 output <- httr::content(res)$list
 
 library(purrr)
-URLs <- map(output, "given_url")
-URLs
+library(tibble)
+
+df  <- output %>% {
+  tibble(
+    id = map_chr(., "item_id"),
+    URL = map_chr(., "given_url"),
+    title = map_chr(., "given_title"),
+    wordcount = map_chr(., "word_count"),
+    language = map_chr(., "lang")
+  )
+}
 
