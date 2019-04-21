@@ -3,7 +3,8 @@
 #' @param name character. Name of person / animal / ... to greet.
 #' @return character. 'Hello World, ' followed by the name.
 #' @export
-hello_world <- function(name){
-  return(paste0("Hello World, and Hello Life ", name))
+Moin <- function(name){
+  return(paste0("Moin", name))
 }
+
 #Änderung 1
