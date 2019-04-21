@@ -6,13 +6,13 @@ require("httr")
 require("jsonlite")
 
 #install.packages("usethis")
-usethis::edit_r_environ()
-consumer_key <- Sys.getenv("consumer_key")
-access_token <- Sys.getenv("access_token")
-
-get <- GET("https://getpocket.com/v3/oauth/request", authenticate(user_name, password, type = "basic"))
-
-get <- GET("https://getpocket.com/v3/oauth/request", authenticate(consumer_key, password, type = "basic"))
+#usethis::edit_r_environ()
+consumer_key <- Sys.getenv("POCKET_CONSUMER_KEY")
+access_token <- Sys.getenv("POCKET_ACCESS_TOKEN")
 
 
-
+url <- httr::parse_url("https://getpocket.com/v3/get")
+url$query <- list(consumer_key = consumer_key, access_token = access_token)
+res <- POST(url)
+res
+str(res)
