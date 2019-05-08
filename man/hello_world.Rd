@@ -10,7 +10,7 @@ hello_world(name)
 \item{name}{character. Name of person / animal / ... to greet.}
 }
 \value{
-character. A nice greeting.D
+character. A nice greeting.
 }
 \description{
 hello_world prints a nice greeting to someone.

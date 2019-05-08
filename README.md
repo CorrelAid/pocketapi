@@ -1,6 +1,8 @@
 PocketAPI R package
 ================
 
+[![Travis build status](https://travis-ci.org/CorrelAid/pocketapi.svg?branch=master)](https://travis-ci.org/CorrelAid/pocketapi)
+
 This is a R wrapper for the Pocket API.
 
 For the developer team
