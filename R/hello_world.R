@@ -4,6 +4,5 @@
 #' @return character. A nice greeting.
 #' @export
 hello_world <- function(name){
-  # this function was changed
   return(paste0("Hello ", name, "! Welcome to the pocketapi R package!"))
 }
