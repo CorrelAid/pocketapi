@@ -5,8 +5,8 @@ Authors@R: person("First", "Last", email = "first.last@example.com", role = c("a
 Description: What the package does (one paragraph).
 Depends: R (>= 3.5.2)
 Imports:
-  httr
-  purrr
+  httr,
+  purrr,
   tibble
 License: What license is it under?
 Encoding: UTF-8
