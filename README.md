@@ -9,9 +9,10 @@ For the developer team
 ======================
 
 -   Hadley Wickhams book: <http://r-pkgs.had.co.nz/>
--   What is DESCRIPTION: <http://r-pkgs.had.co.nz/description.html>
--   What is NAMESPACE: <http://r-pkgs.had.co.nz/namespace.html>
+    -   What is DESCRIPTION: <http://r-pkgs.had.co.nz/description.html>
+    -   What is NAMESPACE: <http://r-pkgs.had.co.nz/namespace.html>
 -   RStudio shortcuts
--   CTRL + SHIFT + B: build
--   CTRL + SHIFT + D: build documentation from roxygen comments (-&gt; man directory)
--   CTRL + SHIFT + T: run tests
+    -   CTRL + SHIFT + E: check package
+    -   CTRL + SHIFT + B: build
+    -   CTRL + SHIFT + D: build documentation from roxygen comments (-&gt; man directory)
+    -   CTRL + SHIFT + T: run tests
