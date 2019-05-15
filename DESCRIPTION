@@ -1,12 +1,15 @@
 Package: pocketapi
 Title: What the Package Does (one line, title case)
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
+Authors@R: person("Frie", "Preu", email = "fr1e@pm.me", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
-Depends: R (>= 3.5.2)
+Depends: R (>= 3.5.0)
 Imports:
-  httr
-License: What license is it under?
+  httr,
+  purrr,
+  tibble,
+  xml2
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
