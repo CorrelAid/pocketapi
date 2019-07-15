@@ -6,15 +6,15 @@
 #' @param raw logical. If set to TRUE, pocket data is returned as part of a list that additionally contains all raw information and possible items.
 #' @return dataframe or list.
 #' @export
-pocket_get <- function(consumer.key=NULL, access.token=NULL, add.item=c(), raw=FALSE){
+pocket_get <- function(consumer_key=NULL, access_token=NULL, add_item=c(), raw=FALSE){
 
-if ( is.null(consumer.key) ) stop("Argument 'consumer_key' is missing. A valid consumer key for Pocket must be provided. See 'https://getpocket.com/developer/docs/authentication' on how to obtain one.")
-if ( is.null(access.token) ) stop("Argument 'access_token' is missing. A valid request token for Pocket must be provided. See 'https://getpocket.com/developer/docs/authentication' on how to obtain one.")
+if ( missing(consumer_key) ) stop("Argument 'consumer_key' is missing. A valid consumer key for Pocket must be provided. See 'https://getpocket.com/developer/docs/authentication' on how to obtain one.")
+if ( missing(access_token) ) stop("Argument 'access_token' is missing. A valid request token for Pocket must be provided. See 'https://getpocket.com/developer/docs/authentication' on how to obtain one.")
 
 library(httr)
 
 get_url <- httr::parse_url("https://getpocket.com/v3/get")
-res <- httr::POST(get_url, body = list(consumer_key = consumer.key, access_token = access.token))
+res <- httr::POST(get_url, body = list(consumer_key = consumer_key, access_token = access_token))
 output <- httr::content(res)$list
 output.categories <- unique(unlist(lapply(output, names)))
 
