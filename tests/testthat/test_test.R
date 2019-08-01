@@ -1,6 +1,3 @@
-library(pocketapi)
-POCKET_TEST_CONSUMER_KEY <- Sys.getenv("POCKET_TEST_CONSUMER_KEY")
-POCKET_TEST_ACCESS_TOKEN <- Sys.getenv("POCKET_TEST_ACCESS_TOKEN")
 
 test_that("Consumer Key invalid error occurs", {
   expect_error(
@@ -17,3 +14,14 @@ test_that("return value is data frame", {
   expect_s3_class(return_value, "data.frame")
   expect_gt(nrow(return_value), 0)
 })
+
+test_that("Return value is list if raw = TRUE", {
+  return_value <- pocket_get(
+    consumer_key = POCKET_TEST_CONSUMER_KEY,
+    access_token = POCKET_TEST_ACCESS_TOKEN,
+    raw = TRUE
+  )
+  expect_true(is.list(return_value))
+})
+
+

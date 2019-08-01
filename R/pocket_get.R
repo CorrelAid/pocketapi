@@ -58,7 +58,6 @@ pocket_get <- function(consumer_key = NULL,
       }
     }
 
-
     if (raw == FALSE) {
       return(data.frame(df))
     } else{
