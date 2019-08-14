@@ -4,7 +4,14 @@
 \alias{pocket_add}
 \title{pocket_add}
 \usage{
-pocket_add()
+pocket_add(consumer.key = NULL, access.token = NULL, add.url = NULL)
+}
+\arguments{
+\item{consumer.key}{character string. Your Pocket consumer key. See https://getpocket.com/developer/docs/authentication.}
+
+\item{access.token}{character string. Your Pocket request token. See https://getpocket.com/developer/docs/authentication.}
+
+\item{add.url}{character string. The URL of the item you want to add to your Pocket list.}
 }
 \description{
 add entry to pocket
