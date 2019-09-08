@@ -1,8 +1,8 @@
 #' pocket_get
 #' @description Get a data frame with your pocket data.
-#' @param consumer.key character string. Your Pocket consumer key. See https://getpocket.com/developer/docs/authentication.
-#' @param access.token character string. Your Pocket request token. See https://getpocket.com/developer/docs/authentication.
-#' @param add.item character vector. Specify a vector listing additional items to be retrieved from Pocket. Baseline: item ID, URL, and item title.
+#' @param consumer_key character string. Your Pocket consumer key. See https://getpocket.com/developer/docs/authentication.
+#' @param access_token character string. Your Pocket request token. See https://getpocket.com/developer/docs/authentication.
+#' @param add_item character vector. Specify a vector listing additional items to be retrieved from Pocket. Baseline: item ID, URL, and item title.
 #' @param raw logical. If set to TRUE, pocket data is returned as part of a list that additionally contains all raw information and possible items.
 #' @return dataframe or list.
 #' @export
