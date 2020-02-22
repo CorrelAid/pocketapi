@@ -4,17 +4,19 @@
 \alias{pocket_get}
 \title{pocket_get}
 \usage{
-pocket_get(consumer_key = NULL, access_token = NULL, add_item = c(),
-  raw = FALSE)
+pocket_get(consumer_key, access_token, add_item = c(),
+  all_items = FALSE, raw = FALSE)
 }
 \arguments{
+\item{consumer_key}{character string. Your Pocket consumer key. See https://getpocket.com/developer/docs/authentication.}
+
+\item{access_token}{character string. Your Pocket request token. See https://getpocket.com/developer/docs/authentication.}
+
+\item{add_item}{character vector. Specify a vector listing additional items to be retrieved from Pocket. Baseline: item ID, URL, and item title.}
+
+\item{all_items}{logical. If set to TRUE, all possible items are returned. This is equivalent to manually defining all items in 'add_item'.}
+
 \item{raw}{logical. If set to TRUE, pocket data is returned as part of a list that additionally contains all raw information and possible items.}
-
-\item{consumer.key}{character string. Your Pocket consumer key. See https://getpocket.com/developer/docs/authentication.}
-
-\item{access.token}{character string. Your Pocket request token. See https://getpocket.com/developer/docs/authentication.}
-
-\item{add.item}{character vector. Specify a vector listing additional items to be retrieved from Pocket. Baseline: item ID, URL, and item title.}
 }
 \value{
 dataframe or list.
