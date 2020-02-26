@@ -5,10 +5,11 @@
 #' @param access_token character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").
 #' @importFrom purrr map
 pocket_delete <- function(item_ids) {
+  # generate "array" with actions (list of list in R)
   action_list <- item_ids %>% purrr::map(action_name = "delete", .f = gen_action_)
-  res <- pocket_modify_(action_list)
-  httr::stop_for_status(res)
 
-  message(glue::glue("You deleted the following items from your Pocket list: {item_ids}"))
-  return(invisible(res))
+  # call internal function
+  results <- pocket_modify_(action_list)
+
+  return(invisible(results))
 }

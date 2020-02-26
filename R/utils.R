@@ -27,6 +27,9 @@ pocket_stop_for_status_ <- function(res) {
     status <- res$headers$status
     x_error <- res$headers$`x-error`
 
+    if (is.null(status)) {
+      status <- httr::status_code(res)
+    }
     stop(glue::glue("Error during API request:
                     {status}: {x_error}"))
   }
