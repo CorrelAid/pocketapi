@@ -4,7 +4,8 @@
 #' @importFrom jsonlite toJSON
 #' @importFrom purrr map_chr
 #' @details see https://getpocket.com/developer/docs/v3/modify.
-pocket_modify_ <- function(actions) {
+#' @export
+pocket_modify <- function(actions) {
   # auto_unbox because otherwise jsonlite will en-array single values, e.g. ["archive"]
   actions_json <- jsonlite::toJSON(actions, auto_unbox = TRUE)
   res <- pocket_post_("send",
@@ -26,6 +27,7 @@ pocket_modify_ <- function(actions) {
 #' @description bulk modify for a given action, i.e. the action is the same for all item_ids.
 #' @param item_ids character vector. Pocket item ids that should be modified.
 #' @param action_name character. The action that should be performed on all specified items.
+#' @importFrom purrr map
 #' @keywords internal
 #' @export
 pocket_modify_bulk_ <- function(item_ids, action_name) {
@@ -52,6 +54,15 @@ warn_for_failures_ <- function(failures) {
       warning(glue::glue("Action on {failure_name} failed with error: {failure$action_errors}"))
     })
 }
+
+# user facing function for generating actions
+gen_tag_action <- function(tag_action, tag, item_id) {
+  # validity checks
+
+}
+
+# user facing function for generating action
+gen_action <- function(item_id, action_name)
 
 #' gen_action_
 #' @description generate an action list element for a given id and action name

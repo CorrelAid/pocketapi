@@ -22,7 +22,6 @@ pocket_post_ <- function(endpoint, consumer_key, access_token, ...) {
 #' @importFrom glue glue
 pocket_stop_for_status_ <- function(res) {
   if (httr::status_code(res) >= 300) {
-    call <- sys.call(-1) # error should be thrown in calling function not here, see httr::stop_for_status
 
     status <- res$headers$status
     x_error <- res$headers$`x-error`

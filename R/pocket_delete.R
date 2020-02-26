@@ -6,10 +6,7 @@
 #' @importFrom purrr map
 pocket_delete <- function(item_ids) {
   # generate "array" with actions (list of list in R)
-  action_list <- item_ids %>% purrr::map(action_name = "delete", .f = gen_action_)
-
-  # call internal function
-  results <- pocket_modify_(action_list)
+  results <- pocket_modify_bulk_(item_ids, "delete")
 
   return(invisible(results))
 }
