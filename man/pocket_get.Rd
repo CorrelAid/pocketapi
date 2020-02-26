@@ -2,25 +2,24 @@
 % Please edit documentation in R/pocket_get.R
 \name{pocket_get}
 \alias{pocket_get}
-\title{pocket_get}
+\title{pocket_get2}
 \usage{
-pocket_get(consumer_key, access_token, add_item = c(),
-  all_items = FALSE, raw = FALSE)
+pocket_get(
+  consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
+  access_token = Sys.getenv("POCKET_ACCESS_TOKEN")
+)
 }
 \arguments{
-\item{consumer_key}{character string. Your Pocket consumer key. See https://getpocket.com/developer/docs/authentication.}
+\item{consumer_key}{character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
 
-\item{access_token}{character string. Your Pocket request token. See https://getpocket.com/developer/docs/authentication.}
-
-\item{add_item}{character vector. Specify a vector listing additional items to be retrieved from Pocket. Baseline: item ID, URL, and item title.}
-
-\item{all_items}{logical. If set to TRUE, all possible items are returned. This is equivalent to manually defining all items in 'add_item'.}
-
-\item{raw}{logical. If set to TRUE, pocket data is returned as part of a list that additionally contains all raw information and possible items.}
+\item{access_token}{character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").}
 }
 \value{
-dataframe or list.
+tibble. Tibble with one row for each Pocket item.
 }
 \description{
 Get a data frame with your pocket data.
+}
+\details{
+See https://getpocket.com/developer/docs/v3/retrieve for the meaning of certain variable values.
 }
