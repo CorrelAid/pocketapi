@@ -11,25 +11,15 @@ pocket_add <-
   function(add_url,
            consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
            access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
-    if (missing(add_url))
-      stop("Argument 'add_url' is missing.")
-
-    if (consumer_key == "")
-      stop(
-        "POCKET_CONSUMER_KEY does not exist as environment variable. Add it to your R environment or manually specify the consumer_key argument."
-      )
-    if (access_token == "")
-      stop(
-        "POCKET_ACCESS_TOKEN does not exist as environment variable. Add it to your R environment or manually specify the access_token argument. See ?get_access_token for details."
-      )
+    if (missing(add_url)) stop("Argument 'add_url' is missing.")
+    if (consumer_key == "") stop(error_message_consumer_key())
+    if (access_token == "") stop(error_message_access_token())
 
 
 
-    res <-
-      pocket_post_("add", consumer_key, access_token, url = add_url)
+    res <- pocket_post_("add", consumer_key, access_token, url = add_url)
 
     pocket_stop_for_status_(res)
 
     invisible(res)
-
   }

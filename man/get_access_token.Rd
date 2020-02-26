@@ -21,8 +21,7 @@ creates the URL the user needs to enter into their browser in order to authorize
 See the \href{https://github.com/CorrelAid/pocketapi}{GitHub README} for details.
 }
 \seealso{
-Other authentication functions: 
-\code{\link{create_authorize_url}()},
-\code{\link{get_request_token}()}
+Other authentication functions: \code{\link{create_authorize_url}},
+  \code{\link{get_request_token}}
 }
 \concept{authentication functions}
