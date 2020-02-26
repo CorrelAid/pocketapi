@@ -4,15 +4,22 @@
 \alias{pocket_add}
 \title{pocket_add}
 \usage{
-pocket_add(consumer_key, access_token, add_url)
+pocket_add(
+  add_url,
+  consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
+  access_token = Sys.getenv("POCKET_ACCESS_TOKEN")
+)
 }
 \arguments{
-\item{consumer_key}{character string. Your Pocket consumer key. See https://getpocket.com/developer/docs/authentication.}
-
-\item{access_token}{character string. Your Pocket request token. See https://getpocket.com/developer/docs/authentication.}
-
 \item{add_url}{character string. The URL of the item you want to add to your Pocket list.}
+
+\item{consumer_key}{character string. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
+
+\item{access_token}{character string. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").}
+}
+\value{
+the response from the httr call, invisibly
 }
 \description{
-add entry to pocket
+add an entry to pocket
 }
