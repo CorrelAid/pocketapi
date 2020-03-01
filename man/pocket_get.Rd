@@ -4,14 +4,20 @@
 \alias{pocket_get}
 \title{pocket_get2}
 \usage{
-pocket_get(favorite = NULL, item_type = NULL, tag = NULL,
+pocket_get(
+  favorite = NULL,
+  item_type = NULL,
+  tag = NULL,
   consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
-  access_token = Sys.getenv("POCKET_ACCESS_TOKEN"))
+  access_token = Sys.getenv("POCKET_ACCESS_TOKEN")
+)
 }
 \arguments{
 \item{favorite}{boolean. Default NULL. Allows to filter for favorited items. If TRUE, only favorited items will be returned. If FALSE, only un-favorited items will be returned.}
 
-\item{item_type}{character. Default NULL. Allows to filter for content type of items. Valid values are: "image", "article", "video".}
+\item{item_type}{character. Default NULL. Allows to filter for content type of items. Valid values are: "image", "article", "video". Please note that there might be Pocket items that do not belong to any of those types. The Pocket API documentation only mentions those three.}
+
+\item{tag}{character. Default NULL. Only one tag can be filtered at a time. Set to '_untagged_' if you only want to get untagged items.}
 
 \item{consumer_key}{character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
 

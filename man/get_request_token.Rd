@@ -19,7 +19,8 @@ requests a request_token for the Pocket application with a given consumer key fr
 See the \href{https://github.com/CorrelAid/pocketapi}{GitHub README} for details.
 }
 \seealso{
-Other authentication functions: \code{\link{create_authorize_url}},
-  \code{\link{get_access_token}}
+Other authentication functions: 
+\code{\link{create_authorize_url}()},
+\code{\link{get_access_token}()}
 }
 \concept{authentication functions}

@@ -1,3 +1,4 @@
+#' pocket_modify
 #' @description internal function that sends a request with actions to the modify Pocket API endpoint.
 #' @param actions list. list of lists where each element is an action object. See https://getpocket.com/developer/docs/v3/modify.
 #' @importFrom httr content
@@ -17,10 +18,10 @@ pocket_modify <- function(actions) {
   item_ids <- purrr::map_chr(actions, "item_id")
   action_results <- extract_action_results(res, item_ids)
 
-  message_for_successes_(action_results$success_ids, action_name)
+  message_for_successes_(action_results$success_ids)
   warn_for_failures_(action_results$failures)
 
-  return(res)
+  return(action_results)
 }
 
 #' pocket_modify_bulk_
@@ -32,16 +33,16 @@ pocket_modify <- function(actions) {
 #' @export
 pocket_modify_bulk_ <- function(item_ids, action_name) {
   # generate "array" with actions (list of list in R)
-  action_list <- item_ids %>% purrr::map(action_name = action_name, .f = gen_action_)
+  action_list <- item_ids %>% purrr::map(action_name = action_name, .f = pocketapi::gen_action_)
 
   # call internal function
-  res <- pocket_modify_(action_list)
+  action_results <- pocket_modify(action_list)
 
   return(action_results)
 }
 
-message_for_successes_ <- function(success_ids, action_name) {
-  message(glue::glue("Action {action_name} was successful for the items: {success_ids}"))
+message_for_successes_ <- function(success_ids) {
+  message(glue::glue("Action was successful for the items: {success_ids}"))
 }
 
 #' warn_for_failures_
@@ -54,15 +55,6 @@ warn_for_failures_ <- function(failures) {
       warning(glue::glue("Action on {failure_name} failed with error: {failure$action_errors}"))
     })
 }
-
-# user facing function for generating actions
-gen_tag_action <- function(tag_action, tag, item_id) {
-  # validity checks
-
-}
-
-# user facing function for generating action
-gen_action <- function(item_id, action_name)
 
 #' gen_action_
 #' @description generate an action list element for a given id and action name
@@ -79,14 +71,12 @@ gen_action_ <- function(item_id, action_name, ...) {
 }
 
 
-
-
 extract_action_results <- function(res, item_ids) {
   content <- httr::content(res)
 
   # check whether any action has failed (status == 0)
   if (content$status != 0) {
-    return(failure_ids = c(), success_ids = item_ids, failures = list())
+    return(list(failure_ids = c(), success_ids = item_ids, failures = list()))
   }
 
   # combine item_ids with action_results and transpose list
@@ -110,4 +100,10 @@ extract_action_results <- function(res, item_ids) {
 }
 
 
+# user facing function for generating actions
+gen_tag_action <- function(tag_action, tag, item_id) {
+  # validity checks
 
+}
+
+# user facing function for generating action

@@ -4,8 +4,11 @@
 \alias{pocket_add}
 \title{pocket_add}
 \usage{
-pocket_add(add_url, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
-  access_token = Sys.getenv("POCKET_ACCESS_TOKEN"))
+pocket_add(
+  add_url,
+  consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
+  access_token = Sys.getenv("POCKET_ACCESS_TOKEN")
+)
 }
 \arguments{
 \item{add_url}{character string. The URL of the item you want to add to your Pocket list.}
