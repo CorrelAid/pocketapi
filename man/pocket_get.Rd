@@ -4,12 +4,15 @@
 \alias{pocket_get}
 \title{pocket_get2}
 \usage{
-pocket_get(
+pocket_get(favorite = NULL, item_type = NULL, tag = NULL,
   consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
-  access_token = Sys.getenv("POCKET_ACCESS_TOKEN")
-)
+  access_token = Sys.getenv("POCKET_ACCESS_TOKEN"))
 }
 \arguments{
+\item{favorite}{boolean. Default NULL. Allows to filter for favorited items. If TRUE, only favorited items will be returned. If FALSE, only un-favorited items will be returned.}
+
+\item{item_type}{character. Default NULL. Allows to filter for content type of items. Valid values are: "image", "article", "video".}
+
 \item{consumer_key}{character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
 
 \item{access_token}{character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").}

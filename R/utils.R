@@ -33,3 +33,11 @@ pocket_stop_for_status_ <- function(res) {
                     {status}: {x_error}"))
   }
 }
+
+error_message_consumer_key <- function() {
+  return("POCKET_CONSUMER_KEY does not exist as environment variable. Add it to your R environment or manually specify the consumer_key argument.")
+}
+
+error_message_access_token <- function() {
+  return("POCKET_ACCESS_TOKEN does not exist as environment variable. Add it to your R environment or manually specify the consumer_key argument.")
+}
