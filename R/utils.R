@@ -41,3 +41,10 @@ error_message_consumer_key <- function() {
 error_message_access_token <- function() {
   return("POCKET_ACCESS_TOKEN does not exist as environment variable. Add it to your R environment or manually specify the consumer_key argument.")
 }
+
+# Create comma separated string
+collapse_to_comma_separated <- function(v){
+  return(paste(v, collapse = ","))
+}
+
+
