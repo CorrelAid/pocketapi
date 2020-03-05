@@ -4,71 +4,98 @@
 #' @param action_name atomic character vector. The kind of tag action you want to undertake.
 #' @param tags character vector. The names of the tags to work with the chosen action.
 #' @param old_new character vector with two elements. Compulsory if action = rename. First element = old tag, second = new tag.
-#' @importFrom purrr map
-
+#' @export
 pocket_tag <- function(item_id = NULL, action_name, tags = NULL, old_new = NULL) {
 
   # check for validity
-  actions <- c("tags_add", "tags_remove", "tags_replace", "tags_clear", "tag_rename", "tag_delete")
 
   # has tags: add, remove, replace
   # has only one tag: delete
   # has exactly two tags: rename
   # has no tags: clear
 
-    if (!action_name %in% actions) {
+  # has no item_id: delete, rename
 
-    stop("Tag actions can be only be: 'tags_add', 'tags_remove', 'tags_replace', 'tags_clear', 'tag_rename', or 'tag_delete'.")
-    }
+  tags <- collapse_to_comma_separated_(tags)
 
-  if (is.null(idem_id) & action_name != "tag_delete") {
+  # Validity checks & some pre-processing ----
+  process_tag_request_(item_id = item_id, action_name = action_name, tags = tags, old_new = old_new)
 
-    stop("If your action_name is not 'tag_delete', you need to provide an item_id.")
+  # Start processing ----
+  if (action_name == "tag_rename") {
 
-  }
-
-  if (action_name == "tag_delete" & length(tags) > 1) {
-
-    stop("For tag_delete, you can only specify an atomic vector of one tag.")
-
-  }
-
-  tags <- collapse_to_comma_separated(tags)
-
-  if (action_name == "tags_clear") {tags <- NULL}
-
-  if (action_name == "tag_rename" & length(old_new) != 2) {
-
-    stop("If your action is 'rename', you need to provide a vector for 'old_new', format: c('old tag', 'new tag').")
-
-  } else {
+    item_id <- NA
 
     old_tag <- old_new[1]
 
     new_tag <- old_new[2]
-
-  }
-
-
-  if (action_name == "tag_rename") {
 
     action_list <- item_id %>% purrr::map(action_name = action_name,
                                           old_tag = old_tag,
                                           new_tag = new_tag,
                                           .f = pocketapi:::gen_action_)
 
+    action_list[[1]][["item_id"]] <- NULL
+
+    actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
+
+    res <- pocketapi:::pocket_post_("send",
+                                    Sys.getenv("POCKET_CONSUMER_KEY"),
+                                    Sys.getenv("POCKET_ACCESS_TOKEN"),
+                                    actions = actions_json)
+
+    if(is.null(pocket_stop_for_status_(res))) {
+
+      print(glue::glue("Successfully renamed tag '{old_tag}' for '{new_tag}'."))
+
+    } else {glue::glue("Could not rename tag '{old_tag}' for '{new_tag}'.")}
+
   }
 
-  if (action_name %in% c("tags_replace", "tags_remove", "tags_add", "tag_delete") ) {
+  if (action_name %in% c("tags_replace", "tags_remove", "tags_add", "tags_clear")) {
 
     action_list <- item_id %>% purrr::map(action_name = action_name,
                                           tags = tags,
                                           .f = pocketapi:::gen_action_)
 
+    action_results <- pocket_modify(action_list)
+
+    return(action_results)
+
+  }
+
+  if (action_name == "tag_delete") {
+
+    item_id <- NA
+
+    action_list <- item_id %>% purrr::map(action_name = action_name,
+                                          tag = tags,
+                                          .f = pocketapi:::gen_action_)
+
+    action_list[[1]][["item_id"]] <- NULL
+
+    actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
+
+    res <- pocketapi:::pocket_post_("send",
+                        Sys.getenv("POCKET_CONSUMER_KEY"),
+                        Sys.getenv("POCKET_ACCESS_TOKEN"),
+                        actions = actions_json)
+
+    if(is.null(pocket_stop_for_status_(res))) {
+
+    print(glue::glue("Successfully removed tag '{tags}'."))
+
+      } else {glue::glue("Could not removed tag '{tags}'.")}
     }
 
-  action_results <- pocket_modify(action_list)
-
-  return(action_results)
+  # print(action_list)
 
 }
+
+
+# roxygen2::roxygenize()
+# pocketapi::pocket_tag(action_name = "tags_add", tags = c("tv"), item_id = "2702822490")
+# pocketapi::pocket_tag(action_name = "tag_rename", old_new = c("tv", "gastronomie"))
+
+# df <- pocket_get()
+# df %>% filter(item_id == "2702822490")
