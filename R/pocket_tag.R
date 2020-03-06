@@ -7,35 +7,35 @@
 #' @export
 pocket_tag <- function(item_id = NULL, action_name, tags = NULL, old_new = NULL) {
 
-  # check for validity
-
-  # has tags: add, remove, replace
-  # has only one tag: delete
-  # has exactly two tags: rename
-  # has no tags: clear
-
-  # has no item_id: delete, rename
-
+  # Pre-process tags comma separated string
   tags <- collapse_to_comma_separated_(tags)
 
   # Validity checks & some pre-processing ----
   process_tag_request_(item_id = item_id, action_name = action_name, tags = tags, old_new = old_new)
 
-  # Start processing ----
-  if (action_name == "tag_rename") {
+  # Processing ----
+  pocket_modify_tag_(item_id = item_id, action_name = action_name, tags = tags, old_new = old_new)
 
-    item_id <- NA
+}
+
+#' pocket_modify_tag_
+#' @description internal function that sends a request with tag actions to the modify Pocket API endpoint.
+#' @param actions list. list of lists where each element is an action object. See https://getpocket.com/developer/docs/v3/modify.
+#' @importFrom httr content
+#' @importFrom jsonlite toJSON
+#' @importFrom purrr map_chr
+#' @details see https://getpocket.com/developer/docs/v3/modify.
+pocket_modify_tag_ <- function(item_id, action_name, tags, old_new) {
+
+  if (action_name == "tag_rename") {
 
     old_tag <- old_new[1]
 
     new_tag <- old_new[2]
 
-    action_list <- item_id %>% purrr::map(action_name = action_name,
-                                          old_tag = old_tag,
+    action_list <- action_name %>% purrr::map(old_tag = old_tag,
                                           new_tag = new_tag,
-                                          .f = pocketapi:::gen_action_)
-
-    action_list[[1]][["item_id"]] <- NULL
+                                          .f = pocketapi:::gen_tag_action_)
 
     actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
 
@@ -48,7 +48,7 @@ pocket_tag <- function(item_id = NULL, action_name, tags = NULL, old_new = NULL)
 
       print(glue::glue("Successfully renamed tag '{old_tag}' for '{new_tag}'."))
 
-    } else {glue::glue("Could not rename tag '{old_tag}' for '{new_tag}'.")}
+    }
 
   }
 
@@ -66,36 +66,32 @@ pocket_tag <- function(item_id = NULL, action_name, tags = NULL, old_new = NULL)
 
   if (action_name == "tag_delete") {
 
-    item_id <- NA
-
-    action_list <- item_id %>% purrr::map(action_name = action_name,
-                                          tag = tags,
-                                          .f = pocketapi:::gen_action_)
-
-    action_list[[1]][["item_id"]] <- NULL
+    action_list <- action_name %>% purrr::map(tag = tags,
+                                              .f = pocketapi:::gen_tag_action_)
 
     actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
 
     res <- pocketapi:::pocket_post_("send",
-                        Sys.getenv("POCKET_CONSUMER_KEY"),
-                        Sys.getenv("POCKET_ACCESS_TOKEN"),
-                        actions = actions_json)
+                                    Sys.getenv("POCKET_CONSUMER_KEY"),
+                                    Sys.getenv("POCKET_ACCESS_TOKEN"),
+                                    actions = actions_json)
 
     if(is.null(pocket_stop_for_status_(res))) {
-
-    print(glue::glue("Successfully removed tag '{tags}'."))
-
-      } else {glue::glue("Could not removed tag '{tags}'.")}
-    }
-
-  # print(action_list)
+      print(glue::glue("Successfully removed tag '{tags}'."))
+      }
+  }
 
 }
 
 
-# roxygen2::roxygenize()
-# pocketapi::pocket_tag(action_name = "tags_add", tags = c("tv"), item_id = "2702822490")
-# pocketapi::pocket_tag(action_name = "tag_rename", old_new = c("tv", "gastronomie"))
-
-# df <- pocket_get()
-# df %>% filter(item_id == "2702822490")
+#' gen_tag_action_
+#' @description generate an action list element for a given action name
+#' @param action_name character. Name of Pocket action as string.
+#' @return list
+gen_tag_action_ <- function(action_name, ...) {
+  return(list(
+    action = action_name,
+    time = as.POSIXct(Sys.time()),
+    ...
+  ))
+}
