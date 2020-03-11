@@ -1,8 +1,7 @@
 `pocketapi`
 ================
 
-[![Travis build status](https://travis-ci.org/CorrelAid/pocketapi.svg?branch=master)](https://travis-ci.org/CorrelAid/pocketapi)
-
+![R-CMD-check](https://github.com/CorrelAid/pocketapi/workflows/R-CMD-check/badge.svg?branch=master)
 This is a R wrapper for the [Pocket](https://getpocket.com) API. You can use `pocketapi` to access and modify your *own* pockets and to add new links to your Pocket programmatically. 
 
 # Installation
