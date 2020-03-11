@@ -41,3 +41,59 @@ error_message_consumer_key <- function() {
 error_message_access_token <- function() {
   return("POCKET_ACCESS_TOKEN does not exist as environment variable. Add it to your R environment or manually specify the consumer_key argument.")
 }
+
+#' collapse_to_comma_separated
+#' Create comma separated string
+collapse_to_comma_separated_ <- function(v){
+
+  return(paste(v, collapse = ","))
+
+}
+
+
+#' process_tag_request_
+#' Validity checks for tag requests
+process_tag_request_ <- function(item_id, action_name, tags, old_new) {
+
+  actions <- c("tags_add", "tags_remove", "tags_replace", "tags_clear", "tag_rename", "tag_delete")
+
+  if (!action_name %in% actions) {
+
+    stop("Tag actions can be only be: 'tags_add', 'tags_remove', 'tags_replace', 'tags_clear', 'tag_rename', or 'tag_delete'.")
+
+  }
+
+  if (action_name != "tag_rename" & !is.null(old_new)) {
+
+    stop("Only provide a value for old_new when your action is 'tag_rename'.")
+
+  }
+
+  if (is.null(item_id) & !action_name %in% c("tag_delete", "tag_rename")) {
+
+    stop("If your action_name is not 'tag_delete' or 'tag_rename', you need to provide an item_id.")
+
+  }
+
+  if (action_name == "tag_delete" & length(tags) > 1) {
+
+    stop("For 'tag_delete', you can only specify an atomic vector of one tag.")
+
+  }
+
+  if (action_name == "tag_rename" & length(old_new) != 2) {
+
+    stop("If your action is 'tag_rename', you need to provide a vector for 'old_new', format: c('old tag', 'new tag').")
+
+  }
+
+  if (action_name == "tags_clear" & !is.null(tags)) {
+
+    stop("If your action is 'tags_clear', you must not provide tags.")
+
+  }
+
+}
+
+
+

@@ -33,7 +33,7 @@ pocket_modify <- function(actions) {
 #' @export
 pocket_modify_bulk_ <- function(item_ids, action_name) {
   # generate "array" with actions (list of list in R)
-  action_list <- item_ids %>% purrr::map(action_name = action_name, .f = pocketapi::gen_action_)
+  action_list <- item_ids %>% purrr::map(action_name = action_name, .f = pocketapi:::gen_action_)
 
   # call internal function
   action_results <- pocket_modify(action_list)
