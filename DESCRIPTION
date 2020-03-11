@@ -18,4 +18,5 @@ LazyData: true
 RoxygenNote: 7.0.2
 Suggests: 
     testthat,
-    mockery
+    mockery,
+    covr

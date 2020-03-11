@@ -1,7 +1,10 @@
 `pocketapi`
 ================
 
+<!-- badges: start -->
 ![R-CMD-check](https://github.com/CorrelAid/pocketapi/workflows/R-CMD-check/badge.svg?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/CorrelAid/pocketapi/branch/master/graph/badge.svg)](https://codecov.io/gh/CorrelAid/pocketapi?branch=master)
+<!-- badges: end -->
 
 This is a R wrapper for the [Pocket](https://getpocket.com) API. You can use `pocketapi` to access and modify your *own* pockets and to add new links to your Pocket programmatically. 
 
