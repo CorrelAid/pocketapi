@@ -2,3 +2,4 @@
 ^pocketapi\.Rproj$
 ^\.Rproj\.user$
 ^README.Rmd
+^.github

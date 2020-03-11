@@ -1,18 +1,25 @@
 #' pocket_modify
-#' @description internal function that sends a request with actions to the modify Pocket API endpoint.
+#' @description function that sends a request with a list of actions to the modify Pocket API endpoint.
 #' @param actions list. list of lists where each element is an action object. See https://getpocket.com/developer/docs/v3/modify.
+#' @param consumer_key character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").
+#' @param access_token character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").
 #' @importFrom httr content
 #' @importFrom jsonlite toJSON
 #' @importFrom purrr map_chr
 #' @details see https://getpocket.com/developer/docs/v3/modify.
 #' @export
-pocket_modify <- function(actions) {
+pocket_modify <- function(actions, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
+                          access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
+  if (consumer_key == "") stop(error_message_consumer_key())
+  if (access_token == "") stop(error_message_access_token())
+
   # auto_unbox because otherwise jsonlite will en-array single values, e.g. ["archive"]
   actions_json <- jsonlite::toJSON(actions, auto_unbox = TRUE)
   res <- pocket_post_("send",
-                      Sys.getenv("POCKET_CONSUMER_KEY"),
-                      Sys.getenv("POCKET_ACCESS_TOKEN"),
-                      actions = actions_json)
+    Sys.getenv("POCKET_CONSUMER_KEY"),
+    Sys.getenv("POCKET_ACCESS_TOKEN"),
+    actions = actions_json
+  )
   pocket_stop_for_status_(res)
 
   item_ids <- purrr::map_chr(actions, "item_id")
@@ -33,7 +40,7 @@ pocket_modify <- function(actions) {
 #' @export
 pocket_modify_bulk_ <- function(item_ids, action_name) {
   # generate "array" with actions (list of list in R)
-  action_list <- item_ids %>% purrr::map(action_name = action_name, .f = pocketapi:::gen_action_)
+  action_list <- item_ids %>% purrr::map(action_name = action_name, .f = gen_action_)
 
   # call internal function
   action_results <- pocket_modify(action_list)
@@ -42,7 +49,8 @@ pocket_modify_bulk_ <- function(item_ids, action_name) {
 }
 
 message_for_successes_ <- function(success_ids) {
-  message(glue::glue("Action was successful for the items: {success_ids}"))
+  success_ids_collapsed <- paste(success_ids, collapse = ", ")
+  message(glue::glue("Action was successful for the items: {success_ids_collapsed}"))
 }
 
 #' warn_for_failures_
@@ -51,16 +59,17 @@ message_for_successes_ <- function(success_ids) {
 #' @keywords internal
 #' @export
 warn_for_failures_ <- function(failures) {
-    purrr::walk2(failures, names(failures), function(failure, failure_name) {
-      warning(glue::glue("Action on {failure_name} failed with error: {failure$action_errors}"))
-    })
+  purrr::walk2(failures, names(failures), function(failure, failure_name) {
+    warning(glue::glue("Action on {failure_name} failed with error: {failure$action_errors}"))
+  })
 }
 
 #' gen_action_
-#' @description generate an action list element for a given id and action name
+#' @description generate an Pocket action list element for a given id and action name
 #' @param item_id character. ID of Pocket item
 #' @param action_name character. Name of Pocket action as string.
-#' @return list
+#' @param ... additional named arguments to be added to the action list.
+#' @return list representing a Pocket API action.
 gen_action_ <- function(item_id, action_name, ...) {
   return(list(
     action = action_name,
@@ -98,12 +107,3 @@ extract_action_results <- function(res, item_ids) {
 
   return(list(success_ids = success_ids, failure_ids = failure_ids, failures = failures))
 }
-
-
-# user facing function for generating actions
-gen_tag_action <- function(tag_action, tag, item_id) {
-  # validity checks
-
-}
-
-# user facing function for generating action

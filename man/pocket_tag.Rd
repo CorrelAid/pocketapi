@@ -4,12 +4,12 @@
 \alias{pocket_tag}
 \title{pocket_tag}
 \usage{
-pocket_tag(item_id = NULL, action_name, tags = NULL, old_new = NULL)
+pocket_tag(item_ids = NULL, action_name, tags = NULL, old_new = NULL)
 }
 \arguments{
-\item{item_id}{atomic character vector. Pocket item id you want to modify the tags for.}
+\item{item_ids}{character vector. Pocket item ids you want to modify the tags for.}
 
-\item{action_name}{atomic character vector. The kind of tag action you want to undertake.}
+\item{action_name}{character vector. The kind of tag action you want to undertake. Possible values: 'tags_add', 'tags_remove', 'tags_replace', 'tags_clear', 'tag_rename', or 'tag_delete'.}
 
 \item{tags}{character vector. The names of the tags to work with the chosen action.}
 

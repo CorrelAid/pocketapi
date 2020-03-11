@@ -4,7 +4,11 @@
 \alias{pocket_delete}
 \title{pocket_delete}
 \usage{
-pocket_delete(item_ids)
+pocket_delete(
+  item_ids,
+  consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
+  access_token = Sys.getenv("POCKET_ACCESS_TOKEN")
+)
 }
 \arguments{
 \item{item_ids}{character vector. Pocket item ids you want to delete from your list.}

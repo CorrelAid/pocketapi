@@ -4,13 +4,21 @@
 \alias{pocket_modify}
 \title{pocket_modify}
 \usage{
-pocket_modify(actions)
+pocket_modify(
+  actions,
+  consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
+  access_token = Sys.getenv("POCKET_ACCESS_TOKEN")
+)
 }
 \arguments{
 \item{actions}{list. list of lists where each element is an action object. See https://getpocket.com/developer/docs/v3/modify.}
+
+\item{consumer_key}{character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
+
+\item{access_token}{character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").}
 }
 \description{
-internal function that sends a request with actions to the modify Pocket API endpoint.
+function that sends a request with a list of actions to the modify Pocket API endpoint.
 }
 \details{
 see https://getpocket.com/developer/docs/v3/modify.

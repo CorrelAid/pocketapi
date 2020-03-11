@@ -4,7 +4,11 @@
 \alias{pocket_archive}
 \title{pocket_archive}
 \usage{
-pocket_archive(item_ids)
+pocket_archive(
+  item_ids,
+  consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
+  access_token = Sys.getenv("POCKET_ACCESS_TOKEN")
+)
 }
 \arguments{
 \item{item_ids}{character vector. Pocket item ids you want to archive.}
