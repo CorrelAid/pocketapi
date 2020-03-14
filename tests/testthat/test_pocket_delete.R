@@ -1,8 +1,8 @@
 context("pocket_archive")
 
-# send-2069e8-POST.json
+# send-1972e8-POST.json
 with_mock_api({
-    test_that("success generates message", {
+    test_that("pocket_delete - success generates message", {
         time_stub <- "2020-03-14 12:51:02 CET"
         with_mock(
             Sys.time = function() time_stub,
@@ -15,9 +15,9 @@ with_mock_api({
 })
 
 
-# send-e0dfab-POST.json
+# send-476df7-POST.json
 with_mock_api({
-    test_that("two successes", {
+    test_that("pocket_delete - two successes", {
         time_stub <- "2020-03-14 12:51:02 CET"
         with_mock(
             Sys.time = function() time_stub,
@@ -29,9 +29,9 @@ with_mock_api({
     })
 })
 
-# send-11e8e0-POST.json
+# send-6be7e5-POST.json
 with_mock_api({
-    test_that("one success, one error", {
+    test_that("pocket_delete - one success, one error", {
         time_stub <- "2020-03-14 12:51:02 CET"
         with_mock(
             Sys.time = function() time_stub,

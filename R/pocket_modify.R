@@ -16,8 +16,8 @@ pocket_modify <- function(actions, consumer_key = Sys.getenv("POCKET_CONSUMER_KE
   # auto_unbox because otherwise jsonlite will en-array single values, e.g. ["archive"]
   actions_json <- jsonlite::toJSON(actions, auto_unbox = TRUE)
   res <- pocket_post_("send",
-    Sys.getenv("POCKET_CONSUMER_KEY"),
-    Sys.getenv("POCKET_ACCESS_TOKEN"),
+    consumer_key,
+    access_token,
     actions = actions_json
   )
   pocket_stop_for_status_(res)
@@ -38,12 +38,12 @@ pocket_modify <- function(actions, consumer_key = Sys.getenv("POCKET_CONSUMER_KE
 #' @importFrom purrr map
 #' @keywords internal
 #' @export
-pocket_modify_bulk_ <- function(item_ids, action_name) {
+pocket_modify_bulk_ <- function(item_ids, action_name, consumer_key, access_token) {
   # generate "array" with actions (list of list in R)
   action_list <- item_ids %>% purrr::map(action_name = action_name, .f = gen_action_)
 
   # call internal function
-  action_results <- pocket_modify(action_list)
+  action_results <- pocket_modify(action_list, consumer_key, access_token)
 
   return(action_results)
 }

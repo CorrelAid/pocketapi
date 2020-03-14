@@ -4,7 +4,7 @@
 \alias{pocket_modify_bulk_}
 \title{pocket_modify_bulk_}
 \usage{
-pocket_modify_bulk_(item_ids, action_name)
+pocket_modify_bulk_(item_ids, action_name, consumer_key, access_token)
 }
 \arguments{
 \item{item_ids}{character vector. Pocket item ids that should be modified.}

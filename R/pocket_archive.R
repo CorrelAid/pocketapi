@@ -11,7 +11,7 @@ pocket_archive <- function(item_ids, consumer_key = Sys.getenv("POCKET_CONSUMER_
   if (access_token == "") stop(error_message_access_token())
 
   # generate "array" with actions (list of list in R)
-  results <- pocket_modify_bulk_(item_ids, "archive")
+  results <- pocket_modify_bulk_(item_ids, "archive", consumer_key, access_token)
 
   return(invisible(results))
 }

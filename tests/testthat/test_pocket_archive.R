@@ -1,8 +1,8 @@
 context("pocket_archive")
 
-# send-2069e8-POST.json
+# send-560791-POST.json
 with_mock_api({
-    test_that("success generates message", {
+    test_that("pocket_archive - success generates message", {
         time_stub <- "2020-03-14 12:51:02 CET"
         with_mock(
             Sys.time = function() time_stub,
@@ -16,9 +16,9 @@ with_mock_api({
 
 
 
-# send-11e8e0-POST.json
+# send-e6ec69-POST.json
 with_mock_api({
-    test_that("one success, one error", {
+    test_that("pocket_archive - one success, one error", {
         time_stub <- "2020-03-14 12:51:02 CET"
         with_mock(
             Sys.time = function() time_stub,

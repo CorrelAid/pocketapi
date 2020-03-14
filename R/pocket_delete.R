@@ -9,7 +9,7 @@ pocket_delete <- function(item_ids, consumer_key = Sys.getenv("POCKET_CONSUMER_K
   if (consumer_key == "") stop(error_message_consumer_key())
   if (access_token == "") stop(error_message_access_token())
   # generate "array" with actions (list of list in R)
-  results <- pocket_modify_bulk_(item_ids, "delete")
+  results <- pocket_modify_bulk_(item_ids, "delete", consumer_key, access_token)
 
   return(invisible(results))
 }
