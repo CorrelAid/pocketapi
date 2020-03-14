@@ -1,0 +1,233 @@
+{
+    "status": 1,
+    "complete": 1,
+    "list": {
+        "2120364086": {
+            "item_id": "2120364086",
+            "resolved_id": "2120364086",
+            "given_url": "https://katherinemwood.github.io/post/testthat/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1584183618",
+            "time_updated": "1584183618",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 0,
+            "resolved_title": "Intro to unit testing in R",
+            "resolved_url": "https://katherinemwood.github.io/post/testthat/",
+            "excerpt": "I’ve mentioned before that a great coding practice you can ingrain into your work is unit testing. The idea is simple: you write a script that automatically evaluates pieces of your code and checks it against expected behavior.",
+            "is_article": "1",
+            "is_index": "1",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "1588",
+            "lang": "en",
+            "time_to_read": 7,
+            "authors": {
+                "8694801": {
+                    "item_id": "2120364086",
+                    "author_id": "8694801",
+                    "name": "Katherine Wood",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 615
+        },
+        "679092330": {
+            "item_id": "679092330",
+            "resolved_id": "679092330",
+            "given_url": "https://cran.r-project.org/web/packages/httr/vignettes/api-packages.html",
+            "given_title": "Best practices for API packages",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1554449375",
+            "time_updated": "1583958300",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 1,
+            "resolved_title": "Best practices for API packages",
+            "resolved_url": "https://cran.r-project.org/web/packages/httr/vignettes/api-packages.html",
+            "excerpt": "APIs vary widely. Before starting to code, it is important to understand how the API you are working with handles important issues so that you can implement a complete and coherent R client for the API.",
+            "is_article": "0",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "3132",
+            "lang": "",
+            "tags": {
+                "rstats": {
+                    "item_id": "679092330",
+                    "tag": "rstats"
+                },
+                "rtata": {
+                    "item_id": "679092330",
+                    "tag": "rtata"
+                },
+                "test": {
+                    "item_id": "679092330",
+                    "tag": "test"
+                }
+            },
+            "authors": {
+                "2656911": {
+                    "item_id": "679092330",
+                    "author_id": "2656911",
+                    "name": "Hadley Wickham",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 1212
+        },
+        "1785361118": {
+            "item_id": "1785361118",
+            "resolved_id": "1785361118",
+            "given_url": "https://github.com/r-lib/httr",
+            "given_title": "r-lib/httr: httr: a friendly http package for R",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1554449373",
+            "time_updated": "1554449373",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 2,
+            "resolved_title": "r-lib/httr",
+            "resolved_url": "https://github.com/r-lib/httr",
+            "excerpt": "The aim of httr is to provide a wrapper for the curl package, customised to the demands of modern web APIs.  Functions for the most important http verbs: GET(), HEAD(), PATCH(), PUT(), DELETE() and POST().",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "237",
+            "lang": "en",
+            "top_image_url": "https://avatars2.githubusercontent.com/u/22618716?v=3&s=400",
+            "image": {
+                "item_id": "1785361118",
+                "src": "https://camo.githubusercontent.com/ba8688a6b8d2b23f2eba0d974e956809bd2dd2bc/68747470733a2f2f7472617669732d63692e6f72672f722d6c69622f687474722e7376673f6272616e63683d6d6173746572",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "1785361118",
+                    "image_id": "1",
+                    "src": "https://camo.githubusercontent.com/ba8688a6b8d2b23f2eba0d974e956809bd2dd2bc/68747470733a2f2f7472617669732d63692e6f72672f722d6c69622f687474722e7376673f6272616e63683d6d6173746572",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "1785361118",
+                    "image_id": "2",
+                    "src": "https://camo.githubusercontent.com/23e8ac623a2e54c5440c063aaea2963db99baacb/68747470733a2f2f696d672e736869656c64732e696f2f636f6465636f762f632f6769746875622f722d6c69622f687474722f6d61737465722e737667",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "3": {
+                    "item_id": "1785361118",
+                    "image_id": "3",
+                    "src": "https://camo.githubusercontent.com/7746f09d0c3dd6c7ed797d16883a7ec8a5a5aa5a/687474703a2f2f7777772e722d706b672e6f72672f6261646765732f76657273696f6e2f68747472",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "domain_metadata": {
+                "name": "GitHub",
+                "logo": "https://logo.clearbit.com/github.com?size=800",
+                "greyscale_logo": "https://logo.clearbit.com/github.com?size=800&greyscale=true"
+            },
+            "listen_duration_estimate": 92
+        },
+        "2333373270": {
+            "item_id": "2333373270",
+            "resolved_id": "2333373270",
+            "given_url": "https://medium.com/@Pocket/your-pocket-journey-starts-now-make-the-most-of-it-cc30770e6c53",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1554449248",
+            "time_updated": "1554449248",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 3,
+            "resolved_title": "Your Pocket journey starts now. Make the most of it.",
+            "resolved_url": "https://medium.com/@Pocket/your-pocket-journey-starts-now-make-the-most-of-it-cc30770e6c53",
+            "excerpt": "Welcome to Pocket. You’re about to embark on a journey, one where the vast swaths of information you discover online become knowledge. Everywhere you go with Pocket, the words, sounds, and stories that delight, enlighten, and even shape you will be at your fingertips.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "501",
+            "lang": "en",
+            "top_image_url": "https://miro.medium.com/max/1200/1*hKCxwuSJWmmAGa4bVi_V7Q.png",
+            "authors": {
+                "34265082": {
+                    "item_id": "2333373270",
+                    "author_id": "34265082",
+                    "name": "Pocket",
+                    "url": "https://medium.com/@Pocket"
+                }
+            },
+            "image": {
+                "item_id": "2333373270",
+                "src": "https://miro.medium.com/max/3840/1*hKCxwuSJWmmAGa4bVi_V7Q.png",
+                "width": "1920",
+                "height": "1167"
+            },
+            "images": {
+                "1": {
+                    "item_id": "2333373270",
+                    "image_id": "1",
+                    "src": "https://miro.medium.com/max/3840/1*hKCxwuSJWmmAGa4bVi_V7Q.png",
+                    "width": "1920",
+                    "height": "1167",
+                    "credit": "",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "2333373270",
+                    "image_id": "2",
+                    "src": "https://miro.medium.com/max/3840/1*p1j8hjytlS5RrAs9R3K8XA.png",
+                    "width": "1920",
+                    "height": "1303",
+                    "credit": "",
+                    "caption": ""
+                },
+                "3": {
+                    "item_id": "2333373270",
+                    "image_id": "3",
+                    "src": "https://miro.medium.com/max/3840/1*sTCgI5ZfYEFQtKhE0ADiLg.png",
+                    "width": "1920",
+                    "height": "1259",
+                    "credit": "",
+                    "caption": ""
+                },
+                "4": {
+                    "item_id": "2333373270",
+                    "image_id": "4",
+                    "src": "https://miro.medium.com/max/4400/1*E8xc0m-eP_Tqqs-MKnJqDA.png",
+                    "width": "2200",
+                    "height": "1418",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "domain_metadata": {
+                "name": "Medium",
+                "logo": "https://logo.clearbit.com/medium.com?size=800",
+                "greyscale_logo": "https://logo.clearbit.com/medium.com?size=800&greyscale=true"
+            },
+            "listen_duration_estimate": 194
+        }
+    },
+    "error": null,
+    "search_meta": {
+        "search_type": "normal"
+    },
+    "since": 1584184064
+}
