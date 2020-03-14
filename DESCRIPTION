@@ -3,7 +3,7 @@ Title: R Wrapper around the Pocket API
 Version: 0.0.0.9000
 Authors@R: person("Frie", "Preu", email = "fr1e@pm.me", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
-Depends: R (>= 3.2.3)
+Depends: R (>= 3.5.0)
 Imports:
     httr,
     purrr,
