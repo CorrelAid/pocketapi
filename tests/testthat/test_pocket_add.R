@@ -1,7 +1,7 @@
 context("pocket_add")
 
-POCKET_TEST_CONSUMER_KEY <- Sys.getenv("POCKET_TEST_CONSUMER_KEY")
-POCKET_TEST_ACCESS_TOKEN <- Sys.getenv("POCKET_TEST_ACCESS_TOKEN")
+POCKET_TEST_CONSUMER_KEY <- "fakekey"
+POCKET_TEST_ACCESS_TOKEN <- "faketoken"
 
 test_that("missing consumer key causes error", {
   expect_error(
@@ -24,22 +24,29 @@ test_that("missing URL causes error", {
   )
 })
 
-test_that("invalid consumer key causes error", {
-  expect_error(
-    pocket_add(
-      consumer_key = "dasidadw",
-      access_token = POCKET_TEST_ACCESS_TOKEN,
-      add_url = "xAsdfcm13413"
-    ),
-    regexp = "\n403 Forbidden: The provided keys do not have proper permission"
-  )
-})
+# add-9eee6a-POST.R
+with_mock_api(
+  test_that("invalid consumer key causes error", {
+    expect_error(
+      pocket_add(
+        consumer_key = "dasidadw",
+        access_token = POCKET_TEST_ACCESS_TOKEN,
+        add_url = "xAsdfcm13413"
+      ),
+      regexp = "\n403 Forbidden: The provided keys do not have proper permission"
+    )
+  })
+)
 
-test_that("Valid case", {
-  testthat::skip_on_travis()
-  result <-
-    pocket_add(consumer_key = POCKET_TEST_CONSUMER_KEY,
-               access_token = POCKET_TEST_ACCESS_TOKEN,
-               add_url = "https://katherinemwood.github.io/post/testthat/")
-  expect_equal(result$status_code, 200)
+# add-ed40e6-POST.json
+with_mock_api({
+  test_that("Valid case", {
+    result <-
+      pocket_add(
+        consumer_key = POCKET_TEST_CONSUMER_KEY,
+        access_token = POCKET_TEST_ACCESS_TOKEN,
+        add_url = "https://katherinemwood.github.io/post/testthat/"
+      )
+    expect_equal(result$status_code, 200)
+  })
 })

@@ -1,0 +1,11 @@
+{
+    "action_results": [
+        true,
+        false
+    ],
+    "action_errors": [
+        null,
+        "some error occurred"
+    ],
+    "status": 0
+}

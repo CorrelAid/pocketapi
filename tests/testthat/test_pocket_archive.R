@@ -1,14 +1,29 @@
 context("pocket_archive")
 
-POCKET_TEST_CONSUMER_KEY <- Sys.getenv("POCKET_TEST_CONSUMER_KEY")
-POCKET_TEST_ACCESS_TOKEN <- Sys.getenv("POCKET_TEST_ACCESS_TOKEN")
-
-
+# send-2069e8-POST.json
 with_mock_api({
-    test_that("missing consumer key causes error", {
-        expect_error(
-            pocket_archive(item_ids = c("foobarid"), consumer_key = POCKET_TEST_CONSUMER_KEY, access_token = POCKET_TEST_ACCESS_TOKEN),
-            regexp = "^POCKET_CONSUMER_KEY does not exist as environment variable."
+    test_that("success generates message", {
+        time_stub <- "2020-03-14 12:51:02 CET"
+        # depth = 3 because gen_action_ is called further down
+        mockery::stub(gen_action_, "Sys.time", time_stub, depth = 2)
+        expect_message(
+            pocket_archive(item_ids = c("foobarid"), consumer_key = "fakekey", access_token = "faketoken"),
+            regexp = "Action was successful"
+        )
+    })
+})
+
+
+
+# send-11e8e0-POST.json
+with_mock_api({
+    test_that("one success, one error", {
+        time_stub <- "2020-03-14 12:51:02 CET"
+        # depth = 3 because gen_action_ is called further down
+        mockery::stub(gen_action_, "base::Sys.time", time_stub, depth = 2)
+        expect_warning(
+            pocket_archive(item_ids = c("foo", "bar"), consumer_key = "fakekey", access_token = "faketoken"),
+            regexp = "Action on bar failed with error: some error occurred"
         )
     })
 })

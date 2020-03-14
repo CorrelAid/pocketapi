@@ -1,7 +1,8 @@
 context("pocket_get")
 
-POCKET_TEST_CONSUMER_KEY <- Sys.getenv("POCKET_TEST_CONSUMER_KEY")
-POCKET_TEST_ACCESS_TOKEN <- Sys.getenv("POCKET_TEST_ACCESS_TOKEN")
+
+POCKET_TEST_CONSUMER_KEY <- "fakekey"
+POCKET_TEST_ACCESS_TOKEN <- "faketoken"
 
 
 test_that("empty consumer key causes error", {
@@ -46,7 +47,8 @@ test_that("invalid item_type value causes error", {
   )
 })
 
-httptest::with_mock_api({
+# get-bcc1ca-POST.R
+with_mock_api({
   test_that("invalid access token causes error", {
     expect_error(pocket_get(access_token = "dsffköwejrl", consumer_key = POCKET_TEST_CONSUMER_KEY),
       regexp = "\n401 Unauthorized: A valid access token"
@@ -54,7 +56,8 @@ httptest::with_mock_api({
   })
 })
 
-httptest::with_mock_api({
+# get-40608f-POST.json
+with_mock_api({
   test_that("return value is data frame", {
     return_value <- pocket_get(consumer_key = POCKET_TEST_CONSUMER_KEY, access_token = POCKET_TEST_ACCESS_TOKEN)
     expect_s3_class(return_value, "data.frame")
