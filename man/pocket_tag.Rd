@@ -4,16 +4,24 @@
 \alias{pocket_tag}
 \title{pocket_tag}
 \usage{
-pocket_tag(item_ids = NULL, action_name, tags = NULL, old_new = NULL)
+pocket_tag(
+  action_name,
+  item_ids = NULL,
+  tags = NULL,
+  consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
+  access_token = Sys.getenv("POCKET_ACCESS_TOKEN")
+)
 }
 \arguments{
-\item{item_ids}{character vector. Pocket item ids you want to modify the tags for.}
-
 \item{action_name}{character vector. The kind of tag action you want to undertake. Possible values: 'tags_add', 'tags_remove', 'tags_replace', 'tags_clear', 'tag_rename', or 'tag_delete'.}
+
+\item{item_ids}{character vector. Pocket item ids you want to modify the tags for.}
 
 \item{tags}{character vector. The names of the tags to work with the chosen action.}
 
-\item{old_new}{character vector with two elements. Compulsory if action = rename. First element = old tag, second = new tag.}
+\item{consumer_key}{character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
+
+\item{access_token}{character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").}
 }
 \description{
 modify the tags of the items in pocket.
