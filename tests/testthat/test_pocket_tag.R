@@ -30,7 +30,7 @@ with_mock_api({
         time_stub <- "2020-03-14 12:51:02 CET"
         with_mock(
             Sys.time = function() time_stub,
-            expect_message(pocket_tag("tags_add", c("3424323", "3423222")), regexp = "Action was successful for the items: 3424323, 3423222")
+            expect_message(pocket_tag("tags_add", c("3424323", "3423222"), consumer_key = "myconsumerkey", access_token = "myaccesstoken"), regexp = "Action was successful for the items: 3424323, 3423222")
         )
     })
 })
