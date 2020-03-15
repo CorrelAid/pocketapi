@@ -15,7 +15,7 @@ pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, consumer_key =
   tags <- paste(tags, collapse = ",")
 
   # Validity checks
-  stop_for_invalid_tag_action_(item_ids = item_ids, action_name = action_name, tags = tags, old_new = old_new)
+  stop_for_invalid_tag_action_(item_ids = item_ids, action_name = action_name, tags = tags)
 
   # Processing
   if (action_name %in% c("tags_replace", "tags_remove", "tags_add", "tags_clear")) {
@@ -99,7 +99,7 @@ gen_tag_action_ <- function(action_name, ...) {
 
 
 
-stop_for_invalid_tag_action_ <- function(item_ids, action_name, tags, old_new) {
+stop_for_invalid_tag_action_ <- function(item_ids, action_name, tags) {
   actions <- c("tags_add", "tags_remove", "tags_replace", "tags_clear", "tag_rename", "tag_delete")
 
 
