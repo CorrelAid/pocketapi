@@ -1,4 +1,20 @@
-context("pocket_archive")
+context("pocket_delete")
+
+
+test_that("missing consumer key causes error", {
+    expect_error(
+        pocket_delete(item_ids = c("foobarid"), consumer_key = "", access_token = "faketoken"),
+        regexp = "^POCKET_CONSUMER_KEY does not exist as environment variable."
+    )
+})
+
+test_that("missing access token causes error", {
+    expect_error(
+        pocket_delete(item_ids = c("foobarid"), consumer_key = "fakekey", access_token = ""),
+        regexp = "^POCKET_ACCESS_TOKEN does not exist as environment variable."
+    )
+})
+
 
 # send-1972e8-POST.json
 with_mock_api({

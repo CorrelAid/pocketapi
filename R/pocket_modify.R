@@ -23,7 +23,7 @@ pocket_modify <- function(actions, consumer_key = Sys.getenv("POCKET_CONSUMER_KE
   pocket_stop_for_status_(res)
 
   item_ids <- purrr::map_chr(actions, "item_id")
-  action_results <- extract_action_results(res, item_ids)
+  action_results <- extract_action_results_(res, item_ids)
 
   message_for_successes_(action_results$success_ids)
   warn_for_failures_(action_results$failures)
@@ -35,9 +35,10 @@ pocket_modify <- function(actions, consumer_key = Sys.getenv("POCKET_CONSUMER_KE
 #' @description bulk modify for a given action, i.e. the action is the same for all item_ids.
 #' @param item_ids character vector. Pocket item ids that should be modified.
 #' @param action_name character. The action that should be performed on all specified items.
+#' @param consumer_key character. Your Pocket consumer key.
+#' @param access_token character. Your Pocket request token.
 #' @importFrom purrr map
 #' @keywords internal
-#' @export
 pocket_modify_bulk_ <- function(item_ids, action_name, consumer_key, access_token) {
   # generate "array" with actions (list of list in R)
   action_list <- item_ids %>% purrr::map(action_name = action_name, .f = gen_action_)
@@ -79,8 +80,13 @@ gen_action_ <- function(item_id, action_name, ...) {
   ))
 }
 
-
-extract_action_results <- function(res, item_ids) {
+#' extract_action_results_
+#' @description extract results from list that is returned by the send endpoint of the Pocket API.
+#' @param res list. httr response object.
+#' @param item_ids character vector. Pocket item ids that were modified.
+#' @return list. named list with the ids for which the action was successful, the ids for which it failed and the list of failures.
+#' @keywords internal
+extract_action_results_ <- function(res, item_ids) {
   content <- httr::content(res)
 
   # check whether any action has failed (status == 0)
