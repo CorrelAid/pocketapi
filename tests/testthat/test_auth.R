@@ -11,6 +11,12 @@ test_that("create_authorize_url throws error for invalid request_token argument"
 })
 
 
+test_that("get_request_token throws error for invalid consumer_key argument", {
+    expect_error(get_request_token(33212), "Argument consumer_key must be a character vector of length 1.")
+    expect_error(get_request_token(c("foo", "bar")), "Argument consumer_key must be a character vector of length 1.")
+})
+
+
 # request-b9df5b-POST.R
 with_mock_api({
     test_that("get_request_token throws 400 error for invalid consumer_key", {
@@ -25,6 +31,15 @@ with_mock_api({
         expect_equal(request_token, "successrequesttokenyey")
     })
 })
+
+
+test_that("get_request_token throws error for invalid arguments", {
+    expect_error(get_access_token(33212, "myrequesttoken"), "Argument consumer_key must be a character vector of length 1.")
+    expect_error(get_access_token(c("foo", "bar"), "myrequesttoken"), "Argument consumer_key must be a character vector of length 1.")
+    expect_error(get_access_token("myconsumerkey", 33212), "Argument request_token must be a character vector of length 1.")
+    expect_error(get_access_token("myconsumerkey", c("foo", "bar")), "Argument request_token must be a character vector of length 1.")
+})
+
 
 # authorize-7becba-POST.R
 with_mock_api({
