@@ -1,11 +1,14 @@
 #' pocket_tag
 #' @description modify the tags of the items in pocket.
-#' @param item_ids character vector. Pocket item ids you want to modify the tags for.
 #' @param action_name character vector. The kind of tag action you want to undertake. Possible values: 'tags_add', 'tags_remove', 'tags_replace', 'tags_clear', 'tag_rename', or 'tag_delete'.
+#' @param item_ids character vector. Pocket item ids you want to modify the tags for.
 #' @param tags character vector. The names of the tags to work with the chosen action.
 #' @param old_new character vector with two elements. Compulsory if action = rename. First element = old tag, second = new tag.
+#' @param consumer_key character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").
+#' @param access_token character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").
 #' @export
-pocket_tag <- function(item_ids = NULL, action_name, tags = NULL, old_new = NULL) {
+pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, old_new = NULL, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
+                       access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
 
   # Pre-process tags comma separated string
   tags <- collapse_to_comma_separated_(tags)
