@@ -7,8 +7,7 @@ POCKET_TEST_ACCESS_TOKEN <- "faketoken"
 
 test_that("empty consumer key causes error", {
   expect_error(pocket_get(
-    access_token = POCKET_TEST_ACCESS_TOKEN, consumer_key = "",
-    favorite = "stringisnotvalid"
+    access_token = POCKET_TEST_ACCESS_TOKEN, consumer_key = ""
   ),
   regexp = "^POCKET_CONSUMER_KEY does not exist as environment variable. "
   )
@@ -16,8 +15,7 @@ test_that("empty consumer key causes error", {
 
 test_that("empty access token causes error", {
   expect_error(pocket_get(
-    access_token = "", consumer_key = POCKET_TEST_CONSUMER_KEY,
-    favorite = "stringisnotvalid"
+    access_token = "", consumer_key = POCKET_TEST_CONSUMER_KEY
   ),
   regexp = "^POCKET_ACCESS_TOKEN does not exist as environment variable"
   )

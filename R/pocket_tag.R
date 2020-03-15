@@ -102,12 +102,9 @@ gen_tag_action_ <- function(action_name, ...) {
 stop_for_invalid_tag_action_ <- function(item_ids, action_name, tags, old_new) {
   actions <- c("tags_add", "tags_remove", "tags_replace", "tags_clear", "tag_rename", "tag_delete")
 
+
   if (!action_name %in% actions) {
     stop("Tag actions can be only be: 'tags_add', 'tags_remove', 'tags_replace', 'tags_clear', 'tag_rename', or 'tag_delete'.")
-  }
-
-  if (action_name != "tag_rename" & !is.null(old_new)) {
-    stop("Only provide a value for old_new when your action is 'tag_rename'.")
   }
 
   if (is.null(item_ids) & !action_name %in% c("tag_delete", "tag_rename")) {
@@ -118,8 +115,8 @@ stop_for_invalid_tag_action_ <- function(item_ids, action_name, tags, old_new) {
     stop("For 'tag_delete', you can only specify an atomic vector of one tag.")
   }
 
-  if (action_name == "tag_rename" & length(old_new) != 2) {
-    stop("If your action is 'tag_rename', you need to provide a vector for 'old_new', format: c('old tag', 'new tag').")
+  if (action_name == "tag_rename" & length(tags) != 2) {
+    stop("If your action is 'tag_rename', your tags vector must be of length 2, format: c('old tag', 'new tag').")
   }
 
   if (action_name == "tags_clear" & !is.null(tags)) {
