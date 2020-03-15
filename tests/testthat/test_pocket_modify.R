@@ -1,4 +1,4 @@
-context("test modify utils")
+context("pocket_modify utils")
 
 testthat::test_that("successes and failures are extracted correctly from action_results", {
   content_stub <- list(

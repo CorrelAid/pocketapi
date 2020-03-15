@@ -10,6 +10,10 @@ pocket_modify_bulk_(item_ids, action_name, consumer_key, access_token)
 \item{item_ids}{character vector. Pocket item ids that should be modified.}
 
 \item{action_name}{character. The action that should be performed on all specified items.}
+
+\item{consumer_key}{character. Your Pocket consumer key.}
+
+\item{access_token}{character. Your Pocket request token.}
 }
 \description{
 bulk modify for a given action, i.e. the action is the same for all item_ids.

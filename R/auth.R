@@ -8,6 +8,10 @@
 #' @family authentication functions
 #' @export
 get_request_token <- function(consumer_key) {
+  if (!is.character(consumer_key) || length(consumer_key) != 1) {
+    stop("Argument consumer_key must be a character vector of length 1.")
+  }
+
   # see https://www.jamesfmackenzie.com/getting-started-with-the-pocket-developer-api/
   REQUEST_URL <- "https://getpocket.com/v3/oauth/request"
   REDIRECT_URI <- "https://github.com/CorrelAid/pocketapi"
@@ -16,7 +20,7 @@ get_request_token <- function(consumer_key) {
   res <- httr::POST(REQUEST_URL,
     body = list(consumer_key = consumer_key, redirect_uri = REDIRECT_URI), encode = "form"
   )
-  httr::stop_for_status(res)
+  pocket_stop_for_status_(res)
 
   request_token <- httr::content(res)$code
   return(request_token)
@@ -32,6 +36,10 @@ get_request_token <- function(consumer_key) {
 #' @export
 #'
 create_authorize_url <- function(request_token) {
+  # only accept string
+  if (!is.character(request_token) || length(request_token) != 1) {
+    stop("Argument request_token must be a character vector of length 1.")
+  }
   # create url to give the app access
   AUTHORIZE_URL <- "https://getpocket.com/auth/authorize"
   REDIRECT_URI <- "https://github.com/CorrelAid/pocketapi"
@@ -53,12 +61,20 @@ create_authorize_url <- function(request_token) {
 #' @export
 #'
 get_access_token <- function(consumer_key, request_token) {
+  if (!is.character(consumer_key) || length(consumer_key) != 1) {
+    stop("Argument consumer_key must be a character vector of length 1.")
+  }
+
+  if (!is.character(request_token) || length(request_token) != 1) {
+    stop("Argument request_token must be a character vector of length 1.")
+  }
+
   AUTH_URL <- "https://getpocket.com/v3/oauth/authorize"
 
   authorize_url <- httr::parse_url(AUTH_URL)
   res <- httr::POST(authorize_url, body = list(consumer_key = consumer_key, code = request_token))
 
-  httr::stop_for_status(res)
+  pocket_stop_for_status_(res)
   access_token <- httr::content(res)$access_token
   return(access_token)
 }
