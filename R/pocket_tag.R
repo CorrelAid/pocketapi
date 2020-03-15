@@ -43,9 +43,9 @@ pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, consumer_key =
     actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
 
     # Send request to Pocket
-    res <- pocketapi:::pocket_post_("send",
-      Sys.getenv("POCKET_CONSUMER_KEY"),
-      Sys.getenv("POCKET_ACCESS_TOKEN"),
+    res <- pocket_post_("send",
+      consumer_key,
+      access_token,
       actions = actions_json
     )
 
