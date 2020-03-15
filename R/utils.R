@@ -22,7 +22,6 @@ pocket_post_ <- function(endpoint, consumer_key, access_token, ...) {
 #' @importFrom glue glue
 pocket_stop_for_status_ <- function(res) {
   if (httr::status_code(res) >= 300) {
-
     status <- res$headers$status
     x_error <- res$headers$`x-error`
 
@@ -41,13 +40,3 @@ error_message_consumer_key <- function() {
 error_message_access_token <- function() {
   return("POCKET_ACCESS_TOKEN does not exist as environment variable. Add it to your R environment or manually specify the consumer_key argument.")
 }
-
-
-collapse_to_comma_separated_ <- function(v){
-
-  return(paste(v, collapse = ","))
-
-}
-
-
-

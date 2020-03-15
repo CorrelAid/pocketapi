@@ -9,9 +9,11 @@
 #' @export
 pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, old_new = NULL, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
                        access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
+  if (consumer_key == "") stop(error_message_consumer_key())
+  if (access_token == "") stop(error_message_access_token())
 
-  # Pre-process tags comma separated string
-  tags <- collapse_to_comma_separated_(tags)
+  # Pre-process tags to comma separated string
+  tags <- paste(tags, collapse = ",")
 
   # Validity checks
   stop_for_invalid_tag_action_(item_ids = item_ids, action_name = action_name, tags = tags, old_new = old_new)
@@ -43,8 +45,8 @@ pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, old_new = NULL
     actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
 
     res <- pocket_post_("send",
-      Sys.getenv("POCKET_CONSUMER_KEY"),
-      Sys.getenv("POCKET_ACCESS_TOKEN"),
+      consumer_key,
+      access_token,
       actions = actions_json
     )
 
