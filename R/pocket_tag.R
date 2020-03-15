@@ -3,11 +3,10 @@
 #' @param action_name character vector. The kind of tag action you want to undertake. Possible values: 'tags_add', 'tags_remove', 'tags_replace', 'tags_clear', 'tag_rename', or 'tag_delete'.
 #' @param item_ids character vector. Pocket item ids you want to modify the tags for.
 #' @param tags character vector. The names of the tags to work with the chosen action.
-#' @param old_new character vector with two elements. Compulsory if action = rename. First element = old tag, second = new tag.
 #' @param consumer_key character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").
 #' @param access_token character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").
 #' @export
-pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, old_new = NULL, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
+pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
                        access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
   if (consumer_key == "") stop(error_message_consumer_key())
   if (access_token == "") stop(error_message_access_token())
@@ -25,6 +24,8 @@ pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, old_new = NULL
       .f = gen_action_
     )
 
+
+
     action_results <- pocket_modify(action_list)
 
     return(invisible(action_results))
@@ -41,7 +42,7 @@ pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, old_new = NULL
       new_tag = new_tag,
       .f = gen_tag_action_
     )
-
+    # Convert list of lists to JSON
     actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
 
     res <- pocket_post_("send",
@@ -50,27 +51,37 @@ pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, old_new = NULL
       actions = actions_json
     )
 
-    pocket_stop_for_status_(res)
-    message(glue::glue("Successfully renamed tag '{old_tag}' for '{new_tag}'."))
+    # Return success message
+    if (is.null(pocket_stop_for_status_(res))) {
+      print(glue::glue("Successfully renamed tag '{tags[1]}' for '{tags[2]}'."))
+    }
   }
+}
 
-  if (action_name == "tag_delete") {
-    action_list <- action_name %>% purrr::map(
-      tag = tags,
-      .f = gen_tag_action_
-    )
+# Execute tag action for "delete"
+if (action_name == "tag_delete") {
+  action_list <- action_name %>% purrr::map(
+    tag = tags,
+    .f = gen_tag_action_
+  )
 
-    actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
+  # Compule list of lists for action
+  action_list <- action_name %>% purrr::map(
+    tag = tags,
+    .f = pocketapi:::gen_tag_action_
+  )
 
-    res <- pocket_post_("send",
-      Sys.getenv("POCKET_CONSUMER_KEY"),
-      Sys.getenv("POCKET_ACCESS_TOKEN"),
-      actions = actions_json
-    )
+  # Convert list of lists to JSON
+  actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
 
-    pocket_stop_for_status_(res)
-    message(glue::glue("Successfully removed tag '{tags}'."))
-  }
+  res <- pocket_post_("send",
+    Sys.getenv("POCKET_CONSUMER_KEY"),
+    Sys.getenv("POCKET_ACCESS_TOKEN"),
+    actions = actions_json
+  )
+
+  pocket_stop_for_status_(res)
+  message(glue::glue("Successfully removed tag '{tags}'."))
 }
 
 
