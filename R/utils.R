@@ -53,19 +53,13 @@ collapse_to_comma_separated_ <- function(v){
 
 #' process_tag_request_
 #' Validity checks for tag requests
-process_tag_request_ <- function(item_id, action_name, tags, old_new) {
+process_tag_request_ <- function(item_id, action_name, tags) {
 
   actions <- c("tags_add", "tags_remove", "tags_replace", "tags_clear", "tag_rename", "tag_delete")
 
   if (!action_name %in% actions) {
 
     stop("Tag actions can be only be: 'tags_add', 'tags_remove', 'tags_replace', 'tags_clear', 'tag_rename', or 'tag_delete'.")
-
-  }
-
-  if (action_name != "tag_rename" & !is.null(old_new)) {
-
-    stop("Only provide a value for old_new when your action is 'tag_rename'.")
 
   }
 
@@ -81,9 +75,9 @@ process_tag_request_ <- function(item_id, action_name, tags, old_new) {
 
   }
 
-  if (action_name == "tag_rename" & length(old_new) != 2) {
+  if (action_name == "tag_rename" & length(tags) != 2) {
 
-    stop("If your action is 'tag_rename', you need to provide a vector for 'old_new', format: c('old tag', 'new tag').")
+    stop("If your action is 'tag_rename', your tags vector must be of length 2, format: c('old tag', 'new tag').")
 
   }
 
