@@ -17,6 +17,7 @@ pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, consumer_key =
   # Validity checks
   stop_for_invalid_tag_action_(item_ids = item_ids, action_name = action_name, tags = tags, old_new = old_new)
 
+  # Processing
   if (action_name %in% c("tags_replace", "tags_remove", "tags_add", "tags_clear")) {
     action_list <- item_ids %>% purrr::map(
       action_name = action_name,
@@ -24,30 +25,27 @@ pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, consumer_key =
       .f = gen_action_
     )
 
-
-
     action_results <- pocket_modify(action_list)
 
     return(invisible(action_results))
   }
 
-  # Processing
   if (action_name == "tag_rename") {
-    old_tag <- old_new[1]
 
-    new_tag <- old_new[2]
-
+    # Compile list of lists with action
     action_list <- action_name %>% purrr::map(
-      old_tag = old_tag,
-      new_tag = new_tag,
-      .f = gen_tag_action_
+      old_tag = tags[1],
+      new_tag = tags[2],
+      .f = pocketapi:::gen_tag_action_
     )
+
     # Convert list of lists to JSON
     actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
 
-    res <- pocket_post_("send",
-      consumer_key,
-      access_token,
+    # Send request to Pocket
+    res <- pocketapi:::pocket_post_("send",
+      Sys.getenv("POCKET_CONSUMER_KEY"),
+      Sys.getenv("POCKET_ACCESS_TOKEN"),
       actions = actions_json
     )
 
@@ -56,32 +54,32 @@ pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, consumer_key =
       print(glue::glue("Successfully renamed tag '{tags[1]}' for '{tags[2]}'."))
     }
   }
-}
 
-# Execute tag action for "delete"
-if (action_name == "tag_delete") {
-  action_list <- action_name %>% purrr::map(
-    tag = tags,
-    .f = gen_tag_action_
-  )
 
-  # Compule list of lists for action
-  action_list <- action_name %>% purrr::map(
-    tag = tags,
-    .f = pocketapi:::gen_tag_action_
-  )
+  # Execute tag action for "delete"
+  if (action_name == "tag_delete") {
+    action_list <- action_name %>% purrr::map(
+      tag = tags,
+      .f = gen_tag_action_
+    )
 
-  # Convert list of lists to JSON
-  actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
+    # Compule list of lists for action
+    action_list <- action_name %>% purrr::map(
+      tag = tags,
+      .f = pocketapi:::gen_tag_action_
+    )
 
-  res <- pocket_post_("send",
-    Sys.getenv("POCKET_CONSUMER_KEY"),
-    Sys.getenv("POCKET_ACCESS_TOKEN"),
-    actions = actions_json
-  )
+    # Convert list of lists to JSON
+    actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
 
-  pocket_stop_for_status_(res)
-  message(glue::glue("Successfully removed tag '{tags}'."))
+    res <- pocket_post_("send",
+      consumer_key,
+      access_token,
+      actions = actions_json
+    )
+    pocket_stop_for_status_(res)
+    message(glue::glue("Successfully removed tag '{tags}'."))
+  }
 }
 
 
