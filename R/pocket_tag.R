@@ -25,7 +25,7 @@ pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, consumer_key =
       .f = gen_action_
     )
 
-    action_results <- pocket_modify(action_list)
+    action_results <- pocket_modify(action_list, consumer_key, access_token)
 
     return(invisible(action_results))
   }
