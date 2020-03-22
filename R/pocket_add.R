@@ -1,25 +1,56 @@
 #' pocket_add
-#' @description add an entry to pocket
-#' @param add_url character string. The URL of the item you want to add to your Pocket list.
+#' @description add one or more items to Pocket
+#' @param add_urls character vector. The URLs you want to add to your Pocket list.
+#' @param item_ids character vector. (Optional) The item_ids of the items you want to add.
+#' @param tags character vector. One or more tags to be applied to any of the newly added URLs.
 #' @param consumer_key character string. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").
 #' @param access_token character string. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").
 #' @export
 #' @return the response from the httr call, invisibly
-#'
-#'
-pocket_add <-
-  function(add_url,
-           consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
-           access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
-    if (missing(add_url)) stop("Argument 'add_url' is missing.")
-    if (consumer_key == "") stop(error_message_consumer_key())
-    if (access_token == "") stop(error_message_access_token())
+pocket_add <- function(add_urls,
+                       item_ids = "",
+                       tags = NULL,
+                       consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
+                       access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
+
+  if (consumer_key == "") stop(error_message_consumer_key())
+  if (access_token == "") stop(error_message_access_token())
+  if (missing(add_urls)) stop("Argument 'add_urls' is missing.")
+
+
+  action_list <- add_urls %>% purrr::map(
+    action_name = "add",
+    item_id = item_ids,
+    tags = paste(tags, collapse = ","),
+    .f = pocketapi:::gen_add_action_)
+
+    actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
+
+    res <- pocketapi:::pocket_post_("send",
+                        consumer_key,
+                        access_token,
+                        actions = actions_json
+    )
+
+    if(is.null(pocket_stop_for_status_(res))) {
+      print(glue::glue("You successfully added {add_urls}."))
+    }
+
+}
+
+#' gen_add_action_
+#' @description generate an action list element for a given action name
+#' @param add_urls character vector. URLs that are to be added
+#' @param action_name character. Name of the action to be used (add)
+#' @param ... additional named arguments to be added to the action list.
+#' @return list
+gen_add_action_ <- function(add_urls, action_name, ...) {
+  return(list(
+    action = action_name,
+    url = add_urls,
+    ...
+  ))
+}
 
 
 
-    res <- pocket_post_("add", consumer_key, access_token, url = add_url)
-
-    pocket_stop_for_status_(res)
-
-    invisible(res)
-  }
