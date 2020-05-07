@@ -48,13 +48,13 @@ test_that("invalid item_type value causes error", {
 # get-bcc1ca-POST.R
 with_mock_api({
   test_that("invalid access token causes error", {
-    expect_error(pocket_get(access_token = "dsffköwejrl", consumer_key = POCKET_TEST_CONSUMER_KEY),
+    expect_error(pocket_get(access_token = "dsffkwejrl", consumer_key = POCKET_TEST_CONSUMER_KEY),
       regexp = "\n401 Unauthorized: A valid access token"
     )
   })
 })
 
-# get-40608f-POST.json
+# get-86fba0-POST.json
 with_mock_api({
   test_that("return value is data frame", {
     return_value <- pocket_get(consumer_key = POCKET_TEST_CONSUMER_KEY, access_token = POCKET_TEST_ACCESS_TOKEN)
