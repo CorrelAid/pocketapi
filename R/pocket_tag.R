@@ -35,7 +35,7 @@ pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add"
     action_list <- action_name %>% purrr::map(
       old_tag = tags[1],
       new_tag = tags[2],
-      .f = pocketapi::gen_tag_action_
+      .f = gen_tag_action_
     )
     # Convert list of lists to JSON
     actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
@@ -63,7 +63,7 @@ pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add"
     # Compule list of lists for action
     action_list <- action_name %>% purrr::map(
       tag = tags,
-      .f = pocketapi::gen_tag_action_
+      .f = gen_tag_action_
     )
 
     # Convert list of lists to JSON
