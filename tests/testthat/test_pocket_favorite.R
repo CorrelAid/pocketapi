@@ -15,10 +15,10 @@ test_that("missing access token causes error", {
     )
 })
 
-# send-ea652b-POST.json
+# send-055179-POST.json
 with_mock_api({
     test_that("pocket_favorite - success generates message", {
-        time_stub <- "2020-03-14 12:51:02 CET"
+        time_stub <- "2020-05-14 07:42:27 CEST"
         with_mock(
             Sys.time = function() time_stub,
             expect_message(
