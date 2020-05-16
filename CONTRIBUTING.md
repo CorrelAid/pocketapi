@@ -1,3 +1,19 @@
+# Contributing to pocketapi
+
+You're welcome to propose a change to pocketapi.
+
+## Prerequisites
+Before making any substantial changes to pocketapi with a pull request, please file an issue first describing the problem so that someone from the project team can look into it and confirm that it needs adaptation. 
+If you want to report a bug, please provide a minimal [reprex](https://www.tidyverse.org/help/) to make the issue reproducible for the developers.
+
+## Pull request process
+- Please create a Git branch for your pull request (PR).
+- make sure the badges in the README before and after making changes to ensure everything is still working as expected.
+- Please provide tests in the tests folder. This makes it easier for us to accept your PR.
+- If you're change is user-facing (e.g. changing function parameters), include a bullet to the top of NEWS.md below the current development version header describing the changes made followed by your GitHub username and links to relevant issue(s)/PR(s).
+
+The following code of conduct is to be respected. 
+
 ## Code of Conduct
 
 As contributors and maintainers of this project, we pledge to respect all people who 
