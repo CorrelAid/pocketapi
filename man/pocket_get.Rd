@@ -8,6 +8,7 @@ pocket_get(
   favorite = NULL,
   item_type = NULL,
   tag = NULL,
+  state = "all",
   consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
   access_token = Sys.getenv("POCKET_ACCESS_TOKEN")
 )
@@ -18,6 +19,8 @@ pocket_get(
 \item{item_type}{character. Default NULL. Allows to filter for content type of items. Valid values are: "image", "article", "video". Please note that there might be Pocket items that do not belong to any of those types. The Pocket API documentation only mentions those three.}
 
 \item{tag}{character. Default NULL. Only one tag can be filtered at a time. Set to '_untagged_' if you only want to get untagged items.}
+
+\item{state}{character. Default "all". Allows to filter on unread/archived items or return all. Valid values are "unread", "archive", "all".}
 
 \item{consumer_key}{character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
 
