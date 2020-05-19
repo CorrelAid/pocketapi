@@ -6,39 +6,37 @@
 #' @param consumer_key character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").
 #' @param access_token character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").
 #' @export
-pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
+pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add", "tags_clear"), item_ids = NULL, tags = NULL, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
                        access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
   if (consumer_key == "") stop(error_message_consumer_key())
   if (access_token == "") stop(error_message_access_token())
 
-  # Pre-process tags to comma separated string
-  tags <- paste(tags, collapse = ",")
-
   # Validity checks
   stop_for_invalid_tag_action_(item_ids = item_ids, action_name = action_name, tags = tags)
 
+  # Pre-process tags to comma separated string
+  tags <- paste(tags, collapse = ",")
+
   # Processing
-  if (action_name %in% c("tags_replace", "tags_remove", "tags_add", "tags_clear")) {
-    action_list <- item_ids %>% purrr::map(
-      action_name = action_name,
-      tags = tags,
-      .f = gen_action_
-    )
-
-    action_results <- pocket_modify(action_list, consumer_key, access_token)
-
+  # actions that require item_ids and tags
+  if (action_name %in% c("tags_replace", "tags_remove", "tags_add")) {
+    action_results <- pocket_modify_bulk_(item_ids, action_name, consumer_key, access_token, tags = tags)
     return(invisible(action_results))
   }
 
-  if (action_name == "tag_rename") {
+  # clearing all tags from item(s) requires item_ids but not tags
+  if (action_name == "tags_clear") {
+    action_results <- pocket_modify_bulk_(item_ids, action_name, consumer_key, access_token)
+  }
 
+  # renaming a tag requires old name and new name
+  if (action_name == "tag_rename") {
     # Compile list of lists with action
     action_list <- action_name %>% purrr::map(
       old_tag = tags[1],
       new_tag = tags[2],
-      .f = pocketapi:::gen_tag_action_
+      .f = gen_tag_action_
     )
-
     # Convert list of lists to JSON
     actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
 
@@ -50,9 +48,8 @@ pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, consumer_key =
     )
 
     # Return success message
-    if (is.null(pocket_stop_for_status_(res))) {
-      print(glue::glue("Successfully renamed tag '{tags[1]}' for '{tags[2]}'."))
-    }
+    pocket_stop_for_status_(res)
+    message(glue::glue("Successfully renamed tag '{tags[1]}' for '{tags[2]}'."))
   }
 
 
@@ -66,7 +63,7 @@ pocket_tag <- function(action_name, item_ids = NULL, tags = NULL, consumer_key =
     # Compule list of lists for action
     action_list <- action_name %>% purrr::map(
       tag = tags,
-      .f = pocketapi:::gen_tag_action_
+      .f = gen_tag_action_
     )
 
     # Convert list of lists to JSON
@@ -97,8 +94,6 @@ gen_tag_action_ <- function(action_name, ...) {
   ))
 }
 
-
-
 stop_for_invalid_tag_action_ <- function(item_ids, action_name, tags) {
   actions <- c("tags_add", "tags_remove", "tags_replace", "tags_clear", "tag_rename", "tag_delete")
 
@@ -108,11 +103,16 @@ stop_for_invalid_tag_action_ <- function(item_ids, action_name, tags) {
   }
 
   if (is.null(item_ids) & !action_name %in% c("tag_delete", "tag_rename")) {
-    stop("If your action_name is not 'tag_delete' or 'tag_rename', you need to provide an item_id.")
+    stop("If your action_name is not 'tag_delete' or 'tag_rename', you need to provide at least one item_id.")
   }
 
-  if (action_name == "tag_delete" & length(tags) > 1) {
-    stop("For 'tag_delete', you can only specify an atomic vector of one tag.")
+  if (action_name == "tag_delete") {
+    if (length(tags) > 1) {
+      stop("For 'tag_delete', you can only specify an atomic vector of one tag.")
+    }
+    if (is.null(tags)) {
+      stop("For 'tag_delete', you need to specify an atomic vector of one tag.")
+    }
   }
 
   if (action_name == "tag_rename" & length(tags) != 2) {
@@ -121,5 +121,9 @@ stop_for_invalid_tag_action_ <- function(item_ids, action_name, tags) {
 
   if (action_name == "tags_clear" & !is.null(tags)) {
     stop("If your action is 'tags_clear', you must not provide tags.")
+  }
+
+  if (action_name == "tags_replace" & is.null(tags)) {
+    stop("For 'tags_replace', you need to specify the tags argument.")
   }
 }

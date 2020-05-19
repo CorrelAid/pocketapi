@@ -37,11 +37,12 @@ pocket_modify <- function(actions, consumer_key = Sys.getenv("POCKET_CONSUMER_KE
 #' @param action_name character. The action that should be performed on all specified items.
 #' @param consumer_key character. Your Pocket consumer key.
 #' @param access_token character. Your Pocket request token.
+#' @param ... additional named arguments to be added to the action list items.
 #' @importFrom purrr map
 #' @keywords internal
-pocket_modify_bulk_ <- function(item_ids, action_name, consumer_key, access_token) {
+pocket_modify_bulk_ <- function(item_ids, action_name, consumer_key, access_token, ...) {
   # generate "array" with actions (list of list in R)
-  action_list <- item_ids %>% purrr::map(action_name = action_name, .f = gen_action_)
+  action_list <- item_ids %>% purrr::map(action_name = action_name, .f = gen_action_, ...)
 
   # call internal function
   action_results <- pocket_modify(action_list, consumer_key, access_token)

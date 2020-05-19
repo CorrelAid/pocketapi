@@ -45,10 +45,29 @@ test_that("invalid item_type value causes error", {
   )
 })
 
-# get-bcc1ca-POST.R
+##
+
+test_that("invalid state value causes error", {
+  expect_error(pocket_get(access_token = POCKET_TEST_ACCESS_TOKEN, consumer_key = POCKET_TEST_CONSUMER_KEY, state = c("more", "than", "one")),
+               regexp = "^The state argument can only be one of the following:"
+  )
+
+  test_that("invalid state value causes error", {
+    expect_error(pocket_get(
+      access_token = POCKET_TEST_ACCESS_TOKEN, consumer_key = POCKET_TEST_CONSUMER_KEY,
+      state = "stringisnotvalid"
+    ),
+    regexp = "^The state argument can only be one of the following:"
+    )
+  })
+})
+
+##
+
+# get-86fba0-POST.R
 with_mock_api({
   test_that("invalid access token causes error", {
-    expect_error(pocket_get(access_token = "dsffköwejrl", consumer_key = POCKET_TEST_CONSUMER_KEY),
+    expect_error(pocket_get(access_token = "dsffkwejrl", consumer_key = POCKET_TEST_CONSUMER_KEY),
       regexp = "\n401 Unauthorized: A valid access token"
     )
   })
