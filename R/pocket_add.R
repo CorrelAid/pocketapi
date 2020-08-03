@@ -1,6 +1,6 @@
 #' pocket_add
 #' @description add one or more items to Pocket
-#' @param add_urls character vector. The URLs you want to add to your Pocket list.
+#' @param add_urls character vector. The URL or URLs you want to add to your Pocket list.
 #' @param item_ids character vector. (Optional) The item_ids of the items you want to add.
 #' @param tags character vector. One or more tags to be applied to any of the newly added URLs.
 #' @param consumer_key character string. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").
@@ -16,7 +16,6 @@ pocket_add <- function(add_urls,
   if (consumer_key == "") stop(error_message_consumer_key())
   if (access_token == "") stop(error_message_access_token())
   if (missing(add_urls)) stop("Argument 'add_urls' is missing.")
-
 
   action_list <- add_urls %>% purrr::map(
     action_name = "add",
@@ -36,6 +35,8 @@ pocket_add <- function(add_urls,
       print(glue::glue("You successfully added {add_urls}."))
     }
 
+  return(invisible(res))
+
 }
 
 #' gen_add_action_
@@ -53,4 +54,19 @@ gen_add_action_ <- function(add_urls, action_name, ...) {
 }
 
 
+#' extract_action_no_id_results_
+#' @description generate an action list element for a given action name
+#' @param add_urls character vector. URLs that are to be added
+#' @param action_name character. Name of the action to be used (add)
+#' @param ... additional named arguments to be added to the action list.
+#' @return list
+extract_action_no_id_results_ <- function(res) {
+
+  content <- httr::content(res)
+
+  success_ids <- map(content$action_results, "item_id")
+  failure_ids <- map(content$action_errors, "item_id")
+
+  return(list(success_ids = success_ids, failure_ids = failure_ids))
+}
 

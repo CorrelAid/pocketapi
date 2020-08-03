@@ -6,7 +6,7 @@
 #' @param consumer_key character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").
 #' @param access_token character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").
 #' @export
-pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add", "tags_clear"), item_ids = NULL, tags = NULL, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
+pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add", "tags_clear", "tag_rename", "tag_delete"), item_ids = NULL, tags = NULL, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
                        access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
   if (consumer_key == "") stop(error_message_consumer_key())
   if (access_token == "") stop(error_message_access_token())
@@ -27,6 +27,7 @@ pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add"
   # clearing all tags from item(s) requires item_ids but not tags
   if (action_name == "tags_clear") {
     action_results <- pocket_modify_bulk_(item_ids, action_name, consumer_key, access_token)
+    return(invisible(action_results))
   }
 
   # renaming a tag requires old name and new name
@@ -50,6 +51,9 @@ pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add"
     # Return success message
     pocket_stop_for_status_(res)
     message(glue::glue("Successfully renamed tag '{tags[1]}' for '{tags[2]}'."))
+
+    return(res) # Attention: return action_results?
+
   }
 
 
@@ -76,6 +80,8 @@ pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add"
     )
     pocket_stop_for_status_(res)
     message(glue::glue("Successfully removed tag '{tags}'."))
+
+    return(res) # Attention: Return
   }
 }
 
