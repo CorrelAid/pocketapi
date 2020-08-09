@@ -3,6 +3,7 @@
 #' @param add_urls character vector. The URL or URLs you want to add to your Pocket list.
 #' @param item_ids character vector. (Optional) The item_ids of the items you want to add.
 #' @param tags character vector. One or more tags to be applied to any of the newly added URLs.
+#' @param success logical. Enables success/failure messages for each URL. Defaults to TRUE.
 #' @param consumer_key character string. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").
 #' @param access_token character string. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").
 #' @export
@@ -10,6 +11,7 @@
 pocket_add <- function(add_urls,
                        item_ids = "",
                        tags = NULL,
+                       success = TRUE,
                        consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
                        access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
 
@@ -31,13 +33,45 @@ pocket_add <- function(add_urls,
                         actions = actions_json
     )
 
-    if(is.null(pocket_stop_for_status_(res))) {
-      print(glue::glue("You successfully added {add_urls}."))
+    if (success == TRUE) {
+    check_for_add_success_(add_urls)
     }
 
   return(invisible(res))
 
 }
+
+#' check_for_add_success_
+#' @description check whether all urls were successfully added to Pocket
+#' @param urls character vector containing URLs to be checked
+#' @param ... additional named arguments to be added to the action list.
+#' @return logical
+check_for_add_success_ <- function(urls) {
+
+  pocket_content <- pocketapi::pocket_get()
+
+  checked <- urls %in% pocket_content$given_url
+
+  false_indexes <- which(checked %in% FALSE)
+  true_indexes <- which(checked %in% TRUE)
+
+  false_urls <- urls[false_indexes]
+  true_urls <- urls[true_indexes]
+
+    if (!is.null(true_urls)) {
+
+    print(glue::glue("The following URL has been successfully added: {true_urls}."))
+
+    }
+
+    if (!is.null(false_urls)) {
+
+    print(glue::glue("The following URL has not been successfully added: {false_urls}. Hint: URLs need to begin with 'http://' or 'https://'."))
+
+    }
+
+}
+
 
 #' gen_add_action_
 #' @description generate an action list element for a given action name

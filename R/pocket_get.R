@@ -1,4 +1,4 @@
-#' pocket_get2
+#' pocket_get
 #' @description Get a data frame with your pocket data.
 #' @param favorite boolean. Default NULL. Allows to filter for favorited items. If TRUE, only favorited items will be returned. If FALSE, only un-favorited items will be returned.
 #' @param item_type character. Default NULL. Allows to filter for content type of items. Valid values are: "image", "article", "video". Please note that there might be Pocket items that do not belong to any of those types. The Pocket API documentation only mentions those three.
