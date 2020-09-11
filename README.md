@@ -8,7 +8,7 @@
 [![R build status](https://github.com/CorrelAid/pocketapi/workflows/R-CMD-check/badge.svg)](https://github.com/CorrelAid/pocketapi/actions)
 <!-- badges: end -->
 
-This is a R wrapper for the [Pocket](https://getpocket.com) API. You can use `pocketapi` to access and modify your *own* pockets and to add new links to your Pocket programmatically. 
+This is a R wrapper for the [Pocket API](https://getpocket.com/developer/docs/overview). You can use `pocketapi` to access and modify your *own* pockets and to add new links to your Pocket programmatically. 
 
 # Installation
 
@@ -98,6 +98,24 @@ Save the file and restart R for the changes to take effect.
 If your `.Renviron` lives at a non-conventional place, you can also edit it manually using RStudio or your favorite text editor. 
 
 If you don't want to clutter your `.Renviron` file, you can also use an `.env` file in your project directory together with the [`dotenv`](https://github.com/gaborcsardi/dotenv) package. In this case, make sure to never share your `.env` file. 
+
+## Get, modify, and add Pockets
+Functions include:
+- `pocket_add()`
+- `pocket_get()`
+- `pocket_tag()`
+- `pocket_archive()`
+- `pocket_delete()`
+- `pocket_favorite()`
+- `pocket_unfavorite()`
+- `pocket_modify()`
+
+Check out the vignette to see in more detail how to add, get, and modify your Pockets using those functions. 
+
+```r
+library(pocketapi)
+vignette("pocketapi")
+```
 
 # Limitations 
 This package has some limitations:
