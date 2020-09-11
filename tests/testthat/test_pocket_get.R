@@ -9,7 +9,7 @@ test_that("empty consumer key causes error", {
   expect_error(pocket_get(
     access_token = POCKET_TEST_ACCESS_TOKEN, consumer_key = ""
   ),
-  regexp = "^POCKET_CONSUMER_KEY does not exist as environment variable. "
+  regexp = "^POCKET_CONSUMER_KEY does not exist as environment variable. ", class = "usethis_error"
   )
 })
 
@@ -17,13 +17,13 @@ test_that("empty access token causes error", {
   expect_error(pocket_get(
     access_token = "", consumer_key = POCKET_TEST_CONSUMER_KEY
   ),
-  regexp = "^POCKET_ACCESS_TOKEN does not exist as environment variable"
+  regexp = "^POCKET_ACCESS_TOKEN does not exist as environment variable", class = "usethis_error"
   )
 })
 
 test_that("invalid tag value causes error", {
   expect_error(pocket_get(access_token = POCKET_TEST_ACCESS_TOKEN, consumer_key = POCKET_TEST_CONSUMER_KEY, tag = c("more", "than", "one")),
-    regexp = "^The tag argument can only be a character string."
+    regexp = "^The tag argument can only be a character string.", class = "usethis_error"
   )
 
   test_that("invalid favorite value causes error", {
@@ -31,7 +31,7 @@ test_that("invalid tag value causes error", {
       access_token = POCKET_TEST_ACCESS_TOKEN, consumer_key = POCKET_TEST_CONSUMER_KEY,
       favorite = "stringisnotvalid"
     ),
-    regexp = "^The favorite argument can only be"
+    regexp = "^The favorite argument can only be", class = "usethis_error"
     )
   })
 })
@@ -41,7 +41,7 @@ test_that("invalid item_type value causes error", {
     access_token = POCKET_TEST_ACCESS_TOKEN, consumer_key = POCKET_TEST_CONSUMER_KEY,
     item_type = "typenotexist"
   ),
-  regexp = "^The item_type argument can only be"
+  regexp = "^The item_type argument can only be", class = "usethis_error"
   )
 })
 
@@ -49,7 +49,7 @@ test_that("invalid item_type value causes error", {
 
 test_that("invalid state value causes error", {
   expect_error(pocket_get(access_token = POCKET_TEST_ACCESS_TOKEN, consumer_key = POCKET_TEST_CONSUMER_KEY, state = c("more", "than", "one")),
-    regexp = "^The state argument can only be one of the following:"
+    regexp = "^The state argument can only be one of the following:", class = "usethis_error"
   )
 
   test_that("invalid state value causes error", {
@@ -57,7 +57,7 @@ test_that("invalid state value causes error", {
       access_token = POCKET_TEST_ACCESS_TOKEN, consumer_key = POCKET_TEST_CONSUMER_KEY,
       state = "stringisnotvalid"
     ),
-    regexp = "^The state argument can only be one of the following:"
+    regexp = "^The state argument can only be one of the following:", class = "usethis_error"
     )
   })
 })
@@ -68,7 +68,7 @@ test_that("invalid state value causes error", {
 with_mock_api({
   test_that("invalid access token causes error", {
     expect_error(pocket_get(access_token = "dsffkwejrl", consumer_key = POCKET_TEST_CONSUMER_KEY),
-      regexp = "\n401 Unauthorized: A valid access token"
+      regexp = "\n401 Unauthorized: A valid access token", class = "usethis_error"
     )
   })
 })

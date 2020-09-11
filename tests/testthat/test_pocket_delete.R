@@ -4,14 +4,14 @@ context("pocket_delete")
 test_that("missing consumer key causes error", {
   expect_error(
     pocket_delete(item_ids = c("foobarid"), consumer_key = "", access_token = "faketoken"),
-    regexp = "^POCKET_CONSUMER_KEY does not exist as environment variable."
+    regexp = "^POCKET_CONSUMER_KEY does not exist as environment variable.", class = "usethis_error"
   )
 })
 
 test_that("missing access token causes error", {
   expect_error(
     pocket_delete(item_ids = c("foobarid"), consumer_key = "fakekey", access_token = ""),
-    regexp = "^POCKET_ACCESS_TOKEN does not exist as environment variable."
+    regexp = "^POCKET_ACCESS_TOKEN does not exist as environment variable.", class = "usethis_error"
   )
 })
 

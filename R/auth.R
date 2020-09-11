@@ -9,7 +9,7 @@
 #' @export
 get_request_token <- function(consumer_key) {
   if (!is.character(consumer_key) || length(consumer_key) != 1) {
-    stop("Argument consumer_key must be a character vector of length 1.")
+    usethis::ui_stop("Argument consumer_key must be a character vector of length 1.")
   }
 
   # see https://www.jamesfmackenzie.com/getting-started-with-the-pocket-developer-api/
@@ -38,7 +38,7 @@ get_request_token <- function(consumer_key) {
 create_authorize_url <- function(request_token) {
   # only accept string
   if (!is.character(request_token) || length(request_token) != 1) {
-    stop("Argument request_token must be a character vector of length 1.")
+    usethis::ui_stop("Argument request_token must be a character vector of length 1.")
   }
   # create url to give the app access
   AUTHORIZE_URL <- "https://getpocket.com/auth/authorize"
@@ -46,7 +46,7 @@ create_authorize_url <- function(request_token) {
 
   auth_url <- glue::glue("{AUTHORIZE_URL}?request_token={request_token}&redirect_uri={REDIRECT_URI}")
 
-  message("Enter this URL into your browser and grant your app access:")
+  usethis::ui_todo("Enter this URL into your browser and grant your app access:")
   return(auth_url)
 }
 
@@ -62,11 +62,11 @@ create_authorize_url <- function(request_token) {
 #'
 get_access_token <- function(consumer_key, request_token) {
   if (!is.character(consumer_key) || length(consumer_key) != 1) {
-    stop("Argument consumer_key must be a character vector of length 1.")
+    usethis::ui_stop("Argument consumer_key must be a character vector of length 1.")
   }
 
   if (!is.character(request_token) || length(request_token) != 1) {
-    stop("Argument request_token must be a character vector of length 1.")
+    usethis::ui_stop("Argument request_token must be a character vector of length 1.")
   }
 
   AUTH_URL <- "https://getpocket.com/v3/oauth/authorize"

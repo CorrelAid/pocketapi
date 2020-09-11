@@ -8,8 +8,8 @@
 #' @export
 pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add", "tags_clear"), item_ids = NULL, tags = NULL, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
                        access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
-  if (consumer_key == "") stop(error_message_consumer_key())
-  if (access_token == "") stop(error_message_access_token())
+  if (consumer_key == "") usethis::ui_stop(error_message_consumer_key())
+  if (access_token == "") usethis::ui_stop(error_message_access_token())
 
   # Validity checks
   stop_for_invalid_tag_action_(item_ids = item_ids, action_name = action_name, tags = tags)
@@ -49,7 +49,7 @@ pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add"
 
     # Return success message
     pocket_stop_for_status_(res)
-    message(glue::glue("Successfully renamed tag '{tags[1]}' for '{tags[2]}'."))
+    usethis::ui_done(glue::glue("Successfully renamed tag '{tags[1]}' for '{tags[2]}'."))
   }
 
 
@@ -75,7 +75,7 @@ pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add"
       actions = actions_json
     )
     pocket_stop_for_status_(res)
-    message(glue::glue("Successfully removed tag '{tags}'."))
+    usethis::ui_done(glue::glue("Successfully removed tag '{tags}'."))
   }
 }
 
@@ -99,31 +99,31 @@ stop_for_invalid_tag_action_ <- function(item_ids, action_name, tags) {
 
 
   if (!action_name %in% actions) {
-    stop("Tag actions can be only be: 'tags_add', 'tags_remove', 'tags_replace', 'tags_clear', 'tag_rename', or 'tag_delete'.")
+    usethis::ui_stop("Tag actions can be only be: 'tags_add', 'tags_remove', 'tags_replace', 'tags_clear', 'tag_rename', or 'tag_delete'.")
   }
 
   if (is.null(item_ids) & !action_name %in% c("tag_delete", "tag_rename")) {
-    stop("If your action_name is not 'tag_delete' or 'tag_rename', you need to provide at least one item_id.")
+    usethis::ui_stop("If your action_name is not 'tag_delete' or 'tag_rename', you need to provide at least one item_id.")
   }
 
   if (action_name == "tag_delete") {
     if (length(tags) > 1) {
-      stop("For 'tag_delete', you can only specify an atomic vector of one tag.")
+      usethis::ui_stop("For 'tag_delete', you can only specify an atomic vector of one tag.")
     }
     if (is.null(tags)) {
-      stop("For 'tag_delete', you need to specify an atomic vector of one tag.")
+      usethis::ui_stop("For 'tag_delete', you need to specify an atomic vector of one tag.")
     }
   }
 
   if (action_name == "tag_rename" & length(tags) != 2) {
-    stop("If your action is 'tag_rename', your tags vector must be of length 2, format: c('old tag', 'new tag').")
+    usethis::ui_stop("If your action is 'tag_rename', your tags vector must be of length 2, format: c('old tag', 'new tag').")
   }
 
   if (action_name == "tags_clear" & !is.null(tags)) {
-    stop("If your action is 'tags_clear', you must not provide tags.")
+    usethis::ui_stop("If your action is 'tags_clear', you must not provide tags.")
   }
 
   if (action_name == "tags_replace" & is.null(tags)) {
-    stop("For 'tags_replace', you need to specify the tags argument.")
+    usethis::ui_stop("For 'tags_replace', you need to specify the tags argument.")
   }
 }
