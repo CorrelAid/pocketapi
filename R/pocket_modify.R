@@ -6,7 +6,9 @@
 #' @importFrom httr content
 #' @importFrom jsonlite toJSON
 #' @importFrom purrr map_chr
-#' @details see https://getpocket.com/developer/docs/v3/modify.
+#' @details see https://getpocket.com/developer/docs/v3/modify. This function uses the \code{modify} endpoint of the Pocket API which exhibits some weird behaviour. 
+#' For example, even if a `modify` action is not successful, the API will still return "success". 
+#' See [issue [#26](https://github.com/CorrelAid/pocketapi/issues/26) for a discussion. 
 #' @export
 pocket_modify <- function(actions, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
                           access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {

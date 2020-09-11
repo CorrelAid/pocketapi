@@ -5,6 +5,9 @@
 #' @param tags character vector. The names of the tags to work with the chosen action.
 #' @param consumer_key character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").
 #' @param access_token character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").
+#' @details This function uses the \code{modify} endpoint of the Pocket API which exhibits some weird behaviour. 
+#' For example, even if a `modify` action is not successful, the API will still return "success". 
+#' See [issue [#26](https://github.com/CorrelAid/pocketapi/issues/26) for a discussion. 
 #' @export
 pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add", "tags_clear"), item_ids = NULL, tags = NULL, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
                        access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {

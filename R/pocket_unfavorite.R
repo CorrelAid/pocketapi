@@ -3,6 +3,9 @@
 #' @param item_ids character vector. Pocket item ids you want to unfavorite
 #' @param consumer_key character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").
 #' @param access_token character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").
+#' @details This function uses the \code{modify} endpoint of the Pocket API which exhibits some weird behaviour. 
+#' For example, even if a `modify` action is not successful, the API will still return "success". 
+#' See [issue [#26](https://github.com/CorrelAid/pocketapi/issues/26) for a discussion. 
 #' @importFrom purrr map
 #' @export
 pocket_unfavorite <- function(item_ids, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),

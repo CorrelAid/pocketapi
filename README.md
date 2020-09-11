@@ -12,6 +12,9 @@ This is a R wrapper for the [Pocket](https://getpocket.com) API. You can use `po
 
 # Installation
 
+## CRAN Version
+The package is not yet on CRAN.
+
 ## Current Development Version
 
 This package is currently only available on GitHub. You can install it using `devtools`. 
@@ -28,9 +31,10 @@ library(pocketapi)
 ```
 
 
-# Authentication
+# Get Started
+## Authentication
 
-## Create a Pocket Application
+### Create a Pocket Application
 You need to create a Pocket *application* in the Pocket developer portal to access your Pocket data. Don't worry: this app will only be visible to you and only serves the purpose of acquiring the credentials for `pocketapi`. 
 
 1. Log in to your Pocket account and go to [https://getpocket.com/developer/apps/new](https://getpocket.com/developer/apps/new).
@@ -48,7 +52,7 @@ You need to create a Pocket *application* in the Pocket developer portal to acce
 
 
 
-## Get consumer key and token
+### Get consumer key and token
 `pocketapi` uses the OAuth2 flow provided by the [Pocket Authentication API](https://getpocket.com/developer/docs/authentication) to get an access token for your App. Because Pocket does not closely follow the OAuth standard, we could not provide as smooth an experience as other packages do (e.g. [googlesheets4](https://github.com/tidyverse/googlesheets4)). Instead, the user has to do the following **once** to obtain an access token:
 
 1. Request a request token.
@@ -71,7 +75,7 @@ access_token <- get_access_token(consumer_key, request_token)
 **Important**: Never make your `consumer_key` and `access_token` publicly available - anyone will be able to access your Pockets! 
 
 
-## Add the consumer key and access token to your environment
+### Add the consumer key and access token to your environment
 It is common practice to set API keys in your R environment file so that every time you start R the key is loaded.
 
  All `pocketapi` functions access your `consumer_key` and `access_token` automatically by executing `Sys.getenv("POCKET_CONSUMER_KEY")` respectively `Sys.getenv("POCKET_ACCESS_TOKEN")` . Alternatively, you can provide an explicit definition of your `consumer_key` and `access_token` with each function call.
@@ -94,6 +98,11 @@ Save the file and restart R for the changes to take effect.
 If your `.Renviron` lives at a non-conventional place, you can also edit it manually using RStudio or your favorite text editor. 
 
 If you don't want to clutter your `.Renviron` file, you can also use an `.env` file in your project directory together with the [`dotenv`](https://github.com/gaborcsardi/dotenv) package. In this case, make sure to never share your `.env` file. 
+
+# Limitations 
+This package has some limitations:
+- You can only modify your own Pockets. 
+- The Pocket API does not follow REST API standards and exhibits some weird behaviours. For example, even if a `modify` action is not successful, the API will still return "success". See [issue [#26](https://github.com/CorrelAid/pocketapi/issues/26) for a discussion of weird behaviours of the API. 
 
 # Contribute
 Contributions to this package are welcome. Please see `CONTRIBUTING.md`.
