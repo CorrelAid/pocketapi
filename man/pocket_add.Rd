@@ -5,13 +5,22 @@
 \title{pocket_add}
 \usage{
 pocket_add(
-  add_url,
+  add_urls,
+  item_ids = "",
+  tags = NULL,
+  success = TRUE,
   consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
   access_token = Sys.getenv("POCKET_ACCESS_TOKEN")
 )
 }
 \arguments{
-\item{add_url}{character string. The URL of the item you want to add to your Pocket list.}
+\item{add_urls}{character vector. The URL or URLs you want to add to your Pocket list.}
+
+\item{item_ids}{character vector. (Optional) The item_ids of the items you want to add.}
+
+\item{tags}{character vector. One or more tags to be applied to any of the newly added URLs.}
+
+\item{success}{logical. Enables success/failure messages for each URL. Defaults to TRUE.}
 
 \item{consumer_key}{character string. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
 
@@ -21,5 +30,5 @@ pocket_add(
 the response from the httr call, invisibly
 }
 \description{
-add an entry to pocket
+add one or more items to Pocket
 }

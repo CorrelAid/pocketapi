@@ -39,3 +39,6 @@ rsconnect/
 
 # getpocket test files from httptest in root
 /getpocket.com
+
+# vscode workspace
+pocketapi.code-workspace

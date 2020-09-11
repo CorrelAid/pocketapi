@@ -2,7 +2,7 @@
 % Please edit documentation in R/pocket_get.R
 \name{pocket_get}
 \alias{pocket_get}
-\title{pocket_get2}
+\title{pocket_get}
 \usage{
 pocket_get(
   favorite = NULL,

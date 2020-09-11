@@ -5,7 +5,8 @@
 \title{pocket_tag}
 \usage{
 pocket_tag(
-  action_name = c("tags_replace", "tags_remove", "tags_add", "tags_clear"),
+  action_name = c("tags_replace", "tags_remove", "tags_add", "tags_clear",
+    "tag_rename", "tag_delete"),
   item_ids = NULL,
   tags = NULL,
   consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
