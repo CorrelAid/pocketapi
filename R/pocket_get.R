@@ -47,7 +47,7 @@ pocket_get <- function(favorite = NULL,
 
   if (!is.null(state)) {
     if (!is.character(state) || length(state) != 1) stop("The state argument can only be one of the following: 'unread', 'archive', 'all'")
-    if(!(state %in% c("unread", "archive", "all"))) stop("The state argument can only be one of the following: 'unread', 'archive', 'all'")
+    if (!(state %in% c("unread", "archive", "all"))) stop("The state argument can only be one of the following: 'unread', 'archive', 'all'")
     post_fun_args$state <- state
   }
 

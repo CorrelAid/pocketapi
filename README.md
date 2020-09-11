@@ -2,10 +2,10 @@
 ================
 
 <!-- badges: start -->
-![R-CMD-check](https://github.com/CorrelAid/pocketapi/workflows/R-CMD-check/badge.svg?branch=master)
 [![Codecov test coverage](https://codecov.io/gh/CorrelAid/pocketapi/branch/master/graph/badge.svg)](https://codecov.io/gh/CorrelAid/pocketapi?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/pocketapi)](https://CRAN.R-project.org/package=pocketapi)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![R build status](https://github.com/CorrelAid/pocketapi/workflows/R-CMD-check/badge.svg)](https://github.com/CorrelAid/pocketapi/actions)
 <!-- badges: end -->
 
 This is a R wrapper for the [Pocket](https://getpocket.com) API. You can use `pocketapi` to access and modify your *own* pockets and to add new links to your Pocket programmatically. 
@@ -94,3 +94,6 @@ Save the file and restart R for the changes to take effect.
 If your `.Renviron` lives at a non-conventional place, you can also edit it manually using RStudio or your favorite text editor. 
 
 If you don't want to clutter your `.Renviron` file, you can also use an `.env` file in your project directory together with the [`dotenv`](https://github.com/gaborcsardi/dotenv) package. In this case, make sure to never share your `.env` file. 
+
+# Contribute
+Contributions to this package are welcome. Please see `CONTRIBUTING.md`.
