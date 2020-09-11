@@ -2,10 +2,10 @@
 
 <!-- badges: start -->
 
+[![R build status](https://github.com/CorrelAid/pocketapi/workflows/R-CMD-check/badge.svg)](https://github.com/CorrelAid/pocketapi/actions)
 [![Codecov test coverage](https://codecov.io/gh/CorrelAid/pocketapi/branch/master/graph/badge.svg)](https://codecov.io/gh/CorrelAid/pocketapi?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/pocketapi)](https://CRAN.R-project.org/package=pocketapi)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![R build status](https://github.com/CorrelAid/pocketapi/workflows/R-CMD-check/badge.svg)](https://github.com/CorrelAid/pocketapi/actions)
 
 <!-- badges: end -->
 
