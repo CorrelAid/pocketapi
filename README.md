@@ -94,3 +94,6 @@ Save the file and restart R for the changes to take effect.
 If your `.Renviron` lives at a non-conventional place, you can also edit it manually using RStudio or your favorite text editor. 
 
 If you don't want to clutter your `.Renviron` file, you can also use an `.env` file in your project directory together with the [`dotenv`](https://github.com/gaborcsardi/dotenv) package. In this case, make sure to never share your `.env` file. 
+
+# Contribute
+Contributions to this package are welcome. Please see `CONTRIBUTING.md`.
