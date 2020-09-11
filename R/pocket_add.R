@@ -14,9 +14,9 @@ pocket_add <-
   function(add_url,
            consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
            access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
-    if (missing(add_url)) stop("Argument 'add_url' is missing.")
-    if (consumer_key == "") stop(error_message_consumer_key())
-    if (access_token == "") stop(error_message_access_token())
+    if (missing(add_url)) usethis::ui_stop("Argument 'add_url' is missing.")
+    if (consumer_key == "") usethis::ui_stop(error_message_consumer_key())
+    if (access_token == "") usethis::ui_stop(error_message_access_token())
 
 
 

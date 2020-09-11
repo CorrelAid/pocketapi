@@ -16,8 +16,8 @@ pocket_get <- function(favorite = NULL,
                        state = "all",
                        consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
                        access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
-  if (consumer_key == "") stop(error_message_consumer_key())
-  if (access_token == "") stop(error_message_access_token())
+  if (consumer_key == "") usethis::ui_stop(error_message_consumer_key())
+  if (access_token == "") usethis::ui_stop(error_message_access_token())
 
   # arguments to call the post function with later
   # we do this so that we can add additional arguments to ... conditional on the if statements
@@ -30,24 +30,24 @@ pocket_get <- function(favorite = NULL,
   )
 
   if (!is.null(favorite)) {
-    if (!is.logical(favorite) || length(favorite) != 1) stop("The favorite argument can only be TRUE or FALSE.")
+    if (!is.logical(favorite) || length(favorite) != 1) usethis::ui_stop("The favorite argument can only be TRUE or FALSE.")
     post_fun_args$favorite <- as.integer(favorite)
   }
 
   if (!is.null(item_type)) {
-    if (!item_type %in% c("image", "video", "article")) stop("The item_type argument can only be one of the following:  'image', 'article', 'video'.")
+    if (!item_type %in% c("image", "video", "article")) usethis::ui_stop("The item_type argument can only be one of the following:  'image', 'article', 'video'.")
     post_fun_args$contentType <- item_type
   }
 
   if (!is.null(tag)) {
-    if (!is.character(tag) || length(tag) != 1) stop("The tag argument can only be a character string.")
+    if (!is.character(tag) || length(tag) != 1) usethis::ui_stop("The tag argument can only be a character string.")
     post_fun_args$tag <- tag
   }
 
 
   if (!is.null(state)) {
-    if (!is.character(state) || length(state) != 1) stop("The state argument can only be one of the following: 'unread', 'archive', 'all'")
-    if (!(state %in% c("unread", "archive", "all"))) stop("The state argument can only be one of the following: 'unread', 'archive', 'all'")
+    if (!is.character(state) || length(state) != 1) usethis::ui_stop("The state argument can only be one of the following: 'unread', 'archive', 'all'")
+    if (!(state %in% c("unread", "archive", "all"))) usethis::ui_stop("The state argument can only be one of the following: 'unread', 'archive', 'all'")
     post_fun_args$state <- state
   }
 

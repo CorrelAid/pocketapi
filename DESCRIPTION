@@ -11,7 +11,8 @@ Imports:
     dplyr,
     glue,
     jsonlite,
-    magrittr
+    magrittr,
+    usethis
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

@@ -6,21 +6,21 @@ POCKET_TEST_ACCESS_TOKEN <- "faketoken"
 test_that("missing consumer key causes error", {
   expect_error(
     pocket_add(add_url = "xAsdfcm13413", consumer_key = "", access_token = POCKET_TEST_ACCESS_TOKEN),
-    regexp = "^POCKET_CONSUMER_KEY does not exist as environment variable."
+    regexp = "^POCKET_CONSUMER_KEY does not exist as environment variable.", class = "usethis_error"
   )
 })
 
 test_that("missing access token causes error", {
   expect_error(
     pocket_add(add_url = "xAsdfcm13413", consumer_key = POCKET_TEST_CONSUMER_KEY, access_token = ""),
-    regexp = "^POCKET_ACCESS_TOKEN does not exist as environment variable."
+    regexp = "^POCKET_ACCESS_TOKEN does not exist as environment variable.", class = "usethis_error"
   )
 })
 
 test_that("missing URL causes error", {
   expect_error(
     pocket_add(),
-    regexp = "Argument 'add_url' is missing."
+    regexp = "Argument 'add_url' is missing.", class = "usethis_error"
   )
 })
 
@@ -33,7 +33,7 @@ with_mock_api(
         access_token = POCKET_TEST_ACCESS_TOKEN,
         add_url = "xAsdfcm13413"
       ),
-      regexp = "\n403 Forbidden: The provided keys do not have proper permission"
+      regexp = "\n403 Forbidden: The provided keys do not have proper permission", class = "usethis_error"
     )
   })
 )
