@@ -11,6 +11,16 @@
 
 This is a R wrapper for the [Pocket API](https://getpocket.com/developer/docs/overview). You can use `pocketapi` to access and modify your _own_ pockets and to add new links to your Pocket programmatically.
 
+Functions include:
+
+- `pocket_add()`
+- `pocket_get()`
+- `pocket_tag()`
+- `pocket_archive()`
+- `pocket_delete()`
+- `pocket_favorite()`
+- `pocket_unfavorite()`
+
 # Installation
 
 ## CRAN Version
@@ -101,17 +111,6 @@ If your `.Renviron` lives at a non-conventional place, you can also edit it manu
 If you don't want to clutter the `.Renviron` file in your home folder, you can also use a local `.Renviron` file in your project folder and read it in using the `readRenviron()` function. In this case, make sure to never share your local `.Renviron` file.
 
 ## Get, modify, and add Pockets
-
-Functions include:
-
-- `pocket_add()`
-- `pocket_get()`
-- `pocket_tag()`
-- `pocket_archive()`
-- `pocket_delete()`
-- `pocket_favorite()`
-- `pocket_unfavorite()`
-- `pocket_modify()`
 
 Check out the vignette to see in more detail how to add, get, and modify your Pockets using those functions.
 
