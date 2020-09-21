@@ -28,7 +28,7 @@ pocket_stop_for_status_ <- function(res) {
     if (is.null(status)) {
       status <- httr::status_code(res)
     }
-    stop(glue::glue("Error during API request:
+    usethis::ui_stop(glue::glue("Error during API request:
                     {status}: {x_error}"))
   }
 }

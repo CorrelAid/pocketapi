@@ -21,5 +21,7 @@ pocket_modify(
 Function that sends a request with a list of actions to the 'modify' Pocket API endpoint.
 }
 \details{
-See https://getpocket.com/developer/docs/v3/modify for details.
+see https://getpocket.com/developer/docs/v3/modify. This function uses the \code{modify} endpoint of the Pocket API which exhibits some weird behaviour. 
+For example, even if a `modify` action is not successful, the API will still return "success". 
+See [issue [#26](https://github.com/CorrelAid/pocketapi/issues/26) for a discussion.
 }

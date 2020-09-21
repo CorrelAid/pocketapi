@@ -6,13 +6,14 @@
 #' @importFrom httr content
 #' @importFrom jsonlite toJSON
 #' @importFrom purrr map_chr
-#' @details See https://getpocket.com/developer/docs/v3/modify for details.
+#' @details see https://getpocket.com/developer/docs/v3/modify. This function uses the \code{modify} endpoint of the Pocket API which exhibits some weird behaviour. 
+#' For example, even if a `modify` action is not successful, the API will still return "success". 
+#' See [issue [#26](https://github.com/CorrelAid/pocketapi/issues/26) for a discussion. 
 #' @export
 pocket_modify <- function(actions, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
                           access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
-
-  if (consumer_key == "") stop(error_message_consumer_key())
-  if (access_token == "") stop(error_message_access_token())
+  if (consumer_key == "") usethis::ui_stop(error_message_consumer_key())
+  if (access_token == "") usethis::ui_stop(error_message_access_token())
 
   # Set auto_unbox = TRUE because otherwise jsonlite will en-array single values, e.g. ["archive"]
   actions_json <- jsonlite::toJSON(actions, auto_unbox = TRUE)
@@ -54,7 +55,7 @@ pocket_modify_bulk_ <- function(item_ids, action_name, consumer_key, access_toke
 
 message_for_successes_ <- function(success_ids) {
   success_ids_collapsed <- paste(success_ids, collapse = ", ")
-  message(glue::glue("Action was successful for the items: {success_ids_collapsed}"))
+  usethis::ui_done(glue::glue("Action was successful for the items: {success_ids_collapsed}"))
 }
 
 #' warn_for_failures_
@@ -63,7 +64,7 @@ message_for_successes_ <- function(success_ids) {
 #' @keywords internal
 warn_for_failures_ <- function(failures) {
   purrr::walk2(failures, names(failures), function(failure, failure_name) {
-    warning(glue::glue("Action on {failure_name} failed with error: {failure$action_errors}"))
+    usethis::ui_warn(glue::glue("Action on {failure_name} failed with error: {failure$action_errors}"))
   })
 }
 

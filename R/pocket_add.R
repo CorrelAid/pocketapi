@@ -7,7 +7,10 @@
 #' @param consumer_key Character string. Your Pocket consumer key. Defaults to \code{Sys.getenv("POCKET_CONSUMER_KEY")}.
 #' @param access_token Character string. Your Pocket request token. Defaults to \code{Sys.getenv("POCKET_ACCESS_TOKEN")}.
 #' @export
-#' @return Invisibly returns the response from the \code{httr} call.
+#' @details This function uses the \code{modify} endpoint of the Pocket API which exhibits some weird behaviour. 
+#' For example, even if a `modify` action is not successful, the API will still return "success". 
+#' See [issue [#26](https://github.com/CorrelAid/pocketapi/issues/26) for a discussion. 
+#' @return the response from the httr call, invisibly
 pocket_add <- function(add_urls,
                        item_ids = "",
                        tags = NULL,

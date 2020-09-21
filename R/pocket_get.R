@@ -1,13 +1,13 @@
 #' pocket_get
-#' @description Get a data frame with your pocket data, including item IDs.
-#' @param favorite Boolean. Defaults to \code{NULL}. Allows to filter for favorited items. If TRUE, only favorited items will be returned. If FALSE, only un-favorited items will be returned.
-#' @param item_type Character. Defaults to \code{NULL}. Allows to filter for content type of items. Valid values are: "image", "article", "video". Please note that there might be Pocket items that do not belong to any of those types. The Pocket API documentation only mentions those three.
-#' @param tag Character. Defaults to \Code{NULL}. Only one tag can be filtered for at a time. Set to "_untagged_" if you only want to get untagged items.
-#' @param state Character. Defaults to "all". Allows to filter on unread/archived items or return all. Valid values are "unread", "archive", "all".
-#' @param consumer_key Character string. Your Pocket consumer key. Defaults to \code{Sys.getenv("POCKET_CONSUMER_KEY")}.
-#' @param access_token Character string. Your Pocket request token. Defaults to \code{Sys.getenv("POCKET_ACCESS_TOKEN")}.
-#' @return Tibble with one row for each Pocket item.
-#' @details See https://getpocket.com/developer/docs/v3/retrieve for the meaning of the variable values in the resulting tibble.
+#' @description Get a data frame with your pocket data.
+#' @param favorite boolean. Default NULL. Allows to filter for favorited items. If TRUE, only favorited items will be returned. If FALSE, only un-favorited items will be returned.
+#' @param item_type character. Default NULL. Allows to filter for content type of items. Valid values are: "image", "article", "video". Please note that there might be Pocket items that do not belong to any of those types. The Pocket API documentation only mentions those three.
+#' @param tag character. Default NULL. Only one tag can be filtered at a time. Set to '_untagged_' if you only want to get untagged items.
+#' @param state character. Default "all". Allows to filter on unread/archived items or return all. Valid values are "unread", "archive", "all".
+#' @param consumer_key character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").
+#' @param access_token character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").
+#' @return tibble. Tibble with one row for each Pocket item.
+#' @details See https://getpocket.com/developer/docs/v3/retrieve for the meaning of certain variable values.
 #' @importFrom purrr map_dfr
 #' @export
 pocket_get <- function(favorite = NULL,
@@ -16,9 +16,8 @@ pocket_get <- function(favorite = NULL,
                        state = "all",
                        consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
                        access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
-
-  if (consumer_key == "") stop(error_message_consumer_key())
-  if (access_token == "") stop(error_message_access_token())
+  if (consumer_key == "") usethis::ui_stop(error_message_consumer_key())
+  if (access_token == "") usethis::ui_stop(error_message_access_token())
 
   # Arguments to call the 'post' function with later
   # We do this so that we can add additional arguments to ... conditional on the if statements
@@ -31,24 +30,24 @@ pocket_get <- function(favorite = NULL,
   )
 
   if (!is.null(favorite)) {
-    if (!is.logical(favorite) || length(favorite) != 1) stop("The favorite argument can only be TRUE or FALSE.")
+    if (!is.logical(favorite) || length(favorite) != 1) usethis::ui_stop("The favorite argument can only be TRUE or FALSE.")
     post_fun_args$favorite <- as.integer(favorite)
   }
 
   if (!is.null(item_type)) {
-    if (!item_type %in% c("image", "video", "article")) stop("The item_type argument can only be one of the following:  'image', 'article', 'video'.")
+    if (!item_type %in% c("image", "video", "article")) usethis::ui_stop("The item_type argument can only be one of the following:  'image', 'article', 'video'.")
     post_fun_args$contentType <- item_type
   }
 
   if (!is.null(tag)) {
-    if (!is.character(tag) || length(tag) != 1) stop("The tag argument can only be a character string.")
+    if (!is.character(tag) || length(tag) != 1) usethis::ui_stop("The tag argument can only be a character string.")
     post_fun_args$tag <- tag
   }
 
 
   if (!is.null(state)) {
-    if (!is.character(state) || length(state) != 1) stop("The state argument can only be one of the following: 'unread', 'archive', 'all'")
-    if(!(state %in% c("unread", "archive", "all"))) stop("The state argument can only be one of the following: 'unread', 'archive', 'all'")
+    if (!is.character(state) || length(state) != 1) usethis::ui_stop("The state argument can only be one of the following: 'unread', 'archive', 'all'")
+    if (!(state %in% c("unread", "archive", "all"))) usethis::ui_stop("The state argument can only be one of the following: 'unread', 'archive', 'all'")
     post_fun_args$state <- state
   }
 

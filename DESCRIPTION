@@ -7,11 +7,12 @@ Depends: R (>= 3.5.0)
 Imports:
     httr,
     purrr,
-    dplyr,
     tibble,
+    dplyr,
     glue,
     jsonlite,
-    magrittr
+    magrittr,
+    usethis
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

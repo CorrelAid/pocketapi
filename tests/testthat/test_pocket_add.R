@@ -5,15 +5,15 @@ POCKET_TEST_ACCESS_TOKEN <- "faketoken"
 
 test_that("missing consumer key causes error", {
   expect_error(
-    pocket_add(add_urls = "xAsdfcm13413", consumer_key = "", access_token = POCKET_TEST_ACCESS_TOKEN),
-    regexp = "^POCKET_CONSUMER_KEY does not exist as environment variable."
+    pocket_add(add_url = "xAsdfcm13413", consumer_key = "", access_token = POCKET_TEST_ACCESS_TOKEN),
+    regexp = "^POCKET_CONSUMER_KEY does not exist as environment variable.", class = "usethis_error"
   )
 })
 
 test_that("missing access token causes error", {
   expect_error(
-    pocket_add(add_urls = "xAsdfcm13413", consumer_key = POCKET_TEST_CONSUMER_KEY, access_token = ""),
-    regexp = "^POCKET_ACCESS_TOKEN does not exist as environment variable."
+    pocket_add(add_url = "xAsdfcm13413", consumer_key = POCKET_TEST_CONSUMER_KEY, access_token = ""),
+    regexp = "^POCKET_ACCESS_TOKEN does not exist as environment variable.", class = "usethis_error"
   )
 })
 
@@ -32,7 +32,7 @@ test_that("invalid url causes warning that it could not been added", {
         access_token = POCKET_TEST_ACCESS_TOKEN,
         add_urls = "xAsdfcm13413"
       ),
-      regexp = "The following URL has not been successfully added: xAsdfcm13413"
+      regexp = "\n403 Forbidden: The provided keys do not have proper permission", class = "usethis_error"
     )
 })
 
@@ -53,15 +53,4 @@ with_mock_api({
         }
       )
   })
-})
-
-
-test_that("invalid token and key cause 403", {
-      result <-
-        pocket_add(
-          consumer_key = "blabla",
-          access_token = "unreal",
-          add_urls = "https://katherinemwood.github.io/post/testthat/",
-          success = FALSE)
-      expect_equal(result$status_code, 403)
 })
