@@ -17,6 +17,9 @@ pocket_favorite(
 
 \item{access_token}{character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").}
 }
+\value{
+Invisibly returns a list containing information on whether the action failed or succeeded, including the respective item ID.
+}
 \description{
 favorite items from your Pocket list.
 }

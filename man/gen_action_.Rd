@@ -7,15 +7,16 @@
 gen_action_(item_id, action_name, ...)
 }
 \arguments{
-\item{item_id}{character. ID of Pocket item}
+\item{item_id}{Character. ID of Pocket item.}
 
-\item{action_name}{character. Name of Pocket action as string.}
+\item{action_name}{Character. Name of Pocket action as a string.}
 
-\item{...}{additional named arguments to be added to the action list.}
+\item{...}{Additional, named arguments to be added to the action list.}
 }
 \value{
-list representing a Pocket API action.
+List representing a Pocket API action.
 }
 \description{
-generate an Pocket action list element for a given id and action name
+Generate a Pocket action list element for a given ID and action name.
 }
+\keyword{internal}

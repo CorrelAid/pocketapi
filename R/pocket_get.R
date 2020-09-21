@@ -19,8 +19,8 @@ pocket_get <- function(favorite = NULL,
   if (consumer_key == "") usethis::ui_stop(error_message_consumer_key())
   if (access_token == "") usethis::ui_stop(error_message_access_token())
 
-  # arguments to call the post function with later
-  # we do this so that we can add additional arguments to ... conditional on the if statements
+  # Arguments to call the 'post' function with later
+  # We do this so that we can add additional arguments to ... conditional on the if statements
   post_fun_args <- list(
     endpoint = "get",
     consumer_key = consumer_key,
@@ -62,9 +62,9 @@ pocket_get <- function(favorite = NULL,
 }
 
 #' parse_item_
-#' @description parse item in the response list into a mini tibble with one row.
+#' @description Parse item in the response list into a mini tibble with one row.
 #' @param item Pocket item from the Pocket entry list.
-#' @return tibble.
+#' @return Tibble
 #' @keywords internal
 parse_item_ <- function(item) {
   item_df <- tibble::tibble(

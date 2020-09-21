@@ -7,14 +7,14 @@
 extract_action_results_(res, item_ids)
 }
 \arguments{
-\item{res}{list. httr response object.}
+\item{res}{List. Httr response object.}
 
-\item{item_ids}{character vector. Pocket item ids that were modified.}
+\item{item_ids}{Character vector. Pocket item IDs that were modified.}
 }
 \value{
-list. named list with the ids for which the action was successful, the ids for which it failed and the list of failures.
+Named list with the IDs for which the action was successful, the ids for which it failed and the list of failures.
 }
 \description{
-extract results from list that is returned by the send endpoint of the Pocket API.
+Extract results from list that is returned by the send endpoint of the Pocket API.
 }
 \keyword{internal}

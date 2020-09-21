@@ -5,23 +5,32 @@
 \title{pocket_add}
 \usage{
 pocket_add(
-  add_url,
+  add_urls,
+  item_ids = "",
+  tags = NULL,
+  success = TRUE,
   consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
   access_token = Sys.getenv("POCKET_ACCESS_TOKEN")
 )
 }
 \arguments{
-\item{add_url}{character string. The URL of the item you want to add to your Pocket list.}
+\item{add_urls}{Character vector. The URL or URLs you want to add to your Pocket list.}
 
-\item{consumer_key}{character string. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
+\item{item_ids}{Character vector. The item_ids of the items you want to add. Defaults to empty character vector.}
 
-\item{access_token}{character string. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").}
+\item{tags}{Character vector. One or more tags to be applied to all of the newly added URLs. Defaults to NULL.}
+
+\item{success}{Logical. Enables success/failure messages for every URL. Defaults to TRUE. Needs GET permission if TRUE.}
+
+\item{consumer_key}{Character string. Your Pocket consumer key. Defaults to \code{Sys.getenv("POCKET_CONSUMER_KEY")}.}
+
+\item{access_token}{Character string. Your Pocket request token. Defaults to \code{Sys.getenv("POCKET_ACCESS_TOKEN")}.}
 }
 \value{
 the response from the httr call, invisibly
 }
 \description{
-add an entry to pocket
+Add one or more items to your Pocket account.
 }
 \details{
 This function uses the \code{modify} endpoint of the Pocket API which exhibits some weird behaviour. 

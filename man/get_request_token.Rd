@@ -7,16 +7,16 @@
 get_request_token(consumer_key)
 }
 \arguments{
-\item{consumer_key}{character string. Your Pocket consumer key.}
+\item{consumer_key}{Character string. Here goes your Pocket consumer key.}
 }
 \value{
-character string. Request token for the Pocket Application corresponding to consumer_key.
+Character string. Request token for the Pocket Application corresponding to your consumer_key.
 }
 \description{
-requests a request_token for the Pocket application with a given consumer key from the Pocket Authentication API. The request token can then be used in \code{\link{create_authorize_url}} and \code{\link{get_access_token}}.
+Requests a request_token for the Pocket application with a given consumer key from the Pocket Authentication API. The request token can then be used in \code{\link{create_authorize_url}} and \code{\link{get_access_token}}.
 }
 \details{
-See the \href{https://github.com/CorrelAid/pocketapi}{GitHub README} for details.
+See the \href{https://github.com/CorrelAid/pocketapi}{GitHub README} for details on Authentication.
 }
 \seealso{
 Other authentication functions: 

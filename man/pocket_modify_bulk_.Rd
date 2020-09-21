@@ -7,17 +7,17 @@
 pocket_modify_bulk_(item_ids, action_name, consumer_key, access_token, ...)
 }
 \arguments{
-\item{item_ids}{character vector. Pocket item ids that should be modified.}
+\item{item_ids}{Character vector. Pocket item IDs that should be modified.}
 
-\item{action_name}{character. The action that should be performed on all specified items.}
+\item{action_name}{Character. The action that should be performed on all specified items.}
 
-\item{consumer_key}{character. Your Pocket consumer key.}
+\item{consumer_key}{Character string. Your Pocket consumer key. Defaults to \code{Sys.getenv("POCKET_CONSUMER_KEY")}.}
 
-\item{access_token}{character. Your Pocket request token.}
+\item{access_token}{Character string. Your Pocket request token. Defaults to \code{Sys.getenv("POCKET_ACCESS_TOKEN")}.}
 
-\item{...}{additional named arguments to be added to the action list items.}
+\item{...}{Additional named arguments to be added to the action list items.}
 }
 \description{
-bulk modify for a given action, i.e. the action is the same for all item_ids.
+Bulk modify for a given action, i.e., the action is the same for all item_ids.
 }
 \keyword{internal}

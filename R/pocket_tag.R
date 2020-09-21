@@ -9,8 +9,9 @@
 #' For example, even if a `modify` action is not successful, the API will still return "success". 
 #' See [issue [#26](https://github.com/CorrelAid/pocketapi/issues/26) for a discussion. 
 #' @export
-pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add", "tags_clear"), item_ids = NULL, tags = NULL, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
+pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add", "tags_clear", "tag_rename", "tag_delete"), item_ids = NULL, tags = NULL, consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
                        access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
+
   if (consumer_key == "") usethis::ui_stop(error_message_consumer_key())
   if (access_token == "") usethis::ui_stop(error_message_access_token())
 
@@ -21,18 +22,19 @@ pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add"
   tags <- paste(tags, collapse = ",")
 
   # Processing
-  # actions that require item_ids and tags
+  # Actions that require item_ids and tags
   if (action_name %in% c("tags_replace", "tags_remove", "tags_add")) {
     action_results <- pocket_modify_bulk_(item_ids, action_name, consumer_key, access_token, tags = tags)
     return(invisible(action_results))
   }
 
-  # clearing all tags from item(s) requires item_ids but not tags
+  # Clearing all tags from item(s) requires item_ids but not tags
   if (action_name == "tags_clear") {
     action_results <- pocket_modify_bulk_(item_ids, action_name, consumer_key, access_token)
+    return(invisible(action_results))
   }
 
-  # renaming a tag requires old name and new name
+  # Renaming a tag requires old name and new name
   if (action_name == "tag_rename") {
     # Compile list of lists with action
     action_list <- action_name %>% purrr::map(
@@ -40,6 +42,7 @@ pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add"
       new_tag = tags[2],
       .f = gen_tag_action_
     )
+
     # Convert list of lists to JSON
     actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
 
@@ -63,7 +66,7 @@ pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add"
       .f = gen_tag_action_
     )
 
-    # Compule list of lists for action
+    # Compile list of lists for action
     action_list <- action_name %>% purrr::map(
       tag = tags,
       .f = gen_tag_action_
@@ -83,12 +86,12 @@ pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add"
 }
 
 
-
 #' gen_tag_action_
-#' @description generate an action list element for a given action name
-#' @param action_name character. Name of Pocket action as string.
-#' @param ... additional named arguments to be added to the action list.
-#' @return list
+#' @description Generate an action list element for a given action name.
+#' @param action_name Character. Name of Pocket action as a string.
+#' @param ... Additional, named arguments to be added to the action list.
+#' @return Action list.
+#' @keywords internal
 gen_tag_action_ <- function(action_name, ...) {
   return(list(
     action = action_name,
@@ -99,7 +102,6 @@ gen_tag_action_ <- function(action_name, ...) {
 
 stop_for_invalid_tag_action_ <- function(item_ids, action_name, tags) {
   actions <- c("tags_add", "tags_remove", "tags_replace", "tags_clear", "tag_rename", "tag_delete")
-
 
   if (!action_name %in% actions) {
     usethis::ui_stop("Tag actions can be only be: 'tags_add', 'tags_remove', 'tags_replace', 'tags_clear', 'tag_rename', or 'tag_delete'.")
