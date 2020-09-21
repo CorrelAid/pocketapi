@@ -18,9 +18,9 @@ pocket_add <- function(add_urls,
                        consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
                        access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
 
-  if (consumer_key == "") stop(error_message_consumer_key())
-  if (access_token == "") stop(error_message_access_token())
-  if (missing(add_urls)) stop("Argument 'add_urls' is missing.")
+  if (consumer_key == "") usethis::ui_stop(error_message_consumer_key())
+  if (access_token == "") usethis::ui_stop(error_message_access_token())
+  if (missing(add_urls)) usethis::ui_stop("Argument 'add_urls' is missing.")
 
   action_list <- add_urls %>% purrr::map(
     action_name = "add",

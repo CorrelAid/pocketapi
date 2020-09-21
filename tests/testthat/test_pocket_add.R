@@ -20,7 +20,8 @@ test_that("missing access token causes error", {
 test_that("missing URL causes error", {
   expect_error(
     pocket_add(),
-    regexp = "Argument 'add_urls' is missing."
+    regexp = "Argument 'add_urls' is missing.",
+    class = "usethis_error"
   )
 })
 
@@ -32,7 +33,7 @@ test_that("invalid url causes warning that it could not been added", {
         access_token = POCKET_TEST_ACCESS_TOKEN,
         add_urls = "xAsdfcm13413"
       ),
-      regexp = "\n403 Forbidden: The provided keys do not have proper permission", class = "usethis_error"
+      regexp = "The following URL has not been successfully added: xAsdfcm13413. Hint: URLs need to begin with 'http://' or 'https://'."
     )
 })
 
