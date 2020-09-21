@@ -7,13 +7,11 @@
 check_for_add_success_(urls)
 }
 \arguments{
-\item{urls}{character vector containing URLs to be checked}
-
-\item{...}{additional named arguments to be added to the action list.}
+\item{urls}{Character vector containing URLs to be checked.}
 }
 \value{
-logical
+Returns messages of success and/or failure of the URLs wished to be added to Pocket.
 }
 \description{
-check whether all urls were successfully added to Pocket
+Check whether all URLs were successfully added to Pocket by \code{pocket_add()}.
 }

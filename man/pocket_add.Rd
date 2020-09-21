@@ -14,21 +14,21 @@ pocket_add(
 )
 }
 \arguments{
-\item{add_urls}{character vector. The URL or URLs you want to add to your Pocket list.}
+\item{add_urls}{Character vector. The URL or URLs you want to add to your Pocket list.}
 
-\item{item_ids}{character vector. (Optional) The item_ids of the items you want to add.}
+\item{item_ids}{Character vector. (Optional) The item_ids of the items you want to add.}
 
-\item{tags}{character vector. One or more tags to be applied to any of the newly added URLs.}
+\item{tags}{Character vector. One or more tags to be applied to all of the newly added URLs.}
 
-\item{success}{logical. Enables success/failure messages for each URL. Defaults to TRUE.}
+\item{success}{Logical. Enables success/failure messages for every URL. Defaults to TRUE. Needs GET access if TRUE.}
 
-\item{consumer_key}{character string. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
+\item{consumer_key}{Character string. Your Pocket consumer key. Defaults to \code{Sys.getenv("POCKET_CONSUMER_KEY")}.}
 
-\item{access_token}{character string. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").}
+\item{access_token}{Character string. Your Pocket request token. Defaults to \code{Sys.getenv("POCKET_ACCESS_TOKEN")}.}
 }
 \value{
-the response from the httr call, invisibly
+Invisibly returns the response from the \code{httr} call.
 }
 \description{
-add one or more items to Pocket
+Add one or more items to your Pocket account.
 }

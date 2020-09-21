@@ -1,13 +1,13 @@
 #' pocket_get
-#' @description Get a data frame with your pocket data.
-#' @param favorite boolean. Default NULL. Allows to filter for favorited items. If TRUE, only favorited items will be returned. If FALSE, only un-favorited items will be returned.
-#' @param item_type character. Default NULL. Allows to filter for content type of items. Valid values are: "image", "article", "video". Please note that there might be Pocket items that do not belong to any of those types. The Pocket API documentation only mentions those three.
-#' @param tag character. Default NULL. Only one tag can be filtered at a time. Set to '_untagged_' if you only want to get untagged items.
-#' @param state character. Default "all". Allows to filter on unread/archived items or return all. Valid values are "unread", "archive", "all".
-#' @param consumer_key character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").
-#' @param access_token character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").
-#' @return tibble. Tibble with one row for each Pocket item.
-#' @details See https://getpocket.com/developer/docs/v3/retrieve for the meaning of certain variable values.
+#' @description Get a data frame with your pocket data, including item IDs.
+#' @param favorite Boolean. Defaults to \code{NULL}. Allows to filter for favorited items. If TRUE, only favorited items will be returned. If FALSE, only un-favorited items will be returned.
+#' @param item_type Character. Defaults to \code{NULL}. Allows to filter for content type of items. Valid values are: "image", "article", "video". Please note that there might be Pocket items that do not belong to any of those types. The Pocket API documentation only mentions those three.
+#' @param tag Character. Defaults to \Code{NULL}. Only one tag can be filtered for at a time. Set to "_untagged_" if you only want to get untagged items.
+#' @param state Character. Defaults to "all". Allows to filter on unread/archived items or return all. Valid values are "unread", "archive", "all".
+#' @param consumer_key Character string. Your Pocket consumer key. Defaults to \code{Sys.getenv("POCKET_CONSUMER_KEY")}.
+#' @param access_token Character string. Your Pocket request token. Defaults to \code{Sys.getenv("POCKET_ACCESS_TOKEN")}.
+#' @return Tibble with one row for each Pocket item.
+#' @details See https://getpocket.com/developer/docs/v3/retrieve for the meaning of the variable values in the resulting tibble.
 #' @importFrom purrr map_dfr
 #' @export
 pocket_get <- function(favorite = NULL,
@@ -16,11 +16,12 @@ pocket_get <- function(favorite = NULL,
                        state = "all",
                        consumer_key = Sys.getenv("POCKET_CONSUMER_KEY"),
                        access_token = Sys.getenv("POCKET_ACCESS_TOKEN")) {
+
   if (consumer_key == "") stop(error_message_consumer_key())
   if (access_token == "") stop(error_message_access_token())
 
-  # arguments to call the post function with later
-  # we do this so that we can add additional arguments to ... conditional on the if statements
+  # Arguments to call the 'post' function with later
+  # We do this so that we can add additional arguments to ... conditional on the if statements
   post_fun_args <- list(
     endpoint = "get",
     consumer_key = consumer_key,
@@ -62,9 +63,9 @@ pocket_get <- function(favorite = NULL,
 }
 
 #' parse_item_
-#' @description parse item in the response list into a mini tibble with one row.
+#' @description Parse item in the response list into a mini tibble with one row.
 #' @param item Pocket item from the Pocket entry list.
-#' @return tibble.
+#' @return Tibble
 #' @keywords internal
 parse_item_ <- function(item) {
   item_df <- tibble::tibble(

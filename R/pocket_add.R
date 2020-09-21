@@ -1,14 +1,13 @@
 #' pocket_add
-#' @description add one or more items to Pocket
-#' @param add_urls character vector. The URL or URLs you want to add to your Pocket list.
-#' @param item_ids character vector. (Optional) The item_ids of the items you want to add.
-#' @param tags character vector. One or more tags to be applied to any of the newly added URLs.
-#' @param success logical. Enables success/failure messages for each URL. Defaults to TRUE.
-#' @param consumer_key character string. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").
-#' @param access_token character string. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").
-#' @details URLs have to start with http or https to be valid. Otherwise, they will be silently ignored by the Pocket API.
+#' @description Add one or more items to your Pocket account.
+#' @param add_urls Character vector. The URL or URLs you want to add to your Pocket list.
+#' @param item_ids Character vector. (Optional) The item_ids of the items you want to add.
+#' @param tags Character vector. One or more tags to be applied to all of the newly added URLs.
+#' @param success Logical. Enables success/failure messages for every URL. Defaults to TRUE. Needs GET access if TRUE.
+#' @param consumer_key Character string. Your Pocket consumer key. Defaults to \code{Sys.getenv("POCKET_CONSUMER_KEY")}.
+#' @param access_token Character string. Your Pocket request token. Defaults to \code{Sys.getenv("POCKET_ACCESS_TOKEN")}.
 #' @export
-#' @return the response from the httr call, invisibly
+#' @return Invisibly returns the response from the \code{httr} call.
 pocket_add <- function(add_urls,
                        item_ids = "",
                        tags = NULL,
@@ -43,10 +42,10 @@ pocket_add <- function(add_urls,
 }
 
 #' check_for_add_success_
-#' @description check whether all urls were successfully added to Pocket
-#' @param urls character vector containing URLs to be checked
-#' @param ... additional named arguments to be added to the action list.
-#' @return logical
+#' @description Check whether all URLs were successfully added to Pocket by \code{pocket_add()}.
+#' @param urls Character vector containing URLs to be checked.
+#' @return Returns messages of success and/or failure of the URLs wished to be added to Pocket.
+#' @keywords internal
 check_for_add_success_ <- function(urls) {
 
   pocket_content <- pocketapi::pocket_get()
@@ -75,11 +74,12 @@ check_for_add_success_ <- function(urls) {
 
 
 #' gen_add_action_
-#' @description generate an action list element for a given action name
-#' @param add_urls character vector. URLs that are to be added
-#' @param action_name character. Name of the action to be used (add)
-#' @param ... additional named arguments to be added to the action list.
-#' @return list
+#' @description Generate an action list element for adding URLs to Pocket.
+#' @param add_urls Character vector. URLs that are to be added to Pocket.
+#' @param action_name Character. Name of the action to be used (ADD, in this case).
+#' @param ... Additional named arguments to be added to the action list.
+#' @return List of actions and URLs to add to Pocket.
+#' @keywords internal
 gen_add_action_ <- function(add_urls, action_name, ...) {
   return(list(
     action = action_name,
@@ -89,19 +89,19 @@ gen_add_action_ <- function(add_urls, action_name, ...) {
 }
 
 
-#' extract_action_no_id_results_
-#' @description generate an action list element for a given action name
-#' @param add_urls character vector. URLs that are to be added
-#' @param action_name character. Name of the action to be used (add)
-#' @param ... additional named arguments to be added to the action list.
-#' @return list
-extract_action_no_id_results_ <- function(res) {
-
-  content <- httr::content(res)
-
-  success_ids <- map(content$action_results, "item_id")
-  failure_ids <- map(content$action_errors, "item_id")
-
-  return(list(success_ids = success_ids, failure_ids = failure_ids))
-}
+# #' extract_action_no_id_results_
+# #' #' @description Generate an action list element for a given action name
+# #' #' @param add_urls character vector. URLs that are to be added
+# #' @param action_name character. Name of the action to be used (add)
+# #' @param ... additional named arguments to be added to the action list.
+# #' @return list
+# extract_action_no_id_results_ <- function(res) {
+#
+#   content <- httr::content(res)
+#
+#   success_ids <- map(content$action_results, "item_id")
+#   failure_ids <- map(content$action_errors, "item_id")
+#
+#   return(list(success_ids = success_ids, failure_ids = failure_ids))
+# }
 

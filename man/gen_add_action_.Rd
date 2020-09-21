@@ -7,15 +7,15 @@
 gen_add_action_(add_urls, action_name, ...)
 }
 \arguments{
-\item{add_urls}{character vector. URLs that are to be added}
+\item{add_urls}{Character vector. URLs that are to be added to Pocket.}
 
-\item{action_name}{character. Name of the action to be used (add)}
+\item{action_name}{Character. Name of the action to be used (ADD, in this case).}
 
-\item{...}{additional named arguments to be added to the action list.}
+\item{...}{Additional named arguments to be added to the action list.}
 }
 \value{
-list
+List of actions and URLs to add to Pocket.
 }
 \description{
-generate an action list element for a given action name
+Generate an action list element for adding URLs to Pocket.
 }
