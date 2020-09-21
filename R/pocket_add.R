@@ -1,9 +1,9 @@
 #' pocket_add
 #' @description Add one or more items to your Pocket account.
 #' @param add_urls Character vector. The URL or URLs you want to add to your Pocket list.
-#' @param item_ids Character vector. (Optional) The item_ids of the items you want to add.
-#' @param tags Character vector. One or more tags to be applied to all of the newly added URLs.
-#' @param success Logical. Enables success/failure messages for every URL. Defaults to TRUE. Needs GET access if TRUE.
+#' @param item_ids Character vector. The item_ids of the items you want to add. Defaults to empty character vector.
+#' @param tags Character vector. One or more tags to be applied to all of the newly added URLs. Defaults to NULL.
+#' @param success Logical. Enables success/failure messages for every URL. Defaults to TRUE. Needs GET permission if TRUE.
 #' @param consumer_key Character string. Your Pocket consumer key. Defaults to \code{Sys.getenv("POCKET_CONSUMER_KEY")}.
 #' @param access_token Character string. Your Pocket request token. Defaults to \code{Sys.getenv("POCKET_ACCESS_TOKEN")}.
 #' @export
