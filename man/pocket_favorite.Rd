@@ -11,17 +11,17 @@ pocket_favorite(
 )
 }
 \arguments{
-\item{item_ids}{Character vector. Pocket item IDs you want to favorite. Get them, e.g., via \code{pocket_get}.}
+\item{item_ids}{character vector. Pocket item ids you want to favorite}
 
-\item{consumer_key}{Character. Your Pocket consumer key. Defaults to \code{Sys.getenv("POCKET_CONSUMER_KEY")}.}
+\item{consumer_key}{character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
 
-\item{access_token}{Character. Your Pocket request token. Defaults to \code{Sys.getenv("POCKET_ACCESS_TOKEN")}.}
+\item{access_token}{character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").}
 }
 \value{
 Invisibly returns a list containing information on whether the action failed or succeeded, including the respective item ID.
 }
 \description{
-Favorite items from your Pocket list.
+favorite items from your Pocket list.
 }
 \details{
 This function uses the \code{modify} endpoint of the Pocket API which exhibits some weird behaviour. 

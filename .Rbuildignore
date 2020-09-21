@@ -6,3 +6,4 @@
 ^\.github$
 ^codecov\.yml$
 ^CONTRIBUTING.md
+^pocketapi.code-workspace

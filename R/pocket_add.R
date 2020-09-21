@@ -26,11 +26,11 @@ pocket_add <- function(add_urls,
     action_name = "add",
     item_id = item_ids,
     tags = paste(tags, collapse = ","),
-    .f = pocketapi:::gen_add_action_)
+    .f = gen_add_action_)
 
     actions_json <- jsonlite::toJSON(action_list, auto_unbox = TRUE)
 
-    res <- pocketapi:::pocket_post_("send",
+    res <- pocket_post_("send",
                         consumer_key,
                         access_token,
                         actions = actions_json

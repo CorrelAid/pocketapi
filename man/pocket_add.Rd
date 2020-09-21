@@ -27,7 +27,7 @@ pocket_add(
 \item{access_token}{Character string. Your Pocket request token. Defaults to \code{Sys.getenv("POCKET_ACCESS_TOKEN")}.}
 }
 \value{
-Invisibly returns the response from the \code{httr} call.
+the response from the httr call, invisibly
 }
 \description{
 Add one or more items to your Pocket account.

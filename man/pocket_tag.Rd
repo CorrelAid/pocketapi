@@ -14,18 +14,18 @@ pocket_tag(
 )
 }
 \arguments{
-\item{action_name}{Character vector. The kind of tag action you want to execute. Possible values: 'tags_add', 'tags_remove', 'tags_replace', 'tags_clear', 'tag_rename', or 'tag_delete'.}
+\item{action_name}{character vector. The kind of tag action you want to undertake. Possible values: 'tags_add', 'tags_remove', 'tags_replace', 'tags_clear', 'tag_rename', or 'tag_delete'.}
 
-\item{item_ids}{Character vector. Pocket item IDs you want to modify the tags for.}
+\item{item_ids}{character vector. Pocket item ids you want to modify the tags for.}
 
-\item{tags}{Character vector. The names of the tags to work with the chosen action.}
+\item{tags}{character vector. The names of the tags to work with the chosen action.}
 
-\item{consumer_key}{Character string. Your Pocket consumer key. Defaults to \code{Sys.getenv("POCKET_CONSUMER_KEY")}.}
+\item{consumer_key}{character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
 
-\item{access_token}{Character string. Your Pocket request token. Defaults to \code{Sys.getenv("POCKET_ACCESS_TOKEN")}.}
+\item{access_token}{character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").}
 }
 \description{
-Modify the tags of the items in Pocket.
+modify the tags of the items in pocket.
 }
 \details{
 This function uses the \code{modify} endpoint of the Pocket API which exhibits some weird behaviour. 
