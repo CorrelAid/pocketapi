@@ -6,6 +6,7 @@
 #' @param success logical. Enables success/failure messages for each URL. Defaults to TRUE.
 #' @param consumer_key character string. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").
 #' @param access_token character string. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").
+#' @details URLs have to start with http or https to be valid. Otherwise, they will be silently ignored by the Pocket API.
 #' @export
 #' @return the response from the httr call, invisibly
 pocket_add <- function(add_urls,
@@ -66,7 +67,7 @@ check_for_add_success_ <- function(urls) {
 
     if (!is.null(false_urls)) {
 
-    print(glue::glue("The following URL has not been successfully added: {false_urls}. Hint: URLs need to begin with 'http://' or 'https://'."))
+    warning(glue::glue("The following URL has not been successfully added: {false_urls}. Hint: URLs need to begin with 'http://' or 'https://'."))
 
     }
 

@@ -25,29 +25,43 @@ test_that("missing URL causes error", {
 })
 
 # add-9eee6a-POST.R
-with_mock_api(
-  test_that("invalid consumer key causes error", {
-    expect_error(
+test_that("invalid url causes warning that it could not been added", {
+    expect_warning(
       pocket_add(
         consumer_key = "dasidadw",
         access_token = POCKET_TEST_ACCESS_TOKEN,
         add_urls = "xAsdfcm13413"
       ),
-      regexp = "\n403 Forbidden: The provided keys do not have proper permission"
+      regexp = "The following URL has not been successfully added: xAsdfcm13413"
     )
-  })
-)
+})
 
-# send-bb8dd5-POST.json
+# send-fae745-POST.json
 with_mock_api({
   test_that("Valid case", {
-    result <-
-      pocket_add(
-        consumer_key = POCKET_TEST_CONSUMER_KEY,
-        access_token = POCKET_TEST_ACCESS_TOKEN,
-        add_urls = "https://katherinemwood.github.io/post/testthat/"
+      time_stub <- "2020-04-14 12:51:02 CET"
+      with_mock(
+        Sys.time = function() time_stub,
+        {
+        result <-
+          pocket_add(
+            consumer_key = POCKET_TEST_CONSUMER_KEY,
+            access_token = POCKET_TEST_ACCESS_TOKEN,
+            add_urls = "https://katherinemwood.github.io/post/testthat/",
+            success = FALSE)
+          expect_equal(result$status_code, 200)
+        }
       )
-    # print(result)
-    expect_equal(result$status_code, 200)
   })
+})
+
+
+test_that("invalid token and key cause 403", {
+      result <-
+        pocket_add(
+          consumer_key = "blabla",
+          access_token = "unreal",
+          add_urls = "https://katherinemwood.github.io/post/testthat/",
+          success = FALSE)
+      expect_equal(result$status_code, 403)
 })
