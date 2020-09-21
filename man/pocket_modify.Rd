@@ -11,15 +11,15 @@ pocket_modify(
 )
 }
 \arguments{
-\item{actions}{list. list of lists where each element is an action object. See https://getpocket.com/developer/docs/v3/modify.}
+\item{actions}{List. List of lists where each element is an action object. See https://getpocket.com/developer/docs/v3/modify.}
 
-\item{consumer_key}{character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
+\item{consumer_key}{Character string. Your Pocket consumer key. Defaults to \code{Sys.getenv("POCKET_CONSUMER_KEY")}.}
 
-\item{access_token}{character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").}
+\item{access_token}{Character string. Your Pocket request token. Defaults to \code{Sys.getenv("POCKET_ACCESS_TOKEN")}.}
 }
 \description{
-function that sends a request with a list of actions to the modify Pocket API endpoint.
+Function that sends a request with a list of actions to the 'modify' Pocket API endpoint.
 }
 \details{
-see https://getpocket.com/developer/docs/v3/modify.
+See https://getpocket.com/developer/docs/v3/modify for details.
 }

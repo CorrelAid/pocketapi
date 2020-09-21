@@ -10,9 +10,9 @@ parse_item_(item)
 \item{item}{Pocket item from the Pocket entry list.}
 }
 \value{
-tibble.
+Tibble
 }
 \description{
-parse item in the response list into a mini tibble with one row.
+Parse item in the response list into a mini tibble with one row.
 }
 \keyword{internal}

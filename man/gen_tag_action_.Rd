@@ -7,13 +7,14 @@
 gen_tag_action_(action_name, ...)
 }
 \arguments{
-\item{action_name}{character. Name of Pocket action as string.}
+\item{action_name}{Character. Name of Pocket action as a string.}
 
-\item{...}{additional named arguments to be added to the action list.}
+\item{...}{Additional, named arguments to be added to the action list.}
 }
 \value{
-list
+Action list.
 }
 \description{
-generate an action list element for a given action name
+Generate an action list element for a given action name.
 }
+\keyword{internal}

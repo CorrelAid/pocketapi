@@ -11,12 +11,15 @@ pocket_archive(
 )
 }
 \arguments{
-\item{item_ids}{character vector. Pocket item ids you want to archive.}
+\item{item_ids}{Character vector. Pocket item IDs you want to archive. Get them, e.g., via \code{pocket_get}.}
 
-\item{consumer_key}{character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
+\item{consumer_key}{Character. Your Pocket consumer key. Defaults to \code{Sys.getenv("POCKET_CONSUMER_KEY")}.}
 
-\item{access_token}{character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").}
+\item{access_token}{Character. Your Pocket request token. Defaults to \code{Sys.getenv("POCKET_ACCESS_TOKEN")}.}
+}
+\value{
+Invisibly returns a list containing information on whether the action failed or succeeded, including the respective item ID.
 }
 \description{
-archive items from your Pocket list.
+Archive items from your Pocket list.
 }

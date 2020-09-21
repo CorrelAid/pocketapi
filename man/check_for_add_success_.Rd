@@ -15,3 +15,4 @@ Returns messages of success and/or failure of the URLs wished to be added to Poc
 \description{
 Check whether all URLs were successfully added to Pocket by \code{pocket_add()}.
 }
+\keyword{internal}

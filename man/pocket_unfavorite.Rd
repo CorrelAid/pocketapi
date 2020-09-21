@@ -11,12 +11,15 @@ pocket_unfavorite(
 )
 }
 \arguments{
-\item{item_ids}{character vector. Pocket item ids you want to unfavorite}
+\item{item_ids}{Character vector. Pocket item IDs you want to unfavorite. Get them, e.g., via \code{pocket_get}.}
 
 \item{consumer_key}{character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
 
 \item{access_token}{character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").}
 }
+\value{
+Invisibly returns a list containing information on whether the action failed or succeeded, including the respective item ID.
+}
 \description{
-unfavorite items from your Pocket list.
+Unfavorite items from your Pocket list.
 }

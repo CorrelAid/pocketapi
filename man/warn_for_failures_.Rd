@@ -7,9 +7,9 @@
 warn_for_failures_(failures)
 }
 \arguments{
-\item{failures}{list. list of failures.}
+\item{failures}{List of failures.}
 }
 \description{
-generate warnings for all failures
+Generate warnings for all failures.
 }
 \keyword{internal}

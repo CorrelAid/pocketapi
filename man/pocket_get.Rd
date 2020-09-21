@@ -14,24 +14,24 @@ pocket_get(
 )
 }
 \arguments{
-\item{favorite}{boolean. Default NULL. Allows to filter for favorited items. If TRUE, only favorited items will be returned. If FALSE, only un-favorited items will be returned.}
+\item{favorite}{Boolean. Defaults to \code{NULL}. Allows to filter for favorited items. If TRUE, only favorited items will be returned. If FALSE, only un-favorited items will be returned.}
 
-\item{item_type}{character. Default NULL. Allows to filter for content type of items. Valid values are: "image", "article", "video". Please note that there might be Pocket items that do not belong to any of those types. The Pocket API documentation only mentions those three.}
+\item{item_type}{Character. Defaults to \code{NULL}. Allows to filter for content type of items. Valid values are: "image", "article", "video". Please note that there might be Pocket items that do not belong to any of those types. The Pocket API documentation only mentions those three.}
 
-\item{tag}{character. Default NULL. Only one tag can be filtered at a time. Set to '_untagged_' if you only want to get untagged items.}
+\item{tag}{Character. Defaults to \Code{NULL}. Only one tag can be filtered for at a time. Set to "_untagged_" if you only want to get untagged items.}
 
-\item{state}{character. Default "all". Allows to filter on unread/archived items or return all. Valid values are "unread", "archive", "all".}
+\item{state}{Character. Defaults to "all". Allows to filter on unread/archived items or return all. Valid values are "unread", "archive", "all".}
 
-\item{consumer_key}{character. Your Pocket consumer key. Defaults to Sys.getenv("POCKET_CONSUMER_KEY").}
+\item{consumer_key}{Character string. Your Pocket consumer key. Defaults to \code{Sys.getenv("POCKET_CONSUMER_KEY")}.}
 
-\item{access_token}{character. Your Pocket request token. Defaults to Sys.getenv("POCKET_ACCESS_TOKEN").}
+\item{access_token}{Character string. Your Pocket request token. Defaults to \code{Sys.getenv("POCKET_ACCESS_TOKEN")}.}
 }
 \value{
-tibble. Tibble with one row for each Pocket item.
+Tibble with one row for each Pocket item.
 }
 \description{
-Get a data frame with your pocket data.
+Get a data frame with your pocket data, including item IDs.
 }
 \details{
-See https://getpocket.com/developer/docs/v3/retrieve for the meaning of certain variable values.
+See https://getpocket.com/developer/docs/v3/retrieve for the meaning of the variable values in the resulting tibble.
 }

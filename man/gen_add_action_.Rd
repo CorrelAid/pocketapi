@@ -19,3 +19,4 @@ List of actions and URLs to add to Pocket.
 \description{
 Generate an action list element for adding URLs to Pocket.
 }
+\keyword{internal}
