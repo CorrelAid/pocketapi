@@ -16,11 +16,11 @@ pocket_add(
 \arguments{
 \item{add_urls}{Character vector. The URL or URLs you want to add to your Pocket list.}
 
-\item{item_ids}{Character vector. (Optional) The item_ids of the items you want to add.}
+\item{item_ids}{Character vector. The item_ids of the items you want to add. Defaults to empty character vector.}
 
-\item{tags}{Character vector. One or more tags to be applied to all of the newly added URLs.}
+\item{tags}{Character vector. One or more tags to be applied to all of the newly added URLs. Defaults to NULL.}
 
-\item{success}{Logical. Enables success/failure messages for every URL. Defaults to TRUE. Needs GET access if TRUE.}
+\item{success}{Logical. Enables success/failure messages for every URL. Defaults to TRUE. Needs GET permission if TRUE.}
 
 \item{consumer_key}{Character string. Your Pocket consumer key. Defaults to \code{Sys.getenv("POCKET_CONSUMER_KEY")}.}
 
