@@ -55,14 +55,7 @@ pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add"
 
     # Return success message
     pocket_stop_for_status_(res)
-<<<<<<< HEAD
-    message(glue::glue("Successfully renamed tag '{tags[1]}' for '{tags[2]}'."))
-
-    return(res)
-
-=======
     usethis::ui_done(glue::glue("Successfully renamed tag '{tags[1]}' for '{tags[2]}'."))
->>>>>>> master
   }
 
 
@@ -88,13 +81,7 @@ pocket_tag <- function(action_name = c("tags_replace", "tags_remove", "tags_add"
       actions = actions_json
     )
     pocket_stop_for_status_(res)
-<<<<<<< HEAD
-    message(glue::glue("Successfully removed tag '{tags}'."))
-
-    return(res)
-=======
     usethis::ui_done(glue::glue("Successfully removed tag '{tags}'."))
->>>>>>> master
   }
 }
 
