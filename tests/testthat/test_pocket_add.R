@@ -19,22 +19,10 @@ test_that("missing access token causes error", {
 
 test_that("missing URL causes error", {
   expect_error(
-    pocket_add(),
+    pocket_add(consumer_key = "dasidadw", access_token = POCKET_TEST_ACCESS_TOKEN),
     regexp = "Argument 'add_urls' is missing.",
     class = "usethis_error"
   )
-})
-
-# add-9eee6a-POST.R
-test_that("invalid url causes warning that it could not been added", {
-    expect_warning(
-      pocket_add(
-        consumer_key = "dasidadw",
-        access_token = POCKET_TEST_ACCESS_TOKEN,
-        add_urls = "xAsdfcm13413"
-      ),
-      regexp = "The following URL has not been successfully added: xAsdfcm13413. Hint: URLs need to begin with 'http://' or 'https://'."
-    )
 })
 
 # send-fae745-POST.json

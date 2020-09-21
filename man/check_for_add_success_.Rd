@@ -4,10 +4,14 @@
 \alias{check_for_add_success_}
 \title{check_for_add_success_}
 \usage{
-check_for_add_success_(urls)
+check_for_add_success_(urls, consumer_key, access_token)
 }
 \arguments{
 \item{urls}{Character vector containing URLs to be checked.}
+
+\item{consumer_key}{Character string. Your Pocket consumer key.}
+
+\item{access_token}{Character string. Your Pocket request token.}
 }
 \value{
 Returns messages of success and/or failure of the URLs wished to be added to Pocket.

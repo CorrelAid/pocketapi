@@ -37,7 +37,7 @@ pocket_add <- function(add_urls,
     )
 
     if (success == TRUE) {
-    check_for_add_success_(add_urls)
+      check_for_add_success_(add_urls, consumer_key, access_token)
     }
 
   return(invisible(res))
@@ -47,11 +47,13 @@ pocket_add <- function(add_urls,
 #' check_for_add_success_
 #' @description Check whether all URLs were successfully added to Pocket by \code{pocket_add()}.
 #' @param urls Character vector containing URLs to be checked.
+#' @param consumer_key Character string. Your Pocket consumer key.
+#' @param access_token Character string. Your Pocket request token.
 #' @return Returns messages of success and/or failure of the URLs wished to be added to Pocket.
 #' @keywords internal
-check_for_add_success_ <- function(urls) {
+check_for_add_success_ <- function(urls, consumer_key, access_token) {
 
-  pocket_content <- pocketapi::pocket_get()
+  pocket_content <- pocketapi::pocket_get(consumer_key  = consumer_key, access_token = access_token)
 
   checked <- urls %in% pocket_content$given_url
 
