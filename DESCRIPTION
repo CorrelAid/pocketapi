@@ -16,9 +16,15 @@ Imports:
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+BugReports: https://github.com/CorrelAid/pocketapi//issues
+URL: https://github.com/CorrelAid/pocketapi/
 RoxygenNote: 7.1.1
 Suggests: 
     testthat,
     mockery,
     covr,
-    httptest
+    httptest,
+    knitr,
+    rmarkdown,
+	ggplot2
+VignetteBuilder: knitr

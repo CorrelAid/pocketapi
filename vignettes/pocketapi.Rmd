@@ -1,0 +1,283 @@
+---
+title: "Introduction to {pocketapi}"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to pocketapi}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteDepends{ggplot2}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r, include=FALSE}
+library(httptest)
+start_vignette("introduction_to_pocketapi")
+```
+
+The website [Pocket](www.getpocket.com) is a well-known tool for storing things you find on the internet - in case you want to access them later. Be it a news article, a video on YouTube, an interesting Tweet or just any other URL that might prove useful. In short: Pocket is a tool that contributes to organising oneself. Pocket also offers an API whereby you can basically execute all actions that you can do when using Pocket in your web browser. This is where `pocketapi` comes into play. We have created a R wrapper for Pocket's API that allows you to organise, retrieve and change your items stored in your Pocket account through some convenient R functions. In the following, we explain how to connect to the API via `pocketapi`, how the key functions work and how the workflow looks like.
+
+## Connecting to the API / Authentication
+
+### Create a Pocket Application
+You need to create a Pocket *application* in  Pocket's developer portal to access your Pocket data. Don't worry: this app will only be visible to you and only serves the purpose of acquiring the credentials for `pocketapi`. 
+
+1. Log in to your Pocket account and go to [https://getpocket.com/developer/apps/new](https://getpocket.com/developer/apps/new).
+2. Click "Create New Application". You'll be presented with a form. Choose a sensible application *name* and a *description*.
+3. Give your app *permissions*: Depending on the permissions of your app, you'll be able to use all or just a subset of the `pocketapi` functions:
+
+| `pocketapi` function           | what it does                       | needed permission |
+| ------------------------------ | ---------------------------------- | ----------------- |
+| `pocket_get`                   | get data frame of all your pockets | Retrieve          |
+| all other `pocket_*` functions | add new Pocket entries             | Modify            |
+
+4. Check any *platform* for your app - this does not really matter but you need to check at least one box. 
+5. Accept the *terms of service* and click "Create Application".
+
+### Get consumer key and token
+`Pocketapi` uses the *OAuth2* flow provided by the [Pocket Authentication API](https://getpocket.com/developer/docs/authentication) to get an access token for your App. Because Pocket does not closely follow the *OAuth* standard, we are not able to provide as smooth an experience as other packages do (e.g. [googlesheets4](https://github.com/tidyverse/googlesheets4)). Instead, the user has to follow the following instructions **once** to obtain an access token:
+
+1. Request a request token:
+`req_token <- get_request_token(consumer_key)`
+
+2. Authorize your app by entering the URL created by `create_authorize_url` **in your browser**:
+
+```r
+create_authorize_url(req_token)
+``` 
+This step is critical: **Even if you have authorized your app before** and you want to get a new access token, you need to do the authorization in your browser again. Otherwise, the request token will not be authorized to generate an access token!
+
+3. Get access token using the now authorized request token:
+
+```r
+access_token <- get_access_token(consumer_key, request_token)
+```
+**Important**: Never make your `consumer_key` and `access_token` publicly available -- or anyone will be able to access your Pocket! 
+
+### Add the consumer key and access token to your environment
+It is common practice to set API keys in your R environment file so that every time you start R the key is loaded.
+
+All `pocketapi` functions access your `consumer_key` and `access_token` automatically by executing `Sys.getenv("POCKET_CONSUMER_KEY")` respectively `Sys.getenv("POCKET_ACCESS_TOKEN")`. Alternatively, you can provide an explicit definition of your `consumer_key` and `access_token` with each function call.
+
+In order to add your key to your environment file, you can use the function `edit_r_environ` from the `usethis` package:
+
+```r 
+usethis::edit_r_environ()
+```
+
+This will open your `.Renviron` file in the RStudio editor. Now, you can add the following lines to it:
+
+```
+POCKET_CONSUMER_KEY="yourkeygoeshere"
+POCKET_ACCESS_TOKEN="youraccesstokengoeshere"
+```
+Save the file and restart R for the changes to take effect.
+
+If your `.Renviron` lives at a non-conventional place, you can also edit it manually using RStudio or your favorite text editor. 
+
+If you don't want to clutter your `.Renviron` file, you can also use an `.env` file in your project directory together with the [`dotenv`](https://github.com/gaborcsardi/dotenv) package. In this case, make sure to never share your `.env` file. 
+
+
+## The main functions of `pocketapi`
+
+`Pocketapi` offers seven functions to interact with items in your Pocket account. They can be grouped into three general buckets:
+
+1. Adding items to your Pocket account: `pocket_add()`
+2. Retrieving items from your Pocket account: `pocket_get()`
+3. Modifying items that already exist in your Pocket account: `pocket_archive()`, `pocket_delete()`, `pocket_favorite()`, `pocket_unfavorite()`, `pocket_tag()`
+
+If you create an API token for a new Pocket app, you need to decide which permissions this app should have. The Pocket website offers three dimensions of permissions which match the bucket structure mentioned above. If you do not grant a specific permission to your app, it will not be possible to execute the corresponding functions in R. For instance, if you do not grant your app the permission to "modify", it will not be possible to archive, delete and favorite/unfavorite items as well as modifying the tags associated with your items.
+
+If you want to use the "modify" functions, you should also grant the app the permission to "retrieve" items: All "modify" functions are based on Pocket's internal item IDs, which you can only know when you retrieve the data first.
+
+## Getting data from Pocket into R
+
+The main function to access Pocket data from R is `pocket_get()`. You can assign the output of the function to a new object to obtain a data frame where every row represents an object saved in Pocket. The default settings for `pocket_get()` are very broad, but it can be adjusted by using different arguments in the function.
+
+### Input for the `pocket_get()` function
+
+The main arguments of `pocket_get()` are also explained in the function's help file, but below you find a quick overview of the main function arguments for adjusting which content is retrieved from Pocket.
+
+* **favorite** allows to filter on favorited items (`favorite = TRUE`) or on unfavorited items (`favorite = FALSE`). Using the default value (`favorite = NULL`) means that items are retrieved regardless if they are favorited or not.
+* **item_type** filters based on the format of the Pocket content, allowing to filter on "article", "image" or "video". This format classification is done automatically by Pocket and cannot be modified (and there are some instances of misclassification). Keeping the default (`item_type = NULL`) retrieves all items regardless of type.
+* **tag** selects only the items that have a certain tag, also making it possible to filter by any untagged items. At the moment, only one tag can be used for filtering at the same time.
+* **state** can select items depending on their reading status. It's possible to retrieve only items that have not yet been read and are still in the Pocket queue (`state = "unread"`) or to filter on items that are already read and archived (`state = "archive"`). By default, the function returns *all* items (`state = "all"`), regardless whether they are read or unread. Depending on your goals, you might prefer another option besides this default.
+
+The function arguments "consumer_key" and "access_token" are the mandatory account credentials for the API. Please see the previous section for an explanation how to set up your account.
+
+By default, the Pocket API has a limit of 5000 items per API call. This means that the output of `pocket_get()` is a data frame with up to 5000 rows, even if there might actually be more items in your Pocket. If you have more items saved in Pocket, you may use some tricks to combine multiple API calls to get a more complete picture (e.g., using the "state" parameter or playing around with favorited/tagged items), but it may not always be possible to retrieve all items if you have an extremely high number of items saved in your Pocket account.
+
+Like many other APIs, Pocket allows only a certain number of API calls per hour ([find details here](https://getpocket.com/developer/docs/rate-limits)), but usually this limit should not be an issue for `pocket_get()`. Note that *all* API calls, including adding or modifying Pocket items, count towards this hourly limit.
+
+### Output of the pocket_get() function
+
+`pocket_get()` returns a data frame where each row is an item that has been saved in Pocket. For each item, the following information is saved:
+
+* **item_id** and **resolved_id**: internal Pocket item identifiers. If you want to modify an item (e.g. via `pocket_archive()` or `pocket_delete()`), you need to specify the *item_id* as an input for this function. 
+* **given_url**: the web address of the item that has been saved.
+* **given_title** and **resolved_title**: the title of the item. "given_title" is the title that was saved along with the item (but can be blank), whereas "resolved_title" is coming from Pocket's attempt to parse it from the website (which is often more complete).
+* **favorite**: logical variable, indicating `TRUE` if an item is favorited.
+* **status**: numeric variable with three possible values: `0` if the item is unread, `1` if the item is archived, `2` if the item is about to be deleted.
+* **is_article**: logical variable, `TRUE` if Pocket has detected the item to be an article (and not an image or a video). The classification is provided by Pocket and not always 100 percent precise.
+* **has_image** and **has_video**: numeric variable, with three possible values: `0` if the item does not contain any image/video, `1` if the item *contains* an image/video, `2` if the item *is* an image/video.
+* **word_count**: numeric variable, indicating the number of words in the item.
+* **tags**: the user-defined tags associated with each item. If an item has several tags, they are separated via comma (e.g. "tag 1,tag 2").
+* **authors**: information about the author of the item (generated by Pocket via parsing the website), consisting for each item of a list with four elements: "item_id" (should be identical to the information from the variable with the same name mentioned above), "author_id" (an identifier created by Pocket), "name" (the author's name in plain text) and "url" (the web address of the author at the website, usually showing all posts/articles written by the same author).
+* **images** and **image**: **image** contains some identifier for the image. **images** is a list with seven elements: "item_id" (should be identical to the information from the variable with the same name mentioned above), "image_id", "src" (the images' web address), "width" and "height" (supposedly showing the image's dimensions, but often mistakenly displaying "0" as a value even if the picture was larger than 0x0 pixels), "credit" (the person/organization credited for the picture, parsed by Pocket) and "caption" (the picture's caption as parsed by Pocket).
+
+If you need a more technical description of the data that is returned by the Pocket API, the [overview in the developer documentation](https://getpocket.com/developer/docs/v3/retrieve) might help.
+
+### Applied example: obtaining data via `pocket_get()` and using it
+
+The following applied example illustrates how to extract data from Pocket via `pocket_get()` and use it thereafter in R. Please note that the example assumes that you have already connected a new Pocket application in your developer settings, created the necessary credentials and saved them in your `.renviron` file. All these steps are explained in the previous sections of this vignette.
+
+In our first code snippet, we call `pocket_get()`, keeping all options to the defaults, and assign its result to a new object `pocket_items`. Technically, `state = "all"` is also the default, but we specify it to make it easier to understand that we get data for both read *and* unread items.
+
+```{r}
+library(pocketapi)
+
+pocket_items <- pocket_get(state = "all")
+```
+
+The resulting object `pocket_items` is now part of our R environment and can be used just like any standard data frame from other sources. It's a `data.frame` / `tibble`, with the latter allowing it to be integrated nicely into workflows based on the `tidyverse` packages ^[For more information about the `tibble` class, [see here](https://tibble.tidyverse.org). We can also see that we have `r nrow(pocket_items)` rows in our data frame, one for each item saved in Pocket. Tabulating the "status" variable shows us the reading status: There are `r nrow(pocket_items[pocket_items$status == 0,])` items which are unread (`status == 0`) and `r nrow(pocket_items[pocket_items$status == 1,])` items which that are archived (`status == 1`). (Note: The data is coming from an account that has been set up specifically for the development of this package. It's very likely that "real" users have many more items in their Pocket accounts.)
+
+```{r}
+class(pocket_items)
+
+nrow(pocket_items)
+
+table(pocket_items$status) # reading status
+```
+
+The data can be used nicely as input for other R functions. In the code example below, we first show how the data is used as input for `tidyverse` packages: We use the `dplyr` package to calculate the mean and the standard deviation of the number of words per item, separately for unread and archived items. Then, we demonstrate how the data is used in a base R function - in this case, a t-test that allows us to see that there is no significant difference in the length of unread vs. archived articles.
+
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
+
+# quick re-code: new "reading_status" variable with labels that are intuitive to understand
+pocket_items$reading_status <- recode(pocket_items$status, `0` = "unread", `1` = "archived")
+
+# using dplyr functions on the data: grouping the data and then summarizing it
+pocket_items %>%
+  group_by(reading_status) %>%
+  summarise(word_count_avg = mean(word_count),
+            word_count_sd = sd(word_count),
+            base_group = n())
+
+# using base-R functions on the data: t-test
+t.test(word_count ~ reading_status, data = pocket_items)
+```
+
+Of course, the data can also serve as input for plotting functions. Below, we use the `ggplot2` package to show the distribution of the number of words per item for both unread and archived articles. As already shown in the t-test, the mean for both groups is very similar and the distributions largely overlap, but it seems that the distribution of the unread articles has slightly wider tails.
+
+```{r, fig.width = 6}
+library(ggplot2)
+
+ggplot(data = pocket_items) + 
+  geom_density(aes(x = word_count, group = reading_status, fill = reading_status), alpha = 0.25) +
+  labs(title = "Article Length of Read / Unread Items in Pocket",
+       x = "Word Count",
+       y = "Density", 
+       fill = "Reading Status",
+       caption = "Data: Articles from an example account.
+       \nn=20 unread and n=33 read/archived articles") + 
+  theme_minimal() + 
+  theme(legend.position = "top")
+```
+
+## Getting content from R into Pocket
+
+With the function `pocket_add()`, `{pocketapi}` provides a convenient way of adding new links/items to your Pocket account. The function takes a character vector URLs as compulsory input; it will add these URLs to your account. Additionally, you can specify a variety of arguments. There are two main arguments: `tags` allows you to add tags to the items you want to add. *Attention: The tags specified in `tags` will be added to all elements in the vector!* The argument `success` (default: `TRUE`) outputs success or failure messages for each element (in order to use this argument, your App needs the rights for the GET endpoint, for it uses `pocket_get()` in the background). 
+
+Here is an example of how this works:
+
+```{r, warning=FALSE, message=FALSE}
+
+new_urls <- c("https://www.correlaid.org/blog", "https://correlaid.org/about")
+
+pocketapi::pocket_add(add_urls = new_urls, success = FALSE, tags = c("data4good", "correlaid"))
+```
+
+Before adding items using `pocket_add()`, it is crucial to beware of two things, since the Pocket API sometimes behaves oddly/unpredictably, especially when it comes to adding items:
+
+1. The API only accepts URLs that start with *http://* or *https://*; those starting with only *www.* will most likely *not* be added. 
+
+2. In some cases it might be that the URL, once it has been successfully added, is being changed from *https* to *http* internally. If you use the `success` argument of `pocket_add()`, this might lead to false failure messages (the URL will be successfully added, but the function cannot detect it due to the change in the URL).
+
+For further information on `pocket_add()` see the function's documentation.
+
+## Manipulating content in Pocket from within R
+
+The `pocketapi` package also provides a range of functions for manipulating the items in your Pocket. These are:
+
+- `pocket_archive()`
+- `pocket_delete()`
+- `pocket_favorite()`
+- `pocket_unfavorite()`
+- `pocket_tag()`
+
+They usually do not need a lot of arguments, the most important one being the `item_ids`. Pocket assigns a unique ID to each item in your Pocket. You can retrive the IDs by using `pocket_get()`. The functions `pocket_archive`, `pocket_delete`, `pocket_unfavorite` and `pocket_favorite` only need the `item_ids` argument (which can be a single one or a vector). They perform the respective action on these items (e.g., delete or unfavorite them). 
+
+```{r, eval=FALSE, warning=FALSE, message=FALSE}
+
+# First perform pocket_get() to receive a data frame containing your items, including the items' IDs
+
+pocketapi::pocket_delete(item_ids = c("242234", "694834"))
+
+```
+
+`pocket_tag()` is slightly more complex since it can perform a range of actions on the specified items. These include: `tags_add`, `tags_remove`, `tags_replace`, `tags_clear`, `tag_rename`, and `tag_delete`. In addition to the `item_ids` argument, this function also needs one of six actions to be performed on the items. You can check out [Pocket's API documentation](https://getpocket.com/developer/docs/v3/modify#action_tags_add) for more info.
+
+- Two arguments, `tag_delete` and `tag_rename` do not need `item_ids` since they  *change all tags present in your Pocket list* (delete them or rename them, respectively). They need the `tags` argument instead where you either specify the tags to be deleted or the (one!) tag to be renamed (specifying the old and the new name). 
+
+- The action `tags_clear`, in turn, does not need `tags`, since it clears the items of `item_id` from *all* tags. 
+
+- `tags_add` and `tags_remove` need both the `tags` and the `item_ids` arguments. They add (or remove) the tags specified in `tags` from the respective items.  
+
+- `tags_replace` also needs `tags` and `item_ids`. However, it is used to *replace all tags of the item(s) with the newly specified* `tags`.  
+
+Here are a few examples on how to manipulate your items in Pocket:
+
+```{r, eval=FALSE, warning=FALSE, message=FALSE}
+
+# Adds four new tags to two items
+pocketapi::pocket_tag(action_name = "tags_add",
+                      item_ids = c("242234", "694834"), 
+                      tags = c("boring", "done_reading", "newspaper", "german"))
+
+# Note: No tags needed, affects all items with tag "german"
+pocketapi::pocket_tag(action_name = "tag_delete",
+                      tags = "german")
+
+# Renames the tag "newspaper" into "politics" for all items
+pocketapi::pocket_tag(action_name = "tag_rename",
+                      tags = c("newspaper", "politics"))
+
+# Removes the tag "boring" from the two items
+pocketapi::pocket_tag(action_name = "tags_remove",
+                      item_ids = c("242234", "694834"), 
+                      tags = "boring")
+
+# Replaces all existing tags with these three new ones 
+pocketapi::pocket_tag(action_name = "tags_replace",
+                      item_ids = c("242234", "694834"), 
+                      tags = c("interesting", "economics", "longread"))
+
+# Clears the two items from all tags we have assigned previously
+pocketapi::pocket_tag(action_name = "tags_clear",
+                      item_ids = c("242234", "694834"))
+
+
+```
+
+
+If you have any questions remaining regarding Pocket's API, refer to [its documentation](https://getpocket.com/developer/docs/overview).
+
+```{r, include=FALSE}
+end_vignette()
+```

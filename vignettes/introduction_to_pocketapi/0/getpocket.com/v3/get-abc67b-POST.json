@@ -1,0 +1,2773 @@
+{
+    "status": 1,
+    "complete": 1,
+    "list": {
+        "3045557601": {
+            "item_id": "3045557601",
+            "resolved_id": "3045557601",
+            "given_url": "https://www.iapb.org/news/the-effectiveness-of-glasses-in-rural-burkina-faso/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594475397",
+            "time_updated": "1594475401",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 0,
+            "resolved_title": "The Effectiveness of Glasses in Rural Burkina Faso",
+            "resolved_url": "https://www.iapb.org/news/the-effectiveness-of-glasses-in-rural-burkina-faso/",
+            "excerpt": "What are people in rural Burkina Faso willing to pay for OneDollarGlasses? This study sheds light on the potential to distribute glasses through the market in a poor rural context. There are millions of people around the world in need of glasses but cannot afford them.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "598",
+            "lang": "en",
+            "time_to_read": 3,
+            "top_image_url": "https://www.iapb.org/wp-content/uploads/Wearing-OneDollarGlasses-in-Burkina-Faso.jpg",
+            "authors": {
+                "136789664": {
+                    "item_id": "3045557601",
+                    "author_id": "136789664",
+                    "name": "Martin Aufmuth",
+                    "url": "https://www.iapb.org/author/martin/"
+                }
+            },
+            "image": {
+                "item_id": "3045557601",
+                "src": "https://www.iapb.org/wp-content/uploads/Wearing-OneDollarGlasses-in-Burkina-Faso.jpg",
+                "width": "900",
+                "height": "507"
+            },
+            "images": {
+                "1": {
+                    "item_id": "3045557601",
+                    "image_id": "1",
+                    "src": "https://www.iapb.org/wp-content/uploads/Wearing-OneDollarGlasses-in-Burkina-Faso.jpg",
+                    "width": "900",
+                    "height": "507",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "listen_duration_estimate": 231
+        },
+        "2818700043": {
+            "item_id": "2818700043",
+            "resolved_id": "2818700043",
+            "given_url": "https://www.r-bloggers.com/why-i-dont-use-the-tidyverse/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594475391",
+            "time_updated": "1594475391",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 1,
+            "resolved_title": "Why I don’t use the Tidyverse",
+            "resolved_url": "https://www.r-bloggers.com/why-i-dont-use-the-tidyverse/",
+            "excerpt": "In this post, I explain what the tidyverse is and why I resist using it, so read on! Ok, so this post is going to be controversial, I am fully aware of that.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "1021",
+            "lang": "en",
+            "time_to_read": 5,
+            "amp_url": "https://www.r-bloggers.com/why-i-dont-use-the-tidyverse/amp/",
+            "top_image_url": "http://blog.ephorie.de/wp-content/uploads/2019/09/white-male-1856171_1280-e1567327552167-250x300.jpg",
+            "authors": {
+                "97793862": {
+                    "item_id": "2818700043",
+                    "author_id": "97793862",
+                    "name": "Learning Machines",
+                    "url": "https://www.r-bloggers.com/author/learning-machines/"
+                }
+            },
+            "domain_metadata": {
+                "name": "R-bloggers",
+                "logo": "https://logo.clearbit.com/r-bloggers.com?size=800",
+                "greyscale_logo": "https://logo.clearbit.com/r-bloggers.com?size=800&greyscale=true"
+            },
+            "listen_duration_estimate": 395
+        },
+        "1319707438": {
+            "item_id": "1319707438",
+            "resolved_id": "1319707438",
+            "given_url": "https://serialmentor.com/blog/2016/6/13/reading-and-combining-many-tidy-data-files-in-R",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594475386",
+            "time_updated": "1594475386",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 2,
+            "resolved_title": "Reading and combining many tidy data files in R",
+            "resolved_url": "http://serialmentor.com/blog/2016/6/13/reading-and-combining-many-tidy-data-files-in-R",
+            "excerpt": "Everybody who is familiar with the R libraries for processing of tidy data, such as dplyr and ggplot, knows how powerful they are and how much one can get done with just a few lines of R code.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "758",
+            "lang": "en",
+            "time_to_read": 3,
+            "listen_duration_estimate": 293
+        },
+        "731318339": {
+            "item_id": "731318339",
+            "resolved_id": "731318339",
+            "given_url": "https://serialmentor.com/blog/2014/10/4/r-markdown-the-easiest-and-most-elegant-approach-to-writing-about-data-analysis-with-r",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594475380",
+            "time_updated": "1594475380",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 3,
+            "resolved_title": "",
+            "resolved_url": "http://serialmentor.com/blog/2014/10/4/r-markdown-the-easiest-and-most-elegant-approach-to-writing-about-data-analysis-with-r/",
+            "excerpt": "",
+            "is_article": "0",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "0",
+            "lang": "en",
+            "listen_duration_estimate": 0
+        },
+        "2957816422": {
+            "item_id": "2957816422",
+            "resolved_id": "2957816422",
+            "given_url": "https://rviews.rstudio.com/2020/04/21/the-case-for-tidymodels/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594475374",
+            "time_updated": "1594475374",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 4,
+            "resolved_title": "The Case for tidymodels",
+            "resolved_url": "https://rviews.rstudio.com/2020/04/21/the-case-for-tidymodels/",
+            "excerpt": "If you are a data scientist with a built-out set of modeling tools that you know well, and which are almost always adequate for getting your work done, it is probably difficult for you to imagine what would induce you to give them up.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "1200",
+            "lang": "en",
+            "time_to_read": 5,
+            "authors": {
+                "107568": {
+                    "item_id": "2957816422",
+                    "author_id": "107568",
+                    "name": "Joseph Rickert",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "2957816422",
+                "src": "https://rviews.rstudio.com/2020/04/21/the-case-for-tidymodels/tidymodels.png",
+                "width": "400",
+                "height": "200"
+            },
+            "images": {
+                "1": {
+                    "item_id": "2957816422",
+                    "image_id": "1",
+                    "src": "https://rviews.rstudio.com/2020/04/21/the-case-for-tidymodels/tidymodels.png",
+                    "width": "400",
+                    "height": "200",
+                    "credit": "",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "2957816422",
+                    "image_id": "2",
+                    "src": "https://rviews.rstudio.com/2020/04/21/the-case-for-tidymodels/resampling.svg",
+                    "width": "800",
+                    "height": "600",
+                    "credit": "",
+                    "caption": ""
+                },
+                "3": {
+                    "item_id": "2957816422",
+                    "image_id": "3",
+                    "src": "https://rviews.rstudio.com/2020/04/21/the-case-for-tidymodels/cv.png",
+                    "width": "600",
+                    "height": "400",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "listen_duration_estimate": 465
+        },
+        "2811609692": {
+            "item_id": "2811609692",
+            "resolved_id": "2811609692",
+            "given_url": "https://blog.r-hub.io/2019/12/03/readmes/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594475368",
+            "time_updated": "1594475368",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 5,
+            "resolved_title": "The Rt of good package READMEs",
+            "resolved_url": "https://blog.r-hub.io/2019/12/03/readmes/",
+            "excerpt": "A recent topic of the Write The Docs’ great newsletter was READMEs. It read “As they’re often the first thing people see about a code project, READMEs are pretty important to get right.”.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "2519",
+            "lang": "en",
+            "time_to_read": 11,
+            "top_image_url": "https://blog.r-hub.io/rhub-square-white.png",
+            "image": {
+                "item_id": "2811609692",
+                "src": "https://blog.r-hub.io/post/2019-12-03-readmes_files/figure-html/nolinesplot-1.png",
+                "width": "672",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "2811609692",
+                    "image_id": "1",
+                    "src": "https://blog.r-hub.io/post/2019-12-03-readmes_files/figure-html/nolinesplot-1.png",
+                    "width": "672",
+                    "height": "0",
+                    "credit": "",
+                    "caption": "Figure 1: Dot plot of the number of lines in READMEs"
+                }
+            },
+            "listen_duration_estimate": 975
+        },
+        "2979426605": {
+            "item_id": "2979426605",
+            "resolved_id": "2979426605",
+            "given_url": "https://www.tidyverse.org/blog/2020/05/googlesheets4-0-2-0/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594475362",
+            "time_updated": "1594475362",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 6,
+            "resolved_title": "googlesheets4 0.2.0",
+            "resolved_url": "https://www.tidyverse.org/blog/2020/05/googlesheets4-0-2-0/",
+            "excerpt": "googlesheets4 is a package to work with Google Sheets from R. Although version 0.1.0 debuted on CRAN in late 2019, I’ve waited to blog about it until I considered googlesheet4 a replacement for an older package called googlesheets. That day is here! In particular, googlesheets 0.2.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "1893",
+            "lang": "en",
+            "time_to_read": 9,
+            "top_image_url": "https://www.tidyverse.org/blog/2020/05/googlesheets4-0-2-0/thumbnail-sq.jpg",
+            "authors": {
+                "133784769": {
+                    "item_id": "2979426605",
+                    "author_id": "133784769",
+                    "name": "Stephane YAICH",
+                    "url": "https://unsplash.com/photos/ufxd6aU0w9U"
+                }
+            },
+            "image": {
+                "item_id": "2979426605",
+                "src": "https://www.tidyverse.org/blog/2020/05/googlesheets4-0-2-0/append-formula-sparkline.png",
+                "width": "40",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "2979426605",
+                    "image_id": "1",
+                    "src": "https://www.tidyverse.org/blog/2020/05/googlesheets4-0-2-0/append-formula-sparkline.png",
+                    "width": "40",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "listen_duration_estimate": 733
+        },
+        "2974142598": {
+            "item_id": "2974142598",
+            "resolved_id": "2974142598",
+            "given_url": "https://neonira.github.io/rdoc1",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594475356",
+            "time_updated": "1594475356",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 7,
+            "resolved_title": "Still hand-crafting your Rdoc files?",
+            "resolved_url": "https://neonira.github.io/rdoc1",
+            "excerpt": "If your still hand-crafting your R documentation files, then you face a time consuming activity. Trying to foresee time needed to get a documentation to an expected quality level stays a real challenge.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "595",
+            "lang": "en",
+            "time_to_read": 3,
+            "authors": {
+                "98535660": {
+                    "item_id": "2974142598",
+                    "author_id": "98535660",
+                    "name": "Neonira",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "2974142598",
+                "src": "https://neonira.github.io/images/man-head.png",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "2974142598",
+                    "image_id": "1",
+                    "src": "https://neonira.github.io/images/man-head.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "RStudio",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "2974142598",
+                    "image_id": "2",
+                    "src": "https://neonira.github.io/images/process-doc.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "wyz.code.rdoc",
+                    "caption": ""
+                },
+                "3": {
+                    "item_id": "2974142598",
+                    "image_id": "3",
+                    "src": "https://neonira.github.io/images/lambda-rdoc.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "wyz.code.rdoc",
+                    "caption": ""
+                }
+            },
+            "listen_duration_estimate": 230
+        },
+        "2984670483": {
+            "item_id": "2984670483",
+            "resolved_id": "2984670483",
+            "given_url": "https://www.tidyverse.org/blog/2020/05/updates-to-ragg-and-systemfonts/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594475350",
+            "time_updated": "1594475350",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 8,
+            "resolved_title": "Updates to ragg and systemfonts",
+            "resolved_url": "https://www.tidyverse.org/blog/2020/05/updates-to-ragg-and-systemfonts/",
+            "excerpt": "We’re thrilled to announce the new releases of ragg and systemfonts. ragg is a package that provides a modern set of raster devices as alternatives to the ones you know from the grDevices package (e.g. png()).",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "1581",
+            "lang": "en",
+            "time_to_read": 7,
+            "top_image_url": "https://www.tidyverse.org/blog/2020/05/updates-to-ragg-and-systemfonts/updates-to-ragg-and-systemfonts-sq.jpg",
+            "authors": {
+                "134076191": {
+                    "item_id": "2984670483",
+                    "author_id": "134076191",
+                    "name": "Amador Loureiro",
+                    "url": "https://unsplash.com/photos/BVyNlchWqzs"
+                }
+            },
+            "image": {
+                "item_id": "2984670483",
+                "src": "https://d33wubrfki0l68.cloudfront.net/19a308db23e84da238a4479a227e7a8db414a6fa/0f10f/blog/2020-05-updates-to-ragg-and-systemfonts/index_files/figure-html/unnamed-chunk-2-1/png_image.png",
+                "width": "1000",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "2984670483",
+                    "image_id": "1",
+                    "src": "https://d33wubrfki0l68.cloudfront.net/19a308db23e84da238a4479a227e7a8db414a6fa/0f10f/blog/2020-05-updates-to-ragg-and-systemfonts/index_files/figure-html/unnamed-chunk-2-1/png_image.png",
+                    "width": "1000",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "2984670483",
+                    "image_id": "2",
+                    "src": "https://d33wubrfki0l68.cloudfront.net/5f36a7d217122329314c627d49414873b6978a16/59501/blog/2020-05-updates-to-ragg-and-systemfonts/index_files/figure-html/unnamed-chunk-3-1/jpeg_image.jpeg",
+                    "width": "1000",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "3": {
+                    "item_id": "2984670483",
+                    "image_id": "3",
+                    "src": "https://d33wubrfki0l68.cloudfront.net/4492aee1d3af950f91530a1ee84da48495ebf1e8/05a9b/blog/2020-05-updates-to-ragg-and-systemfonts/index_files/figure-html/unnamed-chunk-8-1/png_image.png",
+                    "width": "900",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "listen_duration_estimate": 612
+        },
+        "2946856347": {
+            "item_id": "2946856347",
+            "resolved_id": "2946856347",
+            "given_url": "https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594475345",
+            "time_updated": "1594475345",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 9,
+            "resolved_title": "usethis 1.6.0",
+            "resolved_url": "https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/",
+            "excerpt": "We’re happy to announce that usethis 1.6.0 is now available on CRAN. usethis is a package that facilitates interactive workflows for R project creation and development.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "1049",
+            "lang": "en",
+            "time_to_read": 5,
+            "top_image_url": "https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/thumbnail-sq.jpg",
+            "authors": {
+                "131919717": {
+                    "item_id": "2946856347",
+                    "author_id": "131919717",
+                    "name": "Rock'n Roll Monkey",
+                    "url": "https://unsplash.com/photos/R4WCbazrD1g"
+                }
+            },
+            "listen_duration_estimate": 406
+        },
+        "2974704792": {
+            "item_id": "2974704792",
+            "resolved_id": "2974704792",
+            "given_url": "https://www.tidyverse.org/blog/2020/05/dplyr-1-0-0-last-minute-additions/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594475337",
+            "time_updated": "1594475337",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 10,
+            "resolved_title": "dplyr 1.0.0: last minute additions",
+            "resolved_url": "https://www.tidyverse.org/blog/2020/05/dplyr-1-0-0-last-minute-additions/",
+            "excerpt": "Today I wanted to talk about two cool new features that we’ve added since I started blogging about dplyr 1.0.0: summarise() now gives you greater control over how the results are grouped, and a new set of functions make it easier to modify rows. Update: as of June 1, dplyr 1.0.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "896",
+            "lang": "en",
+            "time_to_read": 4,
+            "top_image_url": "https://www.tidyverse.org/blog/2020/05/dplyr-1-0-0-last-minute-additions/thumbnail-sq.jpg",
+            "authors": {
+                "133517542": {
+                    "item_id": "2974704792",
+                    "author_id": "133517542",
+                    "name": "Malvestida Magazine",
+                    "url": "https://unsplash.com/photos/FfbVFLAVscw"
+                }
+            },
+            "listen_duration_estimate": 347
+        },
+        "2950782228": {
+            "item_id": "2950782228",
+            "resolved_id": "2950782228",
+            "given_url": "https://towardsdatascience.com/what-you-need-to-know-about-the-new-dplyr-1-0-0-7eaaaf6d78ac",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594475331",
+            "time_updated": "1594475331",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 11,
+            "resolved_title": "The Seven Key Things You Need To Know About dplyr 1.0.0",
+            "resolved_url": "https://towardsdatascience.com/what-you-need-to-know-about-the-new-dplyr-1-0-0-7eaaaf6d78ac",
+            "excerpt": "Anyone who codes in R knows about dplyr. It's really the defining package of R, and is designed to make operations on dataframes more intuitive to those that buy into the principles of 'tidy data' (which would be most data scientists, I suspect).",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "1686",
+            "lang": "en",
+            "time_to_read": 8,
+            "top_image_url": "https://miro.medium.com/max/1200/1*yq3z66olonxyvnQFoIhuGA.png",
+            "authors": {
+                "93888985": {
+                    "item_id": "2950782228",
+                    "author_id": "93888985",
+                    "name": "Keith McNulty",
+                    "url": "https://towardsdatascience.com/@keith.mcnulty"
+                }
+            },
+            "image": {
+                "item_id": "2950782228",
+                "src": "https://miro.medium.com/fit/c/96/96/2*bJmq6LLeubVl2FYhJ3c_Hw.jpeg",
+                "width": "48",
+                "height": "48"
+            },
+            "images": {
+                "1": {
+                    "item_id": "2950782228",
+                    "image_id": "1",
+                    "src": "https://miro.medium.com/fit/c/96/96/2*bJmq6LLeubVl2FYhJ3c_Hw.jpeg",
+                    "width": "48",
+                    "height": "48",
+                    "credit": "",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "2950782228",
+                    "image_id": "2",
+                    "src": "https://miro.medium.com/max/3120/1*ncH41FSGHAYTZ1RThz251Q.png",
+                    "width": "1560",
+                    "height": "228",
+                    "credit": "",
+                    "caption": ""
+                },
+                "3": {
+                    "item_id": "2950782228",
+                    "image_id": "3",
+                    "src": "https://miro.medium.com/max/3108/1*5ykEqoSogJMs1Uclpt4ksg.png",
+                    "width": "1554",
+                    "height": "224",
+                    "credit": "",
+                    "caption": ""
+                },
+                "4": {
+                    "item_id": "2950782228",
+                    "image_id": "4",
+                    "src": "https://miro.medium.com/max/3076/1*kNkZ-A3NtuZLP7FTy3ttVg.png",
+                    "width": "1538",
+                    "height": "202",
+                    "credit": "",
+                    "caption": ""
+                },
+                "5": {
+                    "item_id": "2950782228",
+                    "image_id": "5",
+                    "src": "https://miro.medium.com/max/3080/1*iNVTRmH_6w1R_3Aoz4ZOMQ.png",
+                    "width": "1540",
+                    "height": "200",
+                    "credit": "",
+                    "caption": ""
+                },
+                "6": {
+                    "item_id": "2950782228",
+                    "image_id": "6",
+                    "src": "https://miro.medium.com/max/2964/1*s0L3hOj_rqE34iBcQ_sOSA.png",
+                    "width": "1482",
+                    "height": "510",
+                    "credit": "",
+                    "caption": ""
+                },
+                "7": {
+                    "item_id": "2950782228",
+                    "image_id": "7",
+                    "src": "https://miro.medium.com/max/2968/1*a3PROCh9qr5jb3c9b6ub-A.png",
+                    "width": "1484",
+                    "height": "352",
+                    "credit": "",
+                    "caption": ""
+                },
+                "8": {
+                    "item_id": "2950782228",
+                    "image_id": "8",
+                    "src": "https://miro.medium.com/max/2960/1*mIKJrU1SPlOzdrAUHCjUEA.png",
+                    "width": "1480",
+                    "height": "348",
+                    "credit": "",
+                    "caption": ""
+                },
+                "9": {
+                    "item_id": "2950782228",
+                    "image_id": "9",
+                    "src": "https://miro.medium.com/max/2956/1*eadwR6cN17KW3zwz-wA6Eg.png",
+                    "width": "1478",
+                    "height": "410",
+                    "credit": "",
+                    "caption": ""
+                },
+                "10": {
+                    "item_id": "2950782228",
+                    "image_id": "10",
+                    "src": "https://miro.medium.com/max/2956/1*Ar2UOt66J_6l0JpmWzI8OA.png",
+                    "width": "1478",
+                    "height": "508",
+                    "credit": "",
+                    "caption": ""
+                },
+                "11": {
+                    "item_id": "2950782228",
+                    "image_id": "11",
+                    "src": "https://miro.medium.com/max/2964/1*7PllF-Xi2DNwRPPuLyaI2A.png",
+                    "width": "1482",
+                    "height": "530",
+                    "credit": "",
+                    "caption": ""
+                },
+                "12": {
+                    "item_id": "2950782228",
+                    "image_id": "12",
+                    "src": "https://miro.medium.com/max/2928/0*UA44c0JdHzmaKSZC.png",
+                    "width": "1464",
+                    "height": "348",
+                    "credit": "",
+                    "caption": ""
+                },
+                "13": {
+                    "item_id": "2950782228",
+                    "image_id": "13",
+                    "src": "https://miro.medium.com/max/2968/0*jxwvnIPN2rOpeYMZ.png",
+                    "width": "1484",
+                    "height": "772",
+                    "credit": "",
+                    "caption": ""
+                },
+                "14": {
+                    "item_id": "2950782228",
+                    "image_id": "14",
+                    "src": "https://miro.medium.com/max/2952/0*fTWcW7vpfu4grW6i.png",
+                    "width": "1476",
+                    "height": "344",
+                    "credit": "",
+                    "caption": ""
+                },
+                "15": {
+                    "item_id": "2950782228",
+                    "image_id": "15",
+                    "src": "https://miro.medium.com/max/3084/1*kHjHp-gBbhF6UGsXUqqT-A.png",
+                    "width": "1542",
+                    "height": "286",
+                    "credit": "",
+                    "caption": ""
+                },
+                "16": {
+                    "item_id": "2950782228",
+                    "image_id": "16",
+                    "src": "https://miro.medium.com/max/2944/0*grVLo0Tk_bB0yXlW.png",
+                    "width": "1472",
+                    "height": "360",
+                    "credit": "",
+                    "caption": ""
+                },
+                "17": {
+                    "item_id": "2950782228",
+                    "image_id": "17",
+                    "src": "https://miro.medium.com/max/2928/0*O_199GWbuqWBtvBw.png",
+                    "width": "1464",
+                    "height": "348",
+                    "credit": "",
+                    "caption": ""
+                },
+                "18": {
+                    "item_id": "2950782228",
+                    "image_id": "18",
+                    "src": "https://miro.medium.com/max/2968/1*HGJgEVWV3cAOVZXuSVaheg.png",
+                    "width": "1484",
+                    "height": "468",
+                    "credit": "",
+                    "caption": ""
+                },
+                "19": {
+                    "item_id": "2950782228",
+                    "image_id": "19",
+                    "src": "https://miro.medium.com/max/2960/1*PSZJ2ifJai7llNmMH1H4xg.png",
+                    "width": "1480",
+                    "height": "624",
+                    "credit": "",
+                    "caption": ""
+                },
+                "20": {
+                    "item_id": "2950782228",
+                    "image_id": "20",
+                    "src": "https://miro.medium.com/max/2972/1*sjljklnfqNC8dcpwEuxwjw.png",
+                    "width": "1486",
+                    "height": "348",
+                    "credit": "",
+                    "caption": ""
+                },
+                "21": {
+                    "item_id": "2950782228",
+                    "image_id": "21",
+                    "src": "https://miro.medium.com/max/2968/1*B4GlHgpmPkESchcX1yKQ-g.png",
+                    "width": "1484",
+                    "height": "362",
+                    "credit": "",
+                    "caption": ""
+                },
+                "22": {
+                    "item_id": "2950782228",
+                    "image_id": "22",
+                    "src": "https://miro.medium.com/max/4428/1*yq3z66olonxyvnQFoIhuGA.png",
+                    "width": "2214",
+                    "height": "2556",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "domain_metadata": {
+                "name": "Towards Data Science",
+                "logo": "https://logo.clearbit.com/towardsdatascience.com?size=800",
+                "greyscale_logo": "https://logo.clearbit.com/towardsdatascience.com?size=800&greyscale=true"
+            },
+            "listen_duration_estimate": 653
+        },
+        "3045556812": {
+            "item_id": "3045556812",
+            "resolved_id": "3045556812",
+            "given_url": "https://docs.correlaid.org/wiki/hitchhikers-guide",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594475326",
+            "time_updated": "1594475330",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 12,
+            "resolved_title": "How We work - Hitchhiker's Guide to CorrelAid",
+            "resolved_url": "https://docs.correlaid.org/wiki/hitchhikers-guide",
+            "excerpt": "Our goal with CorrelAid is to democratize the potential of Data Science. In practice, we achieve this by supporting a network of over 1000 dedicated data analysts in Germany, by giving them the opportunity to grow, and by organizing pro-bono data science projects for civil society.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "1266",
+            "lang": "en",
+            "time_to_read": 6,
+            "top_image_url": "https://app.gitbook.com/share/space/thumbnail/-Lvg_oIb4oZtCuInS01x.png",
+            "listen_duration_estimate": 490
+        },
+        "2420563926": {
+            "item_id": "2420563926",
+            "resolved_id": "2420563926",
+            "given_url": "https://www.granvillematheson.com/post/self-portrait/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594475319",
+            "time_updated": "1594475319",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 13,
+            "resolved_title": "My Physiological Response to my PhD Defence: Acute and Chronic",
+            "resolved_url": "https://www.granvillematheson.com/post/self-portrait/",
+            "excerpt": "I recently defended my PhD thesis, and it was stressful and a lot of work (though the day itself was brilliant!). In order to take advantage of my putting myself through such a gruelling experience, I bought a heart rate and sleep tracker watch to measure just how bad things would get.",
+            "is_article": "0",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "3160",
+            "lang": "en",
+            "time_to_read": 14,
+            "authors": {
+                "67095793": {
+                    "item_id": "2420563926",
+                    "author_id": "67095793",
+                    "name": "Granville Matheson",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "2420563926",
+                "src": "https://www.granvillematheson.com/post/2018-12-10-self-portrait_files/IMG_20181210_155817.jpg",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "2420563926",
+                    "image_id": "1",
+                    "src": "https://www.granvillematheson.com/post/2018-12-10-self-portrait_files/IMG_20181210_155817.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": "The final result!"
+                },
+                "2": {
+                    "item_id": "2420563926",
+                    "image_id": "2",
+                    "src": "https://www.granvillematheson.com/post/2018-12-10-self-portrait_files/figure-html/plotprops-1.png",
+                    "width": "4050",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "3": {
+                    "item_id": "2420563926",
+                    "image_id": "3",
+                    "src": "https://www.granvillematheson.com/post/2018-12-10-self-portrait_files/figure-html/labelplot-1.png",
+                    "width": "6300",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "4": {
+                    "item_id": "2420563926",
+                    "image_id": "4",
+                    "src": "https://www.granvillematheson.com/post/2018-12-10-self-portrait_files/figure-html/waking_hr_ridges-1.png",
+                    "width": "3600",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "5": {
+                    "item_id": "2420563926",
+                    "image_id": "5",
+                    "src": "https://www.granvillematheson.com/post/2018-12-10-self-portrait_files/figure-html/sleeping_hr_ridges-1.png",
+                    "width": "3600",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "listen_duration_estimate": 1223
+        },
+        "3045543254": {
+            "item_id": "3045543254",
+            "resolved_id": "3045543254",
+            "given_url": "https://correlaid.org/blog/open-cities-ai/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594474151",
+            "time_updated": "1594474155",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 14,
+            "resolved_title": "How to do Data Science competitions as a team",
+            "resolved_url": "https://correlaid.org/blog/open-cities-ai/",
+            "excerpt": "Several members of CorrelAidX Berlin recently took part in the Open Cities AI Challenge, hosted by DrivenData and co-organized by Global Facility for Disaster Reduction and Recovery (GFDRR) of the World Bank.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "702",
+            "lang": "en",
+            "time_to_read": 3,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/headerberlin.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045543254",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 272
+        },
+        "3045543170": {
+            "item_id": "3045543170",
+            "resolved_id": "3045543170",
+            "given_url": "https://correlaid.org/blog/mdb-network/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594474144",
+            "time_updated": "1594474163",
+            "time_read": "1594474163",
+            "time_favorited": "0",
+            "sort_id": 15,
+            "resolved_title": "German Bundestag meets Twitter",
+            "resolved_url": "https://correlaid.org/blog/mdb-network/",
+            "excerpt": "Since Angela Merkel’s famous ‘Neuland’ quote in 2013, the influence and relevance of social media for society, but also for politicians, has greatly increased. Politicians use the Twitter platforms mainly to communicate with the public, the media and with each other.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "869",
+            "lang": "en",
+            "time_to_read": 4,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-mdb-network.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045543170",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "3045543170",
+                "src": "https://correlaid.org/images/blog/mdb-network.png",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "3045543170",
+                    "image_id": "1",
+                    "src": "https://correlaid.org/images/blog/mdb-network.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": "The network graph of German MPs on Twitter --"
+                }
+            },
+            "listen_duration_estimate": 336
+        },
+        "3045543117": {
+            "item_id": "3045543117",
+            "resolved_id": "3045543117",
+            "given_url": "https://correlaid.org/blog/newsanchor-vignette/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594474138",
+            "time_updated": "1594474166",
+            "time_read": "1594474166",
+            "time_favorited": "0",
+            "sort_id": 16,
+            "resolved_title": "Scrape New York Times Online Articles Using {newsanchor}",
+            "resolved_url": "https://correlaid.org/blog/newsanchor-vignette/",
+            "excerpt": "This introduction shows how you could gather meta data (such as title and URL) from the News API and use this information to download the complete article and calculate the sentiment for the text body. First, we download the meta data using the newsanchor package.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "2027",
+            "lang": "en",
+            "time_to_read": 9,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-newsanchor.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045543117",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 785
+        },
+        "2836281602": {
+            "item_id": "2836281602",
+            "resolved_id": "2836281602",
+            "given_url": "https://correlaid.org/blog/a-new-chapter/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594474132",
+            "time_updated": "1594474171",
+            "time_read": "1594474171",
+            "time_favorited": "0",
+            "sort_id": 17,
+            "resolved_title": "Data for Good in Germany – a new chapter",
+            "resolved_url": "https://correlaid.org/blog/a-new-chapter/",
+            "excerpt": "We have had a fantastic year 2019 – with so many great projects, new local chapters, events, and meet-ups. With an exciting year coming to an end it is time to look ahead.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "379",
+            "lang": "en",
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/christmas-2019.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "2836281602",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 147
+        },
+        "3045543036": {
+            "item_id": "3045543036",
+            "resolved_id": "3045543036",
+            "given_url": "https://correlaid.org/blog/1000-data-scientists/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594474127",
+            "time_updated": "1594474181",
+            "time_read": "1594474181",
+            "time_favorited": "0",
+            "sort_id": 18,
+            "resolved_title": "1000 fantastic data scientists and where to find them",
+            "resolved_url": "https://correlaid.org/blog/1000-data-scientists/",
+            "excerpt": "When we started in 2015 we were only a handful of people wondering: How many others could we bring together with the idea to use data science for the common good? Four years later we can say there are at least 1000 other data scientists. In the last year alone our network grew by almost 70%.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "230",
+            "lang": "en",
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/data-scientist-1000.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045543036",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 89
+        },
+        "2629484725": {
+            "item_id": "2629484725",
+            "resolved_id": "2629484725",
+            "given_url": "https://correlaid.org/blog/pepsi/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594474115",
+            "time_updated": "1594474183",
+            "time_read": "1594474183",
+            "time_favorited": "0",
+            "sort_id": 19,
+            "resolved_title": "Pepsi, Coca Cola und die Geschichte der Nullhypothese",
+            "resolved_url": "https://correlaid.org/blog/pepsi/",
+            "excerpt": "Wie viele gute Geschichten beginnt diese hier in einer Bar - genauer gesagt in einem Irish Pub. Die Kellnerin kommt und nimmt unsere Bestellung auf. Yannik behält die Getränkekarte anschließend einen Moment in der Hand. “Mh.",
+            "is_article": "1",
+            "is_index": "1",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "2801",
+            "lang": "de",
+            "time_to_read": 16,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-pepsi.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "2629484725",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "2629484725",
+                "src": "https://correlaid.org/images/blog/509-pepsi1.jpg",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "2629484725",
+                    "image_id": "1",
+                    "src": "https://correlaid.org/images/blog/509-pepsi1.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "2629484725",
+                    "image_id": "2",
+                    "src": "https://correlaid.org/images/blog/509-pepsi2.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "listen_duration_estimate": 1084
+        },
+        "2580167441": {
+            "item_id": "2580167441",
+            "resolved_id": "2580167441",
+            "given_url": "https://correlaid.org/blog/newsanchor/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594474101",
+            "time_updated": "1594474185",
+            "time_read": "1594474185",
+            "time_favorited": "0",
+            "sort_id": 20,
+            "resolved_title": "Introducing {newsanchor}",
+            "resolved_url": "https://correlaid.org/blog/newsanchor/",
+            "excerpt": "At CorrelAid, we developed a tool for communication scientists, journalists and data scientists alike. We proudly present: {newsanchor}, CorrelAid’s first open source R package.",
+            "is_article": "1",
+            "is_index": "1",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "631",
+            "lang": "en",
+            "time_to_read": 3,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-newsanchor.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "2580167441",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "2580167441",
+                "src": "https://correlaid.org/images/blog/509-newsanchor-embed.jpg",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "2580167441",
+                    "image_id": "1",
+                    "src": "https://correlaid.org/images/blog/509-newsanchor-embed.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": "The hex sticker of the new {newsanchor} package --"
+                },
+                "2": {
+                    "item_id": "2580167441",
+                    "image_id": "2",
+                    "src": "https://correlaid.org/images/blog/509-newsanchor-count.jpeg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": "The count of downloads of the package at the time of writing --"
+                }
+            },
+            "listen_duration_estimate": 244
+        },
+        "2447277938": {
+            "item_id": "2447277938",
+            "resolved_id": "2447277938",
+            "given_url": "https://correlaid.org/blog/meetup-mannheim/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594474090",
+            "time_updated": "1594474187",
+            "time_read": "1594474187",
+            "time_favorited": "0",
+            "sort_id": 21,
+            "resolved_title": "Das Meetup in Mannheim",
+            "resolved_url": "https://correlaid.org/blog/meetup-mannheim/",
+            "excerpt": "Meine Erfahrung als Neuling auf dem Meetup in Mannheim - und eines der besten Wochenenden seit langer Zeit. Aber der Reihe nach. Ich stehe seit circa anderthalb Jahren auf dem Mailverteiler von CorrelAid und lese regelmäßig die Blogbeiträge.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "697",
+            "lang": "de",
+            "time_to_read": 4,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/mannheim.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "2447277938",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "2447277938",
+                "src": "https://correlaid.org/images/blog/509-mannheim1.jpg",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "2447277938",
+                    "image_id": "1",
+                    "src": "https://correlaid.org/images/blog/509-mannheim1.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": "Viele Vorträge haben den Samstag gestaltet: JavaScript, Neuronale Netze, etc. --"
+                },
+                "2": {
+                    "item_id": "2447277938",
+                    "image_id": "2",
+                    "src": "https://correlaid.org/images/blog/509-mannheim2.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": "Zu Gast waren wir in der Sozialwissenschaftlichen Fakultät der Uni Mannheim. --"
+                }
+            },
+            "listen_duration_estimate": 270
+        },
+        "3045542565": {
+            "item_id": "3045542565",
+            "resolved_id": "3045542565",
+            "given_url": "https://correlaid.org/blog/data-dialog-berlin/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594474084",
+            "time_updated": "1594474188",
+            "time_read": "1594474188",
+            "time_favorited": "0",
+            "sort_id": 22,
+            "resolved_title": "Datenanalysen zu Migration und Integration",
+            "resolved_url": "https://correlaid.org/blog/data-dialog-berlin/",
+            "excerpt": "Letztes Jahr haben wir ein neues Format eingeführt: den Datendialog. Wir wollen einen Dialog zwischen der Zivilgesellschaft und der Data Science Community anstoßen und gemeinsam Ideen für Data-for-Good-Projekte entwickeln. Am 5.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "645",
+            "lang": "de",
+            "time_to_read": 4,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-datendialog-berlin.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045542565",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "3045542565",
+                "src": "https://correlaid.org/images/blog/509-datendialog1.jpg",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "3045542565",
+                    "image_id": "1",
+                    "src": "https://correlaid.org/images/blog/509-datendialog1.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "listen_duration_estimate": 250
+        },
+        "3045542491": {
+            "item_id": "3045542491",
+            "resolved_id": "3045542491",
+            "given_url": "https://correlaid.org/blog/hackathon-stifterhelfen/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594474075",
+            "time_updated": "1594474254",
+            "time_read": "1594474254",
+            "time_favorited": "0",
+            "sort_id": 23,
+            "resolved_title": "Hackathon mit Stifter-Helfen und PwC",
+            "resolved_url": "https://correlaid.org/blog/hackathon-stifterhelfen/",
+            "excerpt": "Das Potential von Datenanalyse demokratisieren. Wir haben uns Anfang des Jahres gefragt, wie wir auf dieser Mission auch Unternehmen einbeziehen können.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "486",
+            "lang": "de",
+            "time_to_read": 3,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-hackathon-stifter.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045542491",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "3045542491",
+                "src": "https://correlaid.org/images/blog/509-pwc_2.png",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "3045542491",
+                    "image_id": "1",
+                    "src": "https://correlaid.org/images/blog/509-pwc_2.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "3045542491",
+                    "image_id": "2",
+                    "src": "https://correlaid.org/images/blog/509-pwc_3.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "listen_duration_estimate": 188
+        },
+        "3045542265": {
+            "item_id": "3045542265",
+            "resolved_id": "3045542265",
+            "given_url": "https://correlaid.org/blog/markov-chains/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594474051",
+            "time_updated": "1594474191",
+            "time_read": "1594474191",
+            "time_favorited": "0",
+            "sort_id": 24,
+            "resolved_title": "Coin Tosses, Markov Chains and an Existential Crisis",
+            "resolved_url": "https://correlaid.org/blog/markov-chains/",
+            "excerpt": "While procrastinating from writing my thesis, I came across an interesting property of coin tosses (I realise how pathetic that sounds while writing it).",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "962",
+            "lang": "en",
+            "time_to_read": 4,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-markov-coin.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045542265",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "3045542265",
+                "src": "https://correlaid.org/images/blog/509-hist_bob.jpg",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "3045542265",
+                    "image_id": "1",
+                    "src": "https://correlaid.org/images/blog/509-hist_bob.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "3045542265",
+                    "image_id": "2",
+                    "src": "https://correlaid.org/images/blog/509-hist_alice.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "3": {
+                    "item_id": "3045542265",
+                    "image_id": "3",
+                    "src": "https://correlaid.org/images/blog/509-tp_bob.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "4": {
+                    "item_id": "3045542265",
+                    "image_id": "4",
+                    "src": "https://correlaid.org/images/blog/509-tp_alice.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "listen_duration_estimate": 372
+        },
+        "3045542039": {
+            "item_id": "3045542039",
+            "resolved_id": "3045542039",
+            "given_url": "https://correlaid.org/blog/data-science-books-to-read/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594474033",
+            "time_updated": "1594474252",
+            "time_read": "1594474252",
+            "time_favorited": "0",
+            "sort_id": 25,
+            "resolved_title": "Data Science is not just about Data Science",
+            "resolved_url": "https://correlaid.org/blog/data-science-books-to-read/",
+            "excerpt": "The other day I went through the list of books I have read over the last half a year. And I noticed that most popular science books on that list were somewhat related to data science – in one way or the other.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "1348",
+            "lang": "en",
+            "time_to_read": 6,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-data-science-books.jpg",
+            "authors": {
+                "2599167": {
+                    "item_id": "3045542039",
+                    "author_id": "2599167",
+                    "name": "Richard Thaler",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 522
+        },
+        "3045541956": {
+            "item_id": "3045541956",
+            "resolved_id": "3045541956",
+            "given_url": "https://correlaid.org/blog/reconstructing-cambridge-analytica/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1594474027",
+            "time_updated": "1594474031",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 26,
+            "resolved_title": "Reconstructing Cambridge Analytica’s ‘psychological warfare tool’",
+            "resolved_url": "https://correlaid.org/blog/reconstructing-cambridge-analytica/",
+            "excerpt": "Last week the story about Cambridge Analytica broke (again). The British analytics firm helped the Trump campaign to build a massive voter database to inform micro-targeting campaigns.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "2183",
+            "lang": "en",
+            "time_to_read": 10,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-cambridge-analytica.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045541956",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "3045541956",
+                "src": "https://correlaid.org/images/blog/509-trump_ad_immigrants.jpg",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "3045541956",
+                    "image_id": "1",
+                    "src": "https://correlaid.org/images/blog/509-trump_ad_immigrants.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "3045541956",
+                    "image_id": "2",
+                    "src": "https://correlaid.org/images/blog/509-trump_ad_clinton.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "listen_duration_estimate": 845
+        },
+        "3045541740": {
+            "item_id": "3045541740",
+            "resolved_id": "3045541740",
+            "given_url": "https://correlaid.org/blog/experteninterview-hans-verbeek/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594474006",
+            "time_updated": "1594474195",
+            "time_read": "1594474195",
+            "time_favorited": "0",
+            "sort_id": 27,
+            "resolved_title": "‘Es ist wichtig, quantitativ und qualitativ zu arbeiten.’",
+            "resolved_url": "https://correlaid.org/blog/experteninterview-hans-verbeek/",
+            "excerpt": "Hans Verbeek ist in Berlin stellvertretender Leiter im Berliner Büro des Instituts für Sozialforschung und Gesellschaftspolitik (ISG) und ein Datenanalyseprofi.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "582",
+            "lang": "de",
+            "time_to_read": 3,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-interview-sozialforschung.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045541740",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 225
+        },
+        "3045541682": {
+            "item_id": "3045541682",
+            "resolved_id": "3045541682",
+            "given_url": "https://correlaid.org/blog/scraping-reddit/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594474000",
+            "time_updated": "1594474193",
+            "time_read": "1594474193",
+            "time_favorited": "0",
+            "sort_id": 28,
+            "resolved_title": "Learn to scrape and mine text data",
+            "resolved_url": "https://correlaid.org/blog/scraping-reddit/",
+            "excerpt": "Inspiration for this post hit me when our editor-in-chief Yannik told me he’d like to have ”alles Kuriose” (meaning all things weird) for future blog posts. Well, challenge accepted.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "1193",
+            "lang": "en",
+            "time_to_read": 5,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-scraping-reddit.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045541682",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "3045541682",
+                "src": "https://correlaid.org/images/blog/509-reddit1.png",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "3045541682",
+                    "image_id": "1",
+                    "src": "https://correlaid.org/images/blog/509-reddit1.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "3045541682",
+                    "image_id": "2",
+                    "src": "https://correlaid.org/images/blog/509-reddit2.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "3": {
+                    "item_id": "3045541682",
+                    "image_id": "3",
+                    "src": "https://correlaid.org/images/blog/509-reddit3.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "4": {
+                    "item_id": "3045541682",
+                    "image_id": "4",
+                    "src": "https://correlaid.org/images/blog/509-reddit4.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "listen_duration_estimate": 462
+        },
+        "3045541621": {
+            "item_id": "3045541621",
+            "resolved_id": "3045541621",
+            "given_url": "https://correlaid.org/blog/understand-p-values/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473993",
+            "time_updated": "1594474197",
+            "time_read": "1594474197",
+            "time_favorited": "0",
+            "sort_id": 29,
+            "resolved_title": "About P-Values",
+            "resolved_url": "https://correlaid.org/blog/understand-p-values/",
+            "excerpt": "A p-value is the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true. The goal of this blog post is to understand what this means, and perhaps more importantly, what this doesn’t mean.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "2365",
+            "lang": "en",
+            "time_to_read": 11,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-p-values.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045541621",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "3045541621",
+                "src": "https://correlaid.org/images/blog/509-pv1.png",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "3045541621",
+                    "image_id": "1",
+                    "src": "https://correlaid.org/images/blog/509-pv1.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "3045541621",
+                    "image_id": "2",
+                    "src": "https://correlaid.org/images/blog/509-pv2.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "3": {
+                    "item_id": "3045541621",
+                    "image_id": "3",
+                    "src": "https://correlaid.org/images/blog/509-pv3.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "4": {
+                    "item_id": "3045541621",
+                    "image_id": "4",
+                    "src": "https://correlaid.org/images/blog/509-pv4.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "5": {
+                    "item_id": "3045541621",
+                    "image_id": "5",
+                    "src": "https://correlaid.org/images/blog/509-pv5.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "6": {
+                    "item_id": "3045541621",
+                    "image_id": "6",
+                    "src": "https://correlaid.org/images/blog/509-pv6.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "7": {
+                    "item_id": "3045541621",
+                    "image_id": "7",
+                    "src": "https://correlaid.org/images/blog/509-pv7.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "8": {
+                    "item_id": "3045541621",
+                    "image_id": "8",
+                    "src": "https://correlaid.org/images/blog/509-pv8.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "9": {
+                    "item_id": "3045541621",
+                    "image_id": "9",
+                    "src": "https://correlaid.org/images/blog/509-pv9.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "10": {
+                    "item_id": "3045541621",
+                    "image_id": "10",
+                    "src": "https://correlaid.org/images/blog/509-pv10.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "listen_duration_estimate": 915
+        },
+        "3045541450": {
+            "item_id": "3045541450",
+            "resolved_id": "3045541450",
+            "given_url": "https://correlaid.org/blog/blockchain-explained/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473980",
+            "time_updated": "1594474199",
+            "time_read": "1594474199",
+            "time_favorited": "0",
+            "sort_id": 30,
+            "resolved_title": "Understanding Blockchains",
+            "resolved_url": "https://correlaid.org/blog/blockchain-explained/",
+            "excerpt": "Everybody is talking about cryptocurrencies now – thanks to the hype about BitCoin. Much more interesting than whether there is a BitCoin bubble or not is the question how this technology actually works and what it is capable of.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "1573",
+            "lang": "en",
+            "time_to_read": 7,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-blockchain-explained.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045541450",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 609
+        },
+        "3045541372": {
+            "item_id": "3045541372",
+            "resolved_id": "3045541372",
+            "given_url": "https://correlaid.org/blog/big-data-und-verantwortung/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473975",
+            "time_updated": "1594474215",
+            "time_read": "1594474215",
+            "time_favorited": "0",
+            "sort_id": 31,
+            "resolved_title": "Big Data und Verantwortung",
+            "resolved_url": "https://correlaid.org/blog/big-data-und-verantwortung/",
+            "excerpt": "Die Bayreuther Dialoge der Universität Bayreuth bezeichnen sich selbst als „Zukunftsforum für Ökonomie, Philosophie und Gesellschaft“. Sie bieten den Rahmen, dass sich Interessierte aus allen Bereichen der Gesellschaft austauschen können.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "930",
+            "lang": "de",
+            "time_to_read": 5,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-bayreuth.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045541372",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 360
+        },
+        "3045541244": {
+            "item_id": "3045541244",
+            "resolved_id": "3045541244",
+            "given_url": "https://correlaid.org/blog/point-pattern-analysis/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473967",
+            "time_updated": "1594474201",
+            "time_read": "1594474201",
+            "time_favorited": "0",
+            "sort_id": 32,
+            "resolved_title": "Spatial Analysis of Airplane Accidents",
+            "resolved_url": "https://correlaid.org/blog/point-pattern-analysis/",
+            "excerpt": "Technological advances, increased safety standards and a greater importance of risk management led to a decreasing number of airplane accidents over the last decades. Despite these improved conditions, however, accidents still occur, be it due to human error, mechanical failure or further causes.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "1614",
+            "lang": "en",
+            "time_to_read": 7,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-point-pattern-analysis.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045541244",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "3045541244",
+                "src": "https://correlaid.org/images/blog/509-airplanes1.jpg",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "3045541244",
+                    "image_id": "1",
+                    "src": "https://correlaid.org/images/blog/509-airplanes1.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": "Figure 1: Accidents seem to cluster along the East Coast and in Central Florida. --"
+                },
+                "2": {
+                    "item_id": "3045541244",
+                    "image_id": "2",
+                    "src": "https://correlaid.org/images/blog/509-airplanes2.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": "Figure 2: The intensity of the point process is inhomogeneous. --"
+                },
+                "3": {
+                    "item_id": "3045541244",
+                    "image_id": "3",
+                    "src": "https://correlaid.org/images/blog/509-airplanes3.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": "Figure 3: There are several accident hotspots in Central Florida and along the eastern coastline of Florida. --"
+                },
+                "4": {
+                    "item_id": "3045541244",
+                    "image_id": "4",
+                    "src": "https://correlaid.org/images/blog/509-airplanes4.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "a",
+                    "caption": "Figure 4: From Left to Right:"
+                },
+                "5": {
+                    "item_id": "3045541244",
+                    "image_id": "5",
+                    "src": "https://correlaid.org/images/blog/509-airplanes5.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": "Figure 5: A statistically significant clustering of airplane accidents occurred only at smaller distances. --"
+                }
+            },
+            "listen_duration_estimate": 625
+        },
+        "3045541166": {
+            "item_id": "3045541166",
+            "resolved_id": "3045541166",
+            "given_url": "https://correlaid.org/blog/ist-die-afd-unterschaetzt/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473959",
+            "time_updated": "1594474247",
+            "time_read": "1594474247",
+            "time_favorited": "0",
+            "sort_id": 33,
+            "resolved_title": "Die unterschätzten Rechtspopulisten",
+            "resolved_url": "https://correlaid.org/blog/ist-die-afd-unterschaetzt/",
+            "excerpt": "Die Alternative für Deutschland (AfD) ist eine von vier Parteien, die laut Umfragen bei der Bundestagswahl drittstärkste Kraft werden können. Gerade extreme Parteien bekommen bei Wahlen jedoch oft mehr Stimmen, als es die Umfrageinstitute vorhergesagt haben.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "961",
+            "lang": "de",
+            "time_to_read": 5,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-ist-die-afd-unterschaetzt.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045541166",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "3045541166",
+                "src": "https://correlaid.org/images/blog/509-vorwahl.jpeg",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "3045541166",
+                    "image_id": "1",
+                    "src": "https://correlaid.org/images/blog/509-vorwahl.jpeg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "3045541166",
+                    "image_id": "2",
+                    "src": "https://correlaid.org/images/blog/509-exitpoll.jpeg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "listen_duration_estimate": 372
+        },
+        "3045541117": {
+            "item_id": "3045541117",
+            "resolved_id": "3045541117",
+            "given_url": "https://correlaid.org/blog/graphical-perception-political-polls-traunmueller/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473953",
+            "time_updated": "1594474204",
+            "time_read": "1594474204",
+            "time_favorited": "0",
+            "sort_id": 34,
+            "resolved_title": "Die Visualisierung von Wahlumfrageergebnissen",
+            "resolved_url": "https://correlaid.org/blog/graphical-perception-political-polls-traunmueller/",
+            "excerpt": "Wahlumfragen sind wichtige politische Informationsquellen und bedeutende Werkzeuge der politischen Selbstbeobachtung. Damit sie diesen Zweck aber auch erfüllen, kommt es darauf wie ihre Ergebnisse kommuniziert werden.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "633",
+            "lang": "de",
+            "time_to_read": 4,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-graphical-perception-political-polls.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045541117",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "3045541117",
+                "src": "https://correlaid.org/images/blog/509-blogpost-fig3.png",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "3045541117",
+                    "image_id": "1",
+                    "src": "https://correlaid.org/images/blog/509-blogpost-fig3.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": "Abbildung 1: Balkendiagramm, *Dot Plot* und Liniendiagramm im Vergleich. --"
+                }
+            },
+            "listen_duration_estimate": 245
+        },
+        "3045541016": {
+            "item_id": "3045541016",
+            "resolved_id": "3045541016",
+            "given_url": "https://correlaid.org/blog/neue-berichterstattung-umfragen/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473943",
+            "time_updated": "1594474209",
+            "time_read": "1594474209",
+            "time_favorited": "0",
+            "sort_id": 35,
+            "resolved_title": "Neue Wege in der Berichterstattung von Umfragen",
+            "resolved_url": "https://correlaid.org/blog/neue-berichterstattung-umfragen/",
+            "excerpt": "Unter dem Motto “#BTW2017inData” veröffentlichen wir im CorrelAid-Blog im August und September Perspektiven auf die Bundestagswahl aus der Wissenschaft.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "1666",
+            "lang": "de",
+            "time_to_read": 9,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-neue-berichterstattung-umfragen.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045541016",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 645
+        },
+        "3045540687": {
+            "item_id": "3045540687",
+            "resolved_id": "3045540687",
+            "given_url": "https://correlaid.org/blog/experteninterview-simon-munzert/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473916",
+            "time_updated": "1594474206",
+            "time_read": "1594474206",
+            "time_favorited": "0",
+            "sort_id": 36,
+            "resolved_title": "Archimedes, der erste Empiriker?",
+            "resolved_url": "https://correlaid.org/blog/experteninterview-simon-munzert/",
+            "excerpt": "Bitte stell dich unseren Blogleser*innen kurz vor: Wer bist du und was muss man über dich wissen? Mein Name ist Simon Munzert, ich bin Politikwissenschaftler und arbeite derzeit als wissenschaftlicher Mitarbeiter an der Humboldt-Universität zu Berlin.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "874",
+            "lang": "de",
+            "time_to_read": 5,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-expertinneninterview.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045540687",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 338
+        },
+        "3045540586": {
+            "item_id": "3045540586",
+            "resolved_id": "3045540586",
+            "given_url": "https://correlaid.org/blog/koalitionsszenarien-marc-debus/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473910",
+            "time_updated": "1594474218",
+            "time_read": "1594474218",
+            "time_favorited": "0",
+            "sort_id": 37,
+            "resolved_title": "Was kommt nach dem 24. September?",
+            "resolved_url": "https://correlaid.org/blog/koalitionsszenarien-marc-debus/",
+            "excerpt": "Der Regierungsbildungsprozess nach der am 24. September 2017 stattfindenden Bundestagswahl wirft bereits jetzt lange Schatten voraus.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "1699",
+            "lang": "de",
+            "time_to_read": 9,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-koalitionsszenarien-marc-debus.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045540586",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "3045540586",
+                "src": "https://correlaid.org/images/blog/509-graph-koalition.png",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "3045540586",
+                    "image_id": "1",
+                    "src": "https://correlaid.org/images/blog/509-graph-koalition.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": "Abbildung 1: Programmatische Positionen der deutschen Parteien auf der Grundlage ihrer Wahlprogramme 2013 und 2017 --"
+                }
+            },
+            "listen_duration_estimate": 658
+        },
+        "3045540508": {
+            "item_id": "3045540508",
+            "resolved_id": "3045540508",
+            "given_url": "https://correlaid.org/blog/happy-birthday-2017/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473903",
+            "time_updated": "1594474245",
+            "time_read": "1594474245",
+            "time_favorited": "0",
+            "sort_id": 38,
+            "resolved_title": "Zwei Jahre CorrelAid.",
+            "resolved_url": "https://correlaid.org/blog/happy-birthday-2017/",
+            "excerpt": "Heute vor zwei Jahren ist aus der Idee, ein Netzwerk von Datenanalyst*innen und -analysten zu schaffen, die mit ihren Skills Gutes tun, der Verein CorrelAid e.V. entstanden. Ich möchte an dieser Stelle die letzten 12 Monate Revue passieren lassen und meine persönlichen Highlights hervorheben.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "775",
+            "lang": "de",
+            "time_to_read": 4,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-happy-birthday-2017.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045540508",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 300
+        },
+        "3045540440": {
+            "item_id": "3045540440",
+            "resolved_id": "3045540440",
+            "given_url": "https://correlaid.org/blog/expertinneninterview-nadine-meidert/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473894",
+            "time_updated": "1594474242",
+            "time_read": "1594474242",
+            "time_favorited": "0",
+            "sort_id": 39,
+            "resolved_title": "Erste Einblicke und Netzwerkanalyse",
+            "resolved_url": "https://correlaid.org/blog/expertinneninterview-nadine-meidert/",
+            "excerpt": "Bitte stell dich unseren Blogleser*innen kurz vor: Wer bist du und was muss man über dich wissen? Ich bin Geschäftsführerin der Konvena UG (haftungsbeschränkt) und akademische Mitarbeiterin am Lehrstuhl für Politische Soziologie an der Zeppelin Universität (ZU) in Friedrichshafen.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "1082",
+            "lang": "de",
+            "time_to_read": 6,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-expertinneninterview.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045540440",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 419
+        },
+        "3045540376": {
+            "item_id": "3045540376",
+            "resolved_id": "3045540376",
+            "given_url": "https://correlaid.org/blog/update-blog/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473888",
+            "time_updated": "1594474235",
+            "time_read": "1594474235",
+            "time_favorited": "0",
+            "sort_id": 40,
+            "resolved_title": "Good Causes. Better Effects. Stories with Impact:",
+            "resolved_url": "https://correlaid.org/blog/update-blog/",
+            "excerpt": "You’re doing it right if you get frustrated: if you’re not frustrated, you’re (probably) not stretching yourself mentally.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "414",
+            "lang": "de",
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-relaunch.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045540376",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 160
+        },
+        "3045540319": {
+            "item_id": "3045540319",
+            "resolved_id": "3045540319",
+            "given_url": "https://correlaid.org/blog/data-bbq/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473882",
+            "time_updated": "1594474220",
+            "time_read": "1594474220",
+            "time_favorited": "0",
+            "sort_id": 41,
+            "resolved_title": "Bericht vom Data BBQ",
+            "resolved_url": "https://correlaid.org/blog/data-bbq/",
+            "excerpt": "Am Samstag, den 6. Mai, war CorrelAid zu Gast beim Data Viz BBQ des Data Viz Rhein Main Meetups. Die Veranstaltung fand im SAS Institute, in malerischer Lage direkt am Neckar statt, und wurde großzügig unterstützt von SAS. CorrelAid hatte 4 GB Daten von openpetition.de im Gepäck.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "207",
+            "lang": "de",
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-data-bbq.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045540319",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 80
+        },
+        "3045540225": {
+            "item_id": "3045540225",
+            "resolved_id": "3045540225",
+            "given_url": "https://correlaid.org/blog/overview-projektarbeit/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473872",
+            "time_updated": "1594474237",
+            "time_read": "1594474237",
+            "time_favorited": "0",
+            "sort_id": 42,
+            "resolved_title": "Ein Blick in unsere Projektarbeit",
+            "resolved_url": "https://correlaid.org/blog/overview-projektarbeit/",
+            "excerpt": "Über eineinhalb Jahre gibt es CorrelAid jetzt schon. Höchste Zeit für eine kurze Bestandsaufnahme, denn seitdem im Februar 2015 das Gründungsteam zusammen kam, ist viel passiert.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "716",
+            "lang": "de",
+            "time_to_read": 4,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-projektarbeit.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045540225",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 277
+        },
+        "3045540122": {
+            "item_id": "3045540122",
+            "resolved_id": "3045540122",
+            "given_url": "https://correlaid.org/blog/meetup-bonn/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473866",
+            "time_updated": "1594474229",
+            "time_read": "1594474229",
+            "time_favorited": "0",
+            "sort_id": 43,
+            "resolved_title": "Unser Data-for-Good Netzwerk traf sich in Bonn",
+            "resolved_url": "https://correlaid.org/blog/meetup-bonn/",
+            "excerpt": "Wir sind überzeugt, dass in der Arbeit mit Daten mehr Potential steckt als nur Werbung effektiver zu machen. Wir glauben, dass die Zivilgesellschaft von diesem Potential Gebrauch machen sollte. Wir möchten mit Datenanalyse Gutes tun.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "403",
+            "lang": "de",
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-meetup-bonn.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045540122",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 156
+        },
+        "3045539796": {
+            "item_id": "3045539796",
+            "resolved_id": "3045539796",
+            "given_url": "https://correlaid.org/blog/datascientist-organization/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473841",
+            "time_updated": "1594474230",
+            "time_read": "1594474230",
+            "time_favorited": "0",
+            "sort_id": 44,
+            "resolved_title": "‘A data scientist in every non-profit-organisation.’",
+            "resolved_url": "https://correlaid.org/blog/datascientist-organization/",
+            "excerpt": "Microsoft hatte einmal die Vision „A computer on every desk and in every home“. In diesem Sinne würde CorrelAids Vision lauten „A data scientist in every non-profit-organisation.“ Am Freitag den 19.02.2016 fand in Berlin der jährliche Trend- und Digitaltag für NPOs statt.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "246",
+            "lang": "de",
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-a-data-scientist.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045539796",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 95
+        },
+        "3045539725": {
+            "item_id": "3045539725",
+            "resolved_id": "3045539725",
+            "given_url": "https://correlaid.org/blog/correlaid-relevanz/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473833",
+            "time_updated": "1594474223",
+            "time_read": "1594474223",
+            "time_favorited": "0",
+            "sort_id": 45,
+            "resolved_title": "7 Gründe, warum CorrelAid relevant ist",
+            "resolved_url": "https://correlaid.org/blog/correlaid-relevanz/",
+            "excerpt": "Als ich im März 2015 auf die Idee kam, CorrelAid als Initiative zu starten, fing alles mit einer Mail mit dem Betreff „Data for Good“ an, die ich über verschiedene Verteiler schickte mit dem Ziel, Mitstreiter*innen zu finden.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "827",
+            "lang": "de",
+            "time_to_read": 5,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-correlaid-relevance.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045539725",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 320
+        },
+        "3045539644": {
+            "item_id": "3045539644",
+            "resolved_id": "3045539644",
+            "given_url": "https://correlaid.org/blog/we-are-correlaid/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473823",
+            "time_updated": "1594474232",
+            "time_read": "1594474232",
+            "time_favorited": "0",
+            "sort_id": 46,
+            "resolved_title": "#WeAreCorrelAid",
+            "resolved_url": "https://correlaid.org/blog/we-are-correlaid/",
+            "excerpt": "Berlin. Hauptstadt. Zentrum der deutschen, wenn nicht sogar der europäischen Start-Up-Szene. Und an diesem Wochenende auch Treffpunkt von etwa 25 Studierenden und Promovenden aus ganz Deutschland, die sich auch in ihrer Freizeit mit dem etwas nerdigen Thema “Datenanalyse” beschäftigen.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "1145",
+            "lang": "de",
+            "time_to_read": 6,
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-we-are-correlaid.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045539644",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 443
+        },
+        "3045539567": {
+            "item_id": "3045539567",
+            "resolved_id": "3045539567",
+            "given_url": "https://correlaid.org/blog/sexy-daten/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1594473816",
+            "time_updated": "1594474226",
+            "time_read": "1594474226",
+            "time_favorited": "0",
+            "sort_id": 47,
+            "resolved_title": "Warum Daten und Datenanalyse ein sexy Thema sind.",
+            "resolved_url": "https://correlaid.org/blog/sexy-daten/",
+            "excerpt": "“I keep saying the sexy job in the next ten years will be statisticians.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "437",
+            "lang": "de",
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-sexy-data.jpg",
+            "authors": {
+                "72262221": {
+                    "item_id": "3045539567",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 169
+        },
+        "2949467371": {
+            "item_id": "2949467371",
+            "resolved_id": "2949467371",
+            "given_url": "https://docs.correlaid.org/get-started",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1586858724",
+            "time_updated": "1586858729",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 48,
+            "resolved_title": "Get started",
+            "resolved_url": "https://docs.correlaid.org/get-started",
+            "excerpt": "How can you get started at CorrelAid? Basically, there are three ways to get involved at CorrelAid. We talk through them in this short document.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "255",
+            "lang": "en",
+            "top_image_url": "https://app.gitbook.com/share/space/thumbnail/-Lvg_oIb4oZtCuInS01x.png",
+            "listen_duration_estimate": 99
+        },
+        "2120364086": {
+            "item_id": "2120364086",
+            "resolved_id": "2120364086",
+            "given_url": "https://katherinemwood.github.io/post/testthat/",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1584187148",
+            "time_updated": "1584305451",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 49,
+            "resolved_title": "Intro to unit testing in R",
+            "resolved_url": "https://katherinemwood.github.io/post/testthat/",
+            "excerpt": "I’ve mentioned before that a great coding practice you can ingrain into your work is unit testing. The idea is simple: you write a script that automatically evaluates pieces of your code and checks it against expected behavior.",
+            "is_article": "1",
+            "is_index": "1",
+            "has_video": "0",
+            "has_image": "0",
+            "word_count": "1588",
+            "lang": "en",
+            "time_to_read": 7,
+            "tags": {
+                "rstats": {
+                    "item_id": "2120364086",
+                    "tag": "rstats"
+                }
+            },
+            "authors": {
+                "8694801": {
+                    "item_id": "2120364086",
+                    "author_id": "8694801",
+                    "name": "Katherine Wood",
+                    "url": ""
+                }
+            },
+            "listen_duration_estimate": 615
+        },
+        "1034616770": {
+            "item_id": "1034616770",
+            "resolved_id": "1034616770",
+            "given_url": "https://correlaid.org",
+            "given_title": "",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1584184378",
+            "time_updated": "1584305451",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 50,
+            "resolved_title": "CorrelAid",
+            "resolved_url": "https://correlaid.org/",
+            "excerpt": "Wir bieten innovatives Skilled-Volunteering: Wir bringen gesellschaftlich denkende Data Scientists mit sozialen Organisationen zusammen und stoßen gemeinsame Projekte an.",
+            "is_article": "0",
+            "is_index": "1",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "150",
+            "lang": "de",
+            "top_image_url": "https://correlaid.org/images/blog/thumbs-x250/509-correlaid-thumb.jpg",
+            "tags": {
+                "rstats": {
+                    "item_id": "1034616770",
+                    "tag": "rstats"
+                }
+            },
+            "authors": {
+                "72262221": {
+                    "item_id": "1034616770",
+                    "author_id": "72262221",
+                    "name": "CorrelAid e.V.",
+                    "url": ""
+                }
+            },
+            "image": {
+                "item_id": "1034616770",
+                "src": "https://correlaid.org/images/correlaid/correlaid-brand.png",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "1034616770",
+                    "image_id": "1",
+                    "src": "https://correlaid.org/images/correlaid/correlaid-brand.png",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "1034616770",
+                    "image_id": "2",
+                    "src": "https://correlaid.org/images/data-science-for-good.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "3": {
+                    "item_id": "1034616770",
+                    "image_id": "3",
+                    "src": "https://correlaid.org/images/blog/thumbs-x800/509-a-data-scientist.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "4": {
+                    "item_id": "1034616770",
+                    "image_id": "4",
+                    "src": "https://correlaid.org/images/blog/thumbs-x800/509-mannheim.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "5": {
+                    "item_id": "1034616770",
+                    "image_id": "5",
+                    "src": "https://correlaid.org/images/blog/thumbs-x800/509-datendialog-migration.jpg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "6": {
+                    "item_id": "1034616770",
+                    "image_id": "6",
+                    "src": "https://correlaid.org/images/newspapers/suedkurier.svg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "7": {
+                    "item_id": "1034616770",
+                    "image_id": "7",
+                    "src": "https://correlaid.org/images/newspapers/sueddeutsche.svg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "8": {
+                    "item_id": "1034616770",
+                    "image_id": "8",
+                    "src": "https://correlaid.org/images/newspapers/handelsblatt.svg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "9": {
+                    "item_id": "1034616770",
+                    "image_id": "9",
+                    "src": "https://correlaid.org/images/newspapers/netzpolitik.svg",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "listen_duration_estimate": 58
+        },
+        "1785361118": {
+            "item_id": "1785361118",
+            "resolved_id": "1785361118",
+            "given_url": "https://github.com/r-lib/httr",
+            "given_title": "r-lib/httr: httr: a friendly http package for R",
+            "favorite": "0",
+            "status": "0",
+            "time_added": "1554449373",
+            "time_updated": "1554449373",
+            "time_read": "0",
+            "time_favorited": "0",
+            "sort_id": 51,
+            "resolved_title": "r-lib/httr",
+            "resolved_url": "https://github.com/r-lib/httr",
+            "excerpt": "The aim of httr is to provide a wrapper for the curl package, customised to the demands of modern web APIs.  Functions for the most important http verbs: GET(), HEAD(), PATCH(), PUT(), DELETE() and POST().",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "237",
+            "lang": "en",
+            "top_image_url": "https://avatars2.githubusercontent.com/u/22618716?v=3&s=400",
+            "image": {
+                "item_id": "1785361118",
+                "src": "https://camo.githubusercontent.com/ba8688a6b8d2b23f2eba0d974e956809bd2dd2bc/68747470733a2f2f7472617669732d63692e6f72672f722d6c69622f687474722e7376673f6272616e63683d6d6173746572",
+                "width": "0",
+                "height": "0"
+            },
+            "images": {
+                "1": {
+                    "item_id": "1785361118",
+                    "image_id": "1",
+                    "src": "https://camo.githubusercontent.com/ba8688a6b8d2b23f2eba0d974e956809bd2dd2bc/68747470733a2f2f7472617669732d63692e6f72672f722d6c69622f687474722e7376673f6272616e63683d6d6173746572",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "1785361118",
+                    "image_id": "2",
+                    "src": "https://camo.githubusercontent.com/23e8ac623a2e54c5440c063aaea2963db99baacb/68747470733a2f2f696d672e736869656c64732e696f2f636f6465636f762f632f6769746875622f722d6c69622f687474722f6d61737465722e737667",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                },
+                "3": {
+                    "item_id": "1785361118",
+                    "image_id": "3",
+                    "src": "https://camo.githubusercontent.com/7746f09d0c3dd6c7ed797d16883a7ec8a5a5aa5a/687474703a2f2f7777772e722d706b672e6f72672f6261646765732f76657273696f6e2f68747472",
+                    "width": "0",
+                    "height": "0",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "domain_metadata": {
+                "name": "GitHub",
+                "logo": "https://logo.clearbit.com/github.com?size=800",
+                "greyscale_logo": "https://logo.clearbit.com/github.com?size=800&greyscale=true"
+            },
+            "listen_duration_estimate": 92
+        },
+        "2333373270": {
+            "item_id": "2333373270",
+            "resolved_id": "2333373270",
+            "given_url": "https://medium.com/@Pocket/your-pocket-journey-starts-now-make-the-most-of-it-cc30770e6c53",
+            "given_title": "",
+            "favorite": "0",
+            "status": "1",
+            "time_added": "1554449248",
+            "time_updated": "1584184178",
+            "time_read": "2020",
+            "time_favorited": "0",
+            "sort_id": 52,
+            "resolved_title": "Your Pocket journey starts now. Make the most of it.",
+            "resolved_url": "https://medium.com/@Pocket/your-pocket-journey-starts-now-make-the-most-of-it-cc30770e6c53",
+            "excerpt": "Welcome to Pocket. You’re about to embark on a journey, one where the vast swaths of information you discover online become knowledge. Everywhere you go with Pocket, the words, sounds, and stories that delight, enlighten, and even shape you will be at your fingertips.",
+            "is_article": "1",
+            "is_index": "0",
+            "has_video": "0",
+            "has_image": "1",
+            "word_count": "491",
+            "lang": "en",
+            "top_image_url": "https://miro.medium.com/max/1200/1*hKCxwuSJWmmAGa4bVi_V7Q.png",
+            "authors": {
+                "34265082": {
+                    "item_id": "2333373270",
+                    "author_id": "34265082",
+                    "name": "Pocket",
+                    "url": "https://medium.com/@Pocket"
+                }
+            },
+            "image": {
+                "item_id": "2333373270",
+                "src": "https://miro.medium.com/max/3840/1*hKCxwuSJWmmAGa4bVi_V7Q.png",
+                "width": "1920",
+                "height": "1167"
+            },
+            "images": {
+                "1": {
+                    "item_id": "2333373270",
+                    "image_id": "1",
+                    "src": "https://miro.medium.com/max/3840/1*hKCxwuSJWmmAGa4bVi_V7Q.png",
+                    "width": "1920",
+                    "height": "1167",
+                    "credit": "",
+                    "caption": ""
+                },
+                "2": {
+                    "item_id": "2333373270",
+                    "image_id": "2",
+                    "src": "https://miro.medium.com/max/3840/1*p1j8hjytlS5RrAs9R3K8XA.png",
+                    "width": "1920",
+                    "height": "1303",
+                    "credit": "",
+                    "caption": ""
+                },
+                "3": {
+                    "item_id": "2333373270",
+                    "image_id": "3",
+                    "src": "https://miro.medium.com/max/3840/1*sTCgI5ZfYEFQtKhE0ADiLg.png",
+                    "width": "1920",
+                    "height": "1259",
+                    "credit": "",
+                    "caption": ""
+                },
+                "4": {
+                    "item_id": "2333373270",
+                    "image_id": "4",
+                    "src": "https://miro.medium.com/max/4400/1*E8xc0m-eP_Tqqs-MKnJqDA.png",
+                    "width": "2200",
+                    "height": "1418",
+                    "credit": "",
+                    "caption": ""
+                }
+            },
+            "domain_metadata": {
+                "name": "Medium",
+                "logo": "https://logo.clearbit.com/medium.com?size=800",
+                "greyscale_logo": "https://logo.clearbit.com/medium.com?size=800&greyscale=true"
+            },
+            "listen_duration_estimate": 190
+        }
+    },
+    "error": null,
+    "search_meta": {
+        "search_type": "normal"
+    },
+    "since": 1595578538
+}

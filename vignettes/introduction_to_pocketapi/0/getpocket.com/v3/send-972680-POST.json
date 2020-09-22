@@ -1,0 +1,119 @@
+{
+  "action_results": [
+    {
+      "item_id": "1520641742",
+      "normal_url": "http://correlaid.org/blog",
+      "resolved_id": "1520641742",
+      "extended_item_id": "1520641742",
+      "resolved_url": "http://correlaid.org/blog/",
+      "domain_id": "26652124",
+      "origin_domain_id": "26652124",
+      "response_code": "200",
+      "mime_type": "text/html",
+      "content_length": "29261",
+      "encoding": "utf-8",
+      "date_resolved": "2016-12-16 04:22:52",
+      "date_published": "0000-00-00 00:00:00",
+      "title": "CorrelAid.",
+      "excerpt": "Wir sind überzeugt, dass in der Arbeit mit Daten mehr Potential steckt als nur Werbung effektiver zu machen. Wir glauben, dass die Zivilgesellschaft von diesem Potential Gebrauch machen sollte. Wir möchten mit Datenanalyse Gutes tun.",
+      "word_count": "163",
+      "innerdomain_redirect": "1",
+      "login_required": "0",
+      "has_image": "1",
+      "has_video": "0",
+      "is_index": "1",
+      "is_article": "1",
+      "used_fallback": "0",
+      "lang": "de",
+      "time_first_parsed": "1481883772",
+      "authors": {
+        "60388584": {
+          "author_id": "60388584",
+          "name": "Damian Paderta",
+          "url": "http://correlaid.org/author/damian/"
+        }
+      },
+      "images": {
+        "1": {
+          "item_id": "1520641742",
+          "image_id": "1",
+          "src": "https://i2.wp.com/correlaid.org/wp-content/uploads/2016/12/thijbbig.png?fit=830%2C440",
+          "width": "830",
+          "height": "440",
+          "credit": "",
+          "caption": ""
+        },
+        "2": {
+          "item_id": "1520641742",
+          "image_id": "2",
+          "src": "https://i1.wp.com/correlaid.org/wp-content/uploads/2016/12/IMG_9459.jpg?fit=830%2C553",
+          "width": "830",
+          "height": "553",
+          "credit": "",
+          "caption": ""
+        },
+        "3": {
+          "item_id": "1520641742",
+          "image_id": "3",
+          "src": "https://i2.wp.com/correlaid.org/wp-content/uploads/2016/12/20151019_191057.jpg?fit=830%2C623",
+          "width": "830",
+          "height": "623",
+          "credit": "",
+          "caption": ""
+        },
+        "4": {
+          "item_id": "1520641742",
+          "image_id": "4",
+          "src": "https://i2.wp.com/correlaid.org/wp-content/uploads/2016/02/ca_ms_politik.jpg?fit=830%2C466",
+          "width": "830",
+          "height": "466",
+          "credit": "",
+          "caption": ""
+        },
+        "5": {
+          "item_id": "1520641742",
+          "image_id": "5",
+          "src": "http://correlaid.org/wp-content/uploads/2015/11/cropped-cropped-YR89OQFMT1_klein1.jpg",
+          "width": "1920",
+          "height": "0",
+          "credit": "",
+          "caption": ""
+        }
+      },
+      "videos": [],
+      "top_image_url": "https://s0.wp.com/i/blank.jpg",
+      "resolved_normal_url": "http://correlaid.org/blog",
+      "given_url": "https://www.correlaid.org/blog"
+    },
+    {
+      "item_id": "3119081882",
+      "normal_url": "http://correlaid.org/about",
+      "resolved_id": "0",
+      "extended_item_id": "0",
+      "resolved_url": "",
+      "domain_id": "0",
+      "origin_domain_id": "0",
+      "response_code": "0",
+      "mime_type": "",
+      "content_length": "0",
+      "encoding": "",
+      "date_resolved": "0000-00-00 00:00:00",
+      "date_published": "0000-00-00 00:00:00",
+      "title": "",
+      "excerpt": "",
+      "word_count": "0",
+      "innerdomain_redirect": "0",
+      "login_required": "0",
+      "has_image": "0",
+      "has_video": "0",
+      "is_index": "0",
+      "is_article": "0",
+      "used_fallback": "0",
+      "lang": null,
+      "time_first_parsed": null,
+      "given_url": "https://correlaid.org/about"
+    }
+  ],
+  "action_errors": [null, null],
+  "status": 1
+}

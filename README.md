@@ -15,11 +15,11 @@ Functions include:
 
 - `pocket_add()`
 - `pocket_get()`
-- `pocket_tag()`
 - `pocket_archive()`
 - `pocket_delete()`
 - `pocket_favorite()`
 - `pocket_unfavorite()`
+- `pocket_tag()`
 
 # Installation
 

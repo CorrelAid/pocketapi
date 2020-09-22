@@ -39,9 +39,12 @@ rsconnect/
 
 # getpocket test files from httptest in root
 /getpocket.com
+inst/doc
 
 # vscode workspace
 pocketapi.code-workspace
 
 # check
 check/
+doc
+Meta
