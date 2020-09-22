@@ -1,4 +1,4 @@
-# `pocketapi`
+# pocketapi
 
 <!-- badges: start -->
 
