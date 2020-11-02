@@ -22,7 +22,7 @@ Sys.setenv(POCKET_CONSUMER_KEY = "24256-xsadas")
 Sys.setenv(POCKET_ACCESS_TOKEN = "35435-badasdasd")
 ```
 
-The website [Pocket](www.getpocket.com) is a well-known tool for storing things you find on the internet - in case you want to access them later. Be it a news article, a video on YouTube, an interesting Tweet or just any other URL that might prove useful. In short: Pocket is a tool that contributes to organising oneself. Pocket also offers an API whereby you can basically execute all actions that you can do when using Pocket in your web browser. This is where `pocketapi` comes into play. We have created a R wrapper for Pocket's API that allows you to organise, retrieve and change your items stored in your Pocket account through some convenient R functions. In the following, we explain how to connect to the API via `pocketapi`, how the key functions work and how the workflow looks like.
+The website [Pocket](https://www.getpocket.com) is a well-known tool for storing things you find on the internet - in case you want to access them later. Be it a news article, a video on YouTube, an interesting Tweet or just any other URL that might prove useful. In short: Pocket is a tool that contributes to organising oneself. Pocket also offers an API whereby you can basically execute all actions that you can do when using Pocket in your web browser. This is where `pocketapi` comes into play. We have created a R wrapper for Pocket's API that allows you to organise, retrieve and change your items stored in your Pocket account through some convenient R functions. In the following, we explain how to connect to the API via `pocketapi`, how the key functions work and how the workflow looks like.
 
 ## Connecting to the API / Authentication
 
@@ -207,7 +207,7 @@ pocketapi::pocket_add(add_urls = new_urls, success = FALSE, tags = c("data4good"
 
 Before adding items using `pocket_add()`, it is crucial to beware of two things, since the Pocket API sometimes behaves oddly/unpredictably, especially when it comes to adding items:
 
-1. The API only accepts URLs that start with *http://* or *https://*; those starting with only *www.* will most likely *not* be added. 
+1. The API only accepts URLs that start with *http* or *https*, including *://*; those starting with only *www.* will most likely *not* be added. 
 
 2. In some cases it might be that the URL, once it has been successfully added, is being changed from *https* to *http* internally. If you use the `success` argument of `pocket_add()`, this might lead to false failure messages (the URL will be successfully added, but the function cannot detect it due to the change in the URL).
 
