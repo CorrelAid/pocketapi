@@ -1,8 +1,14 @@
 Package: pocketapi
 Title: R Wrapper Around the Pocket API
-Version: 0.0.0.9000
-Authors@R: person("Frie", "Preu", email = "fr1e@pm.me", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Version: 0.1
+Authors@R: c(person("Frie", "Preu", email = "fr1e@pm.me", role = c("aut", "cre")),
+            person("Yannik", "Buhl", email = "yannik.buhl@posteo.de", role = "aut"),
+            person("Max", "Alletsee", email = "max.alletsee@gmail.com", role = "aut"),
+            person("Dorian", "Le Jeune", email = "D.Le-Jeune@gmx.de", role = "ctb"),
+            person("Christoph", "Dworschak", email = "c.dworschak@essex.ac.uk", role = "ctb"),
+            person("Sarah", "Jukna", role = "ctb")
+            )
+Description: Functions that interface with the Pocket Developer API. Allows the user to get, add, and modify items in their own Pocket account.
 Depends: R (>= 3.5.0)
 Imports:
     httr,

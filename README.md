@@ -67,12 +67,14 @@ You need to create a Pocket _application_ in the Pocket developer portal to acce
 `pocketapi` uses the OAuth2 flow provided by the [Pocket Authentication API](https://getpocket.com/developer/docs/authentication) to get an access token for your App. Because Pocket does not closely follow the OAuth standard, we could not provide as smooth an experience as other packages do (e.g. [googlesheets4](https://github.com/tidyverse/googlesheets4)). Instead, the user has to do the following **once** to obtain an access token:
 
 1. Request a request token.
-`req_token <- get_request_token(consumer_key)`
+```
+request_token <- get_request_token(consumer_key)
+```
 
 2. Authorize your app by entering the URL created by `create_authorize_url` **in your browser**:
 
 ```r
-create_authorize_url(req_token)
+create_authorize_url(request_token)
 ```
 
 :warning: This step is critical: **Even if you have authorized your app before** and you want to get a new access token, you need to do the authorization in your browser again. Otherwise, the request token will not be authorized to generate an access token!
@@ -83,9 +85,17 @@ create_authorize_url(req_token)
 access_token <- get_access_token(consumer_key, request_token)
 ```
 
-**Important**: Never make your `consumer_key` and `access_token` publicly available - anyone will be able to access your Pockets!
+You can now already use the package by specifying the consumer key and access token manually as arguments to each function call: 
+
+```
+pocketapi::pocket_get(consumer_key = consumer_key, access_token = access_token)
+```
+
+To make it easier to work with the package, you should set them as environment variables. 
 
 ### Add the consumer key and access token to your environment
+
+**Important**: Never make your `consumer_key` and `access_token` publicly available - anyone will be able to access your Pockets!
 
 It is common practice to set API keys in your R environment file so that every time you start R the key is loaded.
 
