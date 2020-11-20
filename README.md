@@ -5,7 +5,7 @@
 [![R build status](https://github.com/CorrelAid/pocketapi/workflows/R-CMD-check/badge.svg)](https://github.com/CorrelAid/pocketapi/actions)
 [![Codecov test coverage](https://codecov.io/gh/CorrelAid/pocketapi/branch/master/graph/badge.svg)](https://codecov.io/gh/CorrelAid/pocketapi?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/pocketapi)](https://CRAN.R-project.org/package=pocketapi)
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 
 <!-- badges: end -->
 
@@ -25,11 +25,14 @@ Functions include:
 
 ## CRAN Version
 
-The package is not yet on CRAN.
+```r
+# install via CRAN
+install.packages("pocketapi")
+```
 
 ## Current Development Version
 
-This package is currently only available on GitHub. You can install it using `devtools`.
+You can install the latest development version using `devtools`.
 
 ```r
 # install devtools package if it's not already
