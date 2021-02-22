@@ -5,8 +5,8 @@
 [![R build status](https://github.com/CorrelAid/pocketapi/workflows/R-CMD-check/badge.svg)](https://github.com/CorrelAid/pocketapi/actions)
 [![Codecov test coverage](https://codecov.io/gh/CorrelAid/pocketapi/branch/master/graph/badge.svg)](https://codecov.io/gh/CorrelAid/pocketapi?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/pocketapi)](https://CRAN.R-project.org/package=pocketapi)
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![CRAN\_Download\_Badge](https://cranlogs.r-pkg.org/badges/pocketapi)](https://cran.r-project.org/web/packages/pocketapi/index.html)
 <!-- badges: end -->
 
 This is a R wrapper for the [Pocket API](https://getpocket.com/developer/docs/overview). You can use `pocketapi` to access and modify your _own_ pockets and to add new links to your Pocket programmatically.
